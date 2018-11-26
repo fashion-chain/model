@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "transaction.proto";
+package org.fok.core.model;
+
+message BlockInfo {
+	BlockHeader header = 1;
+	BlockBody body = 2;
+	BlockMiner miner = 3;
+	int32 version = 50;
+}
+
+message BlockHeader {
+	bytes hash = 1;
+	bytes parentHash = 2;
+	int64 height = 3;
+	bytes stateRoot = 4;
+	bytes transactionRoot = 5;
+	bytes receiptRoot = 6;
+	int64 timestamp = 7;
+	bytes extraData = 8;
+	repeated bytes txHashs = 9;
+}
+
+message BlockBody {
+	repeated TransactionInfo txs = 1;
+}
+
+message BlockMiner {
+	bytes address = 1;
+	bytes reward = 2;
+}

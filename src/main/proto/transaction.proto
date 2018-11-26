@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package org.fok.core.model;
+
+message TransactionInfo {
+	bytes txHash = 1;
+	TransactionBody txBody = 2;
+	string status = 3;
+	TransactionNode txNode = 4;
+	bytes result = 5;
+}
+
+message TransactionBody {
+	repeated TransactionInput inputs = 1;
+	repeated TransactionOutput outputs = 2;
+	bytes exdata = 3;
+	repeated TransactionSignature signatures = 4;
+	repeated bytes delegate = 5;
+	bytes data = 6;
+	int64 timestamp = 7;
+	int32 type = 8;
+}
+
+message TransactionInput {
+	int32 nonce = 1;
+	bytes address = 4;
+	bytes amount = 5;
+	bytes token = 7;
+	bytes symbol = 8;
+	bytes cryptoToken = 9;
+}
+
+message TransactionOutput {
+	bytes address = 1;
+	bytes amount = 2;
+	bytes symbol = 3;
+	bytes cryptoToken = 4;
+}
+
+message TransactionSignature {
+	bytes signature = 1;
+}
+
+message TransactionNode {
+	string node = 1;
+	bytes address = 2;
+}
+
+message BroadcastTransactionMsg {
+//repeated string txHexStr = 1;
+	repeated bytes txHash = 1;
+	repeated bytes txDatas = 2;
+}
+
+message CryptoTokenData {
+	int64 total = 1;
+	bytes symbol = 2;
+	bytes extData = 3;
+	repeated string name = 4;
+	repeated string code = 5;
+}
+
+message UnionAccountData {
+	bytes max = 1;
+	bytes acceptMax = 2;
+	int32 acceptLimit = 3;
+	repeated bytes address = 4;
+}
+
+message SanctionData {
+	bytes content = 1;
+	int64 endBlockHeight = 2;
+	bytes result = 3;
+}
