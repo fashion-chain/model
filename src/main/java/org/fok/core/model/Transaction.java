@@ -19,22 +19,22 @@ public final class Transaction {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes txHash = 1;</code>
+     * <code>bytes hash = 1;</code>
      */
-    com.google.protobuf.ByteString getTxHash();
+    com.google.protobuf.ByteString getHash();
 
     /**
-     * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+     * <code>.org.fok.core.model.TransactionBody body = 2;</code>
      */
-    boolean hasTxBody();
+    boolean hasBody();
     /**
-     * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+     * <code>.org.fok.core.model.TransactionBody body = 2;</code>
      */
-    org.fok.core.model.Transaction.TransactionBody getTxBody();
+    org.fok.core.model.Transaction.TransactionBody getBody();
     /**
-     * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+     * <code>.org.fok.core.model.TransactionBody body = 2;</code>
      */
-    org.fok.core.model.Transaction.TransactionBodyOrBuilder getTxBodyOrBuilder();
+    org.fok.core.model.Transaction.TransactionBodyOrBuilder getBodyOrBuilder();
 
     /**
      * <code>string status = 3;</code>
@@ -47,17 +47,17 @@ public final class Transaction {
         getStatusBytes();
 
     /**
-     * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+     * <code>.org.fok.core.model.TransactionNode node = 4;</code>
      */
-    boolean hasTxNode();
+    boolean hasNode();
     /**
-     * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+     * <code>.org.fok.core.model.TransactionNode node = 4;</code>
      */
-    org.fok.core.model.Transaction.TransactionNode getTxNode();
+    org.fok.core.model.Transaction.TransactionNode getNode();
     /**
-     * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+     * <code>.org.fok.core.model.TransactionNode node = 4;</code>
      */
-    org.fok.core.model.Transaction.TransactionNodeOrBuilder getTxNodeOrBuilder();
+    org.fok.core.model.Transaction.TransactionNodeOrBuilder getNodeOrBuilder();
 
     /**
      * <code>bytes result = 5;</code>
@@ -76,7 +76,7 @@ public final class Transaction {
       super(builder);
     }
     private TransactionInfo() {
-      txHash_ = com.google.protobuf.ByteString.EMPTY;
+      hash_ = com.google.protobuf.ByteString.EMPTY;
       status_ = "";
       result_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -108,18 +108,18 @@ public final class Transaction {
             }
             case 10: {
 
-              txHash_ = input.readBytes();
+              hash_ = input.readBytes();
               break;
             }
             case 18: {
               org.fok.core.model.Transaction.TransactionBody.Builder subBuilder = null;
-              if (txBody_ != null) {
-                subBuilder = txBody_.toBuilder();
+              if (body_ != null) {
+                subBuilder = body_.toBuilder();
               }
-              txBody_ = input.readMessage(org.fok.core.model.Transaction.TransactionBody.parser(), extensionRegistry);
+              body_ = input.readMessage(org.fok.core.model.Transaction.TransactionBody.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(txBody_);
-                txBody_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(body_);
+                body_ = subBuilder.buildPartial();
               }
 
               break;
@@ -132,13 +132,13 @@ public final class Transaction {
             }
             case 34: {
               org.fok.core.model.Transaction.TransactionNode.Builder subBuilder = null;
-              if (txNode_ != null) {
-                subBuilder = txNode_.toBuilder();
+              if (node_ != null) {
+                subBuilder = node_.toBuilder();
               }
-              txNode_ = input.readMessage(org.fok.core.model.Transaction.TransactionNode.parser(), extensionRegistry);
+              node_ = input.readMessage(org.fok.core.model.Transaction.TransactionNode.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(txNode_);
-                txNode_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(node_);
+                node_ = subBuilder.buildPartial();
               }
 
               break;
@@ -171,34 +171,34 @@ public final class Transaction {
               org.fok.core.model.Transaction.TransactionInfo.class, org.fok.core.model.Transaction.TransactionInfo.Builder.class);
     }
 
-    public static final int TXHASH_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString txHash_;
+    public static final int HASH_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString hash_;
     /**
-     * <code>bytes txHash = 1;</code>
+     * <code>bytes hash = 1;</code>
      */
-    public com.google.protobuf.ByteString getTxHash() {
-      return txHash_;
+    public com.google.protobuf.ByteString getHash() {
+      return hash_;
     }
 
-    public static final int TXBODY_FIELD_NUMBER = 2;
-    private org.fok.core.model.Transaction.TransactionBody txBody_;
+    public static final int BODY_FIELD_NUMBER = 2;
+    private org.fok.core.model.Transaction.TransactionBody body_;
     /**
-     * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+     * <code>.org.fok.core.model.TransactionBody body = 2;</code>
      */
-    public boolean hasTxBody() {
-      return txBody_ != null;
+    public boolean hasBody() {
+      return body_ != null;
     }
     /**
-     * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+     * <code>.org.fok.core.model.TransactionBody body = 2;</code>
      */
-    public org.fok.core.model.Transaction.TransactionBody getTxBody() {
-      return txBody_ == null ? org.fok.core.model.Transaction.TransactionBody.getDefaultInstance() : txBody_;
+    public org.fok.core.model.Transaction.TransactionBody getBody() {
+      return body_ == null ? org.fok.core.model.Transaction.TransactionBody.getDefaultInstance() : body_;
     }
     /**
-     * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+     * <code>.org.fok.core.model.TransactionBody body = 2;</code>
      */
-    public org.fok.core.model.Transaction.TransactionBodyOrBuilder getTxBodyOrBuilder() {
-      return getTxBody();
+    public org.fok.core.model.Transaction.TransactionBodyOrBuilder getBodyOrBuilder() {
+      return getBody();
     }
 
     public static final int STATUS_FIELD_NUMBER = 3;
@@ -235,25 +235,25 @@ public final class Transaction {
       }
     }
 
-    public static final int TXNODE_FIELD_NUMBER = 4;
-    private org.fok.core.model.Transaction.TransactionNode txNode_;
+    public static final int NODE_FIELD_NUMBER = 4;
+    private org.fok.core.model.Transaction.TransactionNode node_;
     /**
-     * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+     * <code>.org.fok.core.model.TransactionNode node = 4;</code>
      */
-    public boolean hasTxNode() {
-      return txNode_ != null;
+    public boolean hasNode() {
+      return node_ != null;
     }
     /**
-     * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+     * <code>.org.fok.core.model.TransactionNode node = 4;</code>
      */
-    public org.fok.core.model.Transaction.TransactionNode getTxNode() {
-      return txNode_ == null ? org.fok.core.model.Transaction.TransactionNode.getDefaultInstance() : txNode_;
+    public org.fok.core.model.Transaction.TransactionNode getNode() {
+      return node_ == null ? org.fok.core.model.Transaction.TransactionNode.getDefaultInstance() : node_;
     }
     /**
-     * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+     * <code>.org.fok.core.model.TransactionNode node = 4;</code>
      */
-    public org.fok.core.model.Transaction.TransactionNodeOrBuilder getTxNodeOrBuilder() {
-      return getTxNode();
+    public org.fok.core.model.Transaction.TransactionNodeOrBuilder getNodeOrBuilder() {
+      return getNode();
     }
 
     public static final int RESULT_FIELD_NUMBER = 5;
@@ -277,17 +277,17 @@ public final class Transaction {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!txHash_.isEmpty()) {
-        output.writeBytes(1, txHash_);
+      if (!hash_.isEmpty()) {
+        output.writeBytes(1, hash_);
       }
-      if (txBody_ != null) {
-        output.writeMessage(2, getTxBody());
+      if (body_ != null) {
+        output.writeMessage(2, getBody());
       }
       if (!getStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status_);
       }
-      if (txNode_ != null) {
-        output.writeMessage(4, getTxNode());
+      if (node_ != null) {
+        output.writeMessage(4, getNode());
       }
       if (!result_.isEmpty()) {
         output.writeBytes(5, result_);
@@ -299,20 +299,20 @@ public final class Transaction {
       if (size != -1) return size;
 
       size = 0;
-      if (!txHash_.isEmpty()) {
+      if (!hash_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, txHash_);
+          .computeBytesSize(1, hash_);
       }
-      if (txBody_ != null) {
+      if (body_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getTxBody());
+          .computeMessageSize(2, getBody());
       }
       if (!getStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status_);
       }
-      if (txNode_ != null) {
+      if (node_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getTxNode());
+          .computeMessageSize(4, getNode());
       }
       if (!result_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
@@ -334,19 +334,19 @@ public final class Transaction {
       org.fok.core.model.Transaction.TransactionInfo other = (org.fok.core.model.Transaction.TransactionInfo) obj;
 
       boolean result = true;
-      result = result && getTxHash()
-          .equals(other.getTxHash());
-      result = result && (hasTxBody() == other.hasTxBody());
-      if (hasTxBody()) {
-        result = result && getTxBody()
-            .equals(other.getTxBody());
+      result = result && getHash()
+          .equals(other.getHash());
+      result = result && (hasBody() == other.hasBody());
+      if (hasBody()) {
+        result = result && getBody()
+            .equals(other.getBody());
       }
       result = result && getStatus()
           .equals(other.getStatus());
-      result = result && (hasTxNode() == other.hasTxNode());
-      if (hasTxNode()) {
-        result = result && getTxNode()
-            .equals(other.getTxNode());
+      result = result && (hasNode() == other.hasNode());
+      if (hasNode()) {
+        result = result && getNode()
+            .equals(other.getNode());
       }
       result = result && getResult()
           .equals(other.getResult());
@@ -360,17 +360,17 @@ public final class Transaction {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TXHASH_FIELD_NUMBER;
-      hash = (53 * hash) + getTxHash().hashCode();
-      if (hasTxBody()) {
-        hash = (37 * hash) + TXBODY_FIELD_NUMBER;
-        hash = (53 * hash) + getTxBody().hashCode();
+      hash = (37 * hash) + HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getHash().hashCode();
+      if (hasBody()) {
+        hash = (37 * hash) + BODY_FIELD_NUMBER;
+        hash = (53 * hash) + getBody().hashCode();
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
-      if (hasTxNode()) {
-        hash = (37 * hash) + TXNODE_FIELD_NUMBER;
-        hash = (53 * hash) + getTxNode().hashCode();
+      if (hasNode()) {
+        hash = (37 * hash) + NODE_FIELD_NUMBER;
+        hash = (53 * hash) + getNode().hashCode();
       }
       hash = (37 * hash) + RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getResult().hashCode();
@@ -492,21 +492,21 @@ public final class Transaction {
       }
       public Builder clear() {
         super.clear();
-        txHash_ = com.google.protobuf.ByteString.EMPTY;
+        hash_ = com.google.protobuf.ByteString.EMPTY;
 
-        if (txBodyBuilder_ == null) {
-          txBody_ = null;
+        if (bodyBuilder_ == null) {
+          body_ = null;
         } else {
-          txBody_ = null;
-          txBodyBuilder_ = null;
+          body_ = null;
+          bodyBuilder_ = null;
         }
         status_ = "";
 
-        if (txNodeBuilder_ == null) {
-          txNode_ = null;
+        if (nodeBuilder_ == null) {
+          node_ = null;
         } else {
-          txNode_ = null;
-          txNodeBuilder_ = null;
+          node_ = null;
+          nodeBuilder_ = null;
         }
         result_ = com.google.protobuf.ByteString.EMPTY;
 
@@ -532,17 +532,17 @@ public final class Transaction {
 
       public org.fok.core.model.Transaction.TransactionInfo buildPartial() {
         org.fok.core.model.Transaction.TransactionInfo result = new org.fok.core.model.Transaction.TransactionInfo(this);
-        result.txHash_ = txHash_;
-        if (txBodyBuilder_ == null) {
-          result.txBody_ = txBody_;
+        result.hash_ = hash_;
+        if (bodyBuilder_ == null) {
+          result.body_ = body_;
         } else {
-          result.txBody_ = txBodyBuilder_.build();
+          result.body_ = bodyBuilder_.build();
         }
         result.status_ = status_;
-        if (txNodeBuilder_ == null) {
-          result.txNode_ = txNode_;
+        if (nodeBuilder_ == null) {
+          result.node_ = node_;
         } else {
-          result.txNode_ = txNodeBuilder_.build();
+          result.node_ = nodeBuilder_.build();
         }
         result.result_ = result_;
         onBuilt();
@@ -586,18 +586,18 @@ public final class Transaction {
 
       public Builder mergeFrom(org.fok.core.model.Transaction.TransactionInfo other) {
         if (other == org.fok.core.model.Transaction.TransactionInfo.getDefaultInstance()) return this;
-        if (other.getTxHash() != com.google.protobuf.ByteString.EMPTY) {
-          setTxHash(other.getTxHash());
+        if (other.getHash() != com.google.protobuf.ByteString.EMPTY) {
+          setHash(other.getHash());
         }
-        if (other.hasTxBody()) {
-          mergeTxBody(other.getTxBody());
+        if (other.hasBody()) {
+          mergeBody(other.getBody());
         }
         if (!other.getStatus().isEmpty()) {
           status_ = other.status_;
           onChanged();
         }
-        if (other.hasTxNode()) {
-          mergeTxNode(other.getTxNode());
+        if (other.hasNode()) {
+          mergeNode(other.getNode());
         }
         if (other.getResult() != com.google.protobuf.ByteString.EMPTY) {
           setResult(other.getResult());
@@ -628,150 +628,150 @@ public final class Transaction {
         return this;
       }
 
-      private com.google.protobuf.ByteString txHash_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString hash_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes txHash = 1;</code>
+       * <code>bytes hash = 1;</code>
        */
-      public com.google.protobuf.ByteString getTxHash() {
-        return txHash_;
+      public com.google.protobuf.ByteString getHash() {
+        return hash_;
       }
       /**
-       * <code>bytes txHash = 1;</code>
+       * <code>bytes hash = 1;</code>
        */
-      public Builder setTxHash(com.google.protobuf.ByteString value) {
+      public Builder setHash(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        txHash_ = value;
+        hash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes txHash = 1;</code>
+       * <code>bytes hash = 1;</code>
        */
-      public Builder clearTxHash() {
+      public Builder clearHash() {
         
-        txHash_ = getDefaultInstance().getTxHash();
+        hash_ = getDefaultInstance().getHash();
         onChanged();
         return this;
       }
 
-      private org.fok.core.model.Transaction.TransactionBody txBody_ = null;
+      private org.fok.core.model.Transaction.TransactionBody body_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.fok.core.model.Transaction.TransactionBody, org.fok.core.model.Transaction.TransactionBody.Builder, org.fok.core.model.Transaction.TransactionBodyOrBuilder> txBodyBuilder_;
+          org.fok.core.model.Transaction.TransactionBody, org.fok.core.model.Transaction.TransactionBody.Builder, org.fok.core.model.Transaction.TransactionBodyOrBuilder> bodyBuilder_;
       /**
-       * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+       * <code>.org.fok.core.model.TransactionBody body = 2;</code>
        */
-      public boolean hasTxBody() {
-        return txBodyBuilder_ != null || txBody_ != null;
+      public boolean hasBody() {
+        return bodyBuilder_ != null || body_ != null;
       }
       /**
-       * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+       * <code>.org.fok.core.model.TransactionBody body = 2;</code>
        */
-      public org.fok.core.model.Transaction.TransactionBody getTxBody() {
-        if (txBodyBuilder_ == null) {
-          return txBody_ == null ? org.fok.core.model.Transaction.TransactionBody.getDefaultInstance() : txBody_;
+      public org.fok.core.model.Transaction.TransactionBody getBody() {
+        if (bodyBuilder_ == null) {
+          return body_ == null ? org.fok.core.model.Transaction.TransactionBody.getDefaultInstance() : body_;
         } else {
-          return txBodyBuilder_.getMessage();
+          return bodyBuilder_.getMessage();
         }
       }
       /**
-       * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+       * <code>.org.fok.core.model.TransactionBody body = 2;</code>
        */
-      public Builder setTxBody(org.fok.core.model.Transaction.TransactionBody value) {
-        if (txBodyBuilder_ == null) {
+      public Builder setBody(org.fok.core.model.Transaction.TransactionBody value) {
+        if (bodyBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          txBody_ = value;
+          body_ = value;
           onChanged();
         } else {
-          txBodyBuilder_.setMessage(value);
+          bodyBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+       * <code>.org.fok.core.model.TransactionBody body = 2;</code>
        */
-      public Builder setTxBody(
+      public Builder setBody(
           org.fok.core.model.Transaction.TransactionBody.Builder builderForValue) {
-        if (txBodyBuilder_ == null) {
-          txBody_ = builderForValue.build();
+        if (bodyBuilder_ == null) {
+          body_ = builderForValue.build();
           onChanged();
         } else {
-          txBodyBuilder_.setMessage(builderForValue.build());
+          bodyBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+       * <code>.org.fok.core.model.TransactionBody body = 2;</code>
        */
-      public Builder mergeTxBody(org.fok.core.model.Transaction.TransactionBody value) {
-        if (txBodyBuilder_ == null) {
-          if (txBody_ != null) {
-            txBody_ =
-              org.fok.core.model.Transaction.TransactionBody.newBuilder(txBody_).mergeFrom(value).buildPartial();
+      public Builder mergeBody(org.fok.core.model.Transaction.TransactionBody value) {
+        if (bodyBuilder_ == null) {
+          if (body_ != null) {
+            body_ =
+              org.fok.core.model.Transaction.TransactionBody.newBuilder(body_).mergeFrom(value).buildPartial();
           } else {
-            txBody_ = value;
+            body_ = value;
           }
           onChanged();
         } else {
-          txBodyBuilder_.mergeFrom(value);
+          bodyBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+       * <code>.org.fok.core.model.TransactionBody body = 2;</code>
        */
-      public Builder clearTxBody() {
-        if (txBodyBuilder_ == null) {
-          txBody_ = null;
+      public Builder clearBody() {
+        if (bodyBuilder_ == null) {
+          body_ = null;
           onChanged();
         } else {
-          txBody_ = null;
-          txBodyBuilder_ = null;
+          body_ = null;
+          bodyBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+       * <code>.org.fok.core.model.TransactionBody body = 2;</code>
        */
-      public org.fok.core.model.Transaction.TransactionBody.Builder getTxBodyBuilder() {
+      public org.fok.core.model.Transaction.TransactionBody.Builder getBodyBuilder() {
         
         onChanged();
-        return getTxBodyFieldBuilder().getBuilder();
+        return getBodyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+       * <code>.org.fok.core.model.TransactionBody body = 2;</code>
        */
-      public org.fok.core.model.Transaction.TransactionBodyOrBuilder getTxBodyOrBuilder() {
-        if (txBodyBuilder_ != null) {
-          return txBodyBuilder_.getMessageOrBuilder();
+      public org.fok.core.model.Transaction.TransactionBodyOrBuilder getBodyOrBuilder() {
+        if (bodyBuilder_ != null) {
+          return bodyBuilder_.getMessageOrBuilder();
         } else {
-          return txBody_ == null ?
-              org.fok.core.model.Transaction.TransactionBody.getDefaultInstance() : txBody_;
+          return body_ == null ?
+              org.fok.core.model.Transaction.TransactionBody.getDefaultInstance() : body_;
         }
       }
       /**
-       * <code>.org.fok.core.model.TransactionBody txBody = 2;</code>
+       * <code>.org.fok.core.model.TransactionBody body = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.fok.core.model.Transaction.TransactionBody, org.fok.core.model.Transaction.TransactionBody.Builder, org.fok.core.model.Transaction.TransactionBodyOrBuilder> 
-          getTxBodyFieldBuilder() {
-        if (txBodyBuilder_ == null) {
-          txBodyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getBodyFieldBuilder() {
+        if (bodyBuilder_ == null) {
+          bodyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.fok.core.model.Transaction.TransactionBody, org.fok.core.model.Transaction.TransactionBody.Builder, org.fok.core.model.Transaction.TransactionBodyOrBuilder>(
-                  getTxBody(),
+                  getBody(),
                   getParentForChildren(),
                   isClean());
-          txBody_ = null;
+          body_ = null;
         }
-        return txBodyBuilder_;
+        return bodyBuilder_;
       }
 
       private java.lang.Object status_ = "";
@@ -843,121 +843,121 @@ public final class Transaction {
         return this;
       }
 
-      private org.fok.core.model.Transaction.TransactionNode txNode_ = null;
+      private org.fok.core.model.Transaction.TransactionNode node_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.fok.core.model.Transaction.TransactionNode, org.fok.core.model.Transaction.TransactionNode.Builder, org.fok.core.model.Transaction.TransactionNodeOrBuilder> txNodeBuilder_;
+          org.fok.core.model.Transaction.TransactionNode, org.fok.core.model.Transaction.TransactionNode.Builder, org.fok.core.model.Transaction.TransactionNodeOrBuilder> nodeBuilder_;
       /**
-       * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+       * <code>.org.fok.core.model.TransactionNode node = 4;</code>
        */
-      public boolean hasTxNode() {
-        return txNodeBuilder_ != null || txNode_ != null;
+      public boolean hasNode() {
+        return nodeBuilder_ != null || node_ != null;
       }
       /**
-       * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+       * <code>.org.fok.core.model.TransactionNode node = 4;</code>
        */
-      public org.fok.core.model.Transaction.TransactionNode getTxNode() {
-        if (txNodeBuilder_ == null) {
-          return txNode_ == null ? org.fok.core.model.Transaction.TransactionNode.getDefaultInstance() : txNode_;
+      public org.fok.core.model.Transaction.TransactionNode getNode() {
+        if (nodeBuilder_ == null) {
+          return node_ == null ? org.fok.core.model.Transaction.TransactionNode.getDefaultInstance() : node_;
         } else {
-          return txNodeBuilder_.getMessage();
+          return nodeBuilder_.getMessage();
         }
       }
       /**
-       * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+       * <code>.org.fok.core.model.TransactionNode node = 4;</code>
        */
-      public Builder setTxNode(org.fok.core.model.Transaction.TransactionNode value) {
-        if (txNodeBuilder_ == null) {
+      public Builder setNode(org.fok.core.model.Transaction.TransactionNode value) {
+        if (nodeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          txNode_ = value;
+          node_ = value;
           onChanged();
         } else {
-          txNodeBuilder_.setMessage(value);
+          nodeBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+       * <code>.org.fok.core.model.TransactionNode node = 4;</code>
        */
-      public Builder setTxNode(
+      public Builder setNode(
           org.fok.core.model.Transaction.TransactionNode.Builder builderForValue) {
-        if (txNodeBuilder_ == null) {
-          txNode_ = builderForValue.build();
+        if (nodeBuilder_ == null) {
+          node_ = builderForValue.build();
           onChanged();
         } else {
-          txNodeBuilder_.setMessage(builderForValue.build());
+          nodeBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+       * <code>.org.fok.core.model.TransactionNode node = 4;</code>
        */
-      public Builder mergeTxNode(org.fok.core.model.Transaction.TransactionNode value) {
-        if (txNodeBuilder_ == null) {
-          if (txNode_ != null) {
-            txNode_ =
-              org.fok.core.model.Transaction.TransactionNode.newBuilder(txNode_).mergeFrom(value).buildPartial();
+      public Builder mergeNode(org.fok.core.model.Transaction.TransactionNode value) {
+        if (nodeBuilder_ == null) {
+          if (node_ != null) {
+            node_ =
+              org.fok.core.model.Transaction.TransactionNode.newBuilder(node_).mergeFrom(value).buildPartial();
           } else {
-            txNode_ = value;
+            node_ = value;
           }
           onChanged();
         } else {
-          txNodeBuilder_.mergeFrom(value);
+          nodeBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+       * <code>.org.fok.core.model.TransactionNode node = 4;</code>
        */
-      public Builder clearTxNode() {
-        if (txNodeBuilder_ == null) {
-          txNode_ = null;
+      public Builder clearNode() {
+        if (nodeBuilder_ == null) {
+          node_ = null;
           onChanged();
         } else {
-          txNode_ = null;
-          txNodeBuilder_ = null;
+          node_ = null;
+          nodeBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+       * <code>.org.fok.core.model.TransactionNode node = 4;</code>
        */
-      public org.fok.core.model.Transaction.TransactionNode.Builder getTxNodeBuilder() {
+      public org.fok.core.model.Transaction.TransactionNode.Builder getNodeBuilder() {
         
         onChanged();
-        return getTxNodeFieldBuilder().getBuilder();
+        return getNodeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+       * <code>.org.fok.core.model.TransactionNode node = 4;</code>
        */
-      public org.fok.core.model.Transaction.TransactionNodeOrBuilder getTxNodeOrBuilder() {
-        if (txNodeBuilder_ != null) {
-          return txNodeBuilder_.getMessageOrBuilder();
+      public org.fok.core.model.Transaction.TransactionNodeOrBuilder getNodeOrBuilder() {
+        if (nodeBuilder_ != null) {
+          return nodeBuilder_.getMessageOrBuilder();
         } else {
-          return txNode_ == null ?
-              org.fok.core.model.Transaction.TransactionNode.getDefaultInstance() : txNode_;
+          return node_ == null ?
+              org.fok.core.model.Transaction.TransactionNode.getDefaultInstance() : node_;
         }
       }
       /**
-       * <code>.org.fok.core.model.TransactionNode txNode = 4;</code>
+       * <code>.org.fok.core.model.TransactionNode node = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.fok.core.model.Transaction.TransactionNode, org.fok.core.model.Transaction.TransactionNode.Builder, org.fok.core.model.Transaction.TransactionNodeOrBuilder> 
-          getTxNodeFieldBuilder() {
-        if (txNodeBuilder_ == null) {
-          txNodeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getNodeFieldBuilder() {
+        if (nodeBuilder_ == null) {
+          nodeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.fok.core.model.Transaction.TransactionNode, org.fok.core.model.Transaction.TransactionNode.Builder, org.fok.core.model.Transaction.TransactionNodeOrBuilder>(
-                  getTxNode(),
+                  getNode(),
                   getParentForChildren(),
                   isClean());
-          txNode_ = null;
+          node_ = null;
         }
-        return txNodeBuilder_;
+        return nodeBuilder_;
       }
 
       private com.google.protobuf.ByteString result_ = com.google.protobuf.ByteString.EMPTY;
@@ -1042,28 +1042,17 @@ public final class Transaction {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+     * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
      */
-    java.util.List<org.fok.core.model.Transaction.TransactionInput> 
-        getInputsList();
+    boolean hasInputs();
     /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+     * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
      */
-    org.fok.core.model.Transaction.TransactionInput getInputs(int index);
+    org.fok.core.model.Transaction.TransactionInput getInputs();
     /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+     * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
      */
-    int getInputsCount();
-    /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-     */
-    java.util.List<? extends org.fok.core.model.Transaction.TransactionInputOrBuilder> 
-        getInputsOrBuilderList();
-    /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-     */
-    org.fok.core.model.Transaction.TransactionInputOrBuilder getInputsOrBuilder(
-        int index);
+    org.fok.core.model.Transaction.TransactionInputOrBuilder getInputsOrBuilder();
 
     /**
      * <code>repeated .org.fok.core.model.TransactionOutput outputs = 2;</code>
@@ -1095,54 +1084,30 @@ public final class Transaction {
     com.google.protobuf.ByteString getExdata();
 
     /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+     * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
      */
-    java.util.List<org.fok.core.model.Transaction.TransactionSignature> 
-        getSignaturesList();
+    boolean hasSignatures();
     /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+     * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
      */
-    org.fok.core.model.Transaction.TransactionSignature getSignatures(int index);
+    org.fok.core.model.Transaction.TransactionSignature getSignatures();
     /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+     * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
      */
-    int getSignaturesCount();
-    /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-     */
-    java.util.List<? extends org.fok.core.model.Transaction.TransactionSignatureOrBuilder> 
-        getSignaturesOrBuilderList();
-    /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-     */
-    org.fok.core.model.Transaction.TransactionSignatureOrBuilder getSignaturesOrBuilder(
-        int index);
+    org.fok.core.model.Transaction.TransactionSignatureOrBuilder getSignaturesOrBuilder();
 
     /**
-     * <code>repeated bytes delegate = 5;</code>
-     */
-    java.util.List<com.google.protobuf.ByteString> getDelegateList();
-    /**
-     * <code>repeated bytes delegate = 5;</code>
-     */
-    int getDelegateCount();
-    /**
-     * <code>repeated bytes delegate = 5;</code>
-     */
-    com.google.protobuf.ByteString getDelegate(int index);
-
-    /**
-     * <code>bytes data = 6;</code>
+     * <code>bytes data = 5;</code>
      */
     com.google.protobuf.ByteString getData();
 
     /**
-     * <code>int64 timestamp = 7;</code>
+     * <code>int64 timestamp = 6;</code>
      */
     long getTimestamp();
 
     /**
-     * <code>int32 type = 8;</code>
+     * <code>int32 type = 7;</code>
      */
     int getType();
   }
@@ -1158,11 +1123,8 @@ public final class Transaction {
       super(builder);
     }
     private TransactionBody() {
-      inputs_ = java.util.Collections.emptyList();
       outputs_ = java.util.Collections.emptyList();
       exdata_ = com.google.protobuf.ByteString.EMPTY;
-      signatures_ = java.util.Collections.emptyList();
-      delegate_ = java.util.Collections.emptyList();
       data_ = com.google.protobuf.ByteString.EMPTY;
       timestamp_ = 0L;
       type_ = 0;
@@ -1194,12 +1156,16 @@ public final class Transaction {
               break;
             }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                inputs_ = new java.util.ArrayList<org.fok.core.model.Transaction.TransactionInput>();
-                mutable_bitField0_ |= 0x00000001;
+              org.fok.core.model.Transaction.TransactionInput.Builder subBuilder = null;
+              if (inputs_ != null) {
+                subBuilder = inputs_.toBuilder();
               }
-              inputs_.add(
-                  input.readMessage(org.fok.core.model.Transaction.TransactionInput.parser(), extensionRegistry));
+              inputs_ = input.readMessage(org.fok.core.model.Transaction.TransactionInput.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inputs_);
+                inputs_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 18: {
@@ -1217,33 +1183,29 @@ public final class Transaction {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                signatures_ = new java.util.ArrayList<org.fok.core.model.Transaction.TransactionSignature>();
-                mutable_bitField0_ |= 0x00000008;
+              org.fok.core.model.Transaction.TransactionSignature.Builder subBuilder = null;
+              if (signatures_ != null) {
+                subBuilder = signatures_.toBuilder();
               }
-              signatures_.add(
-                  input.readMessage(org.fok.core.model.Transaction.TransactionSignature.parser(), extensionRegistry));
+              signatures_ = input.readMessage(org.fok.core.model.Transaction.TransactionSignature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signatures_);
+                signatures_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                delegate_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              delegate_.add(input.readBytes());
-              break;
-            }
-            case 50: {
 
               data_ = input.readBytes();
               break;
             }
-            case 56: {
+            case 48: {
 
               timestamp_ = input.readInt64();
               break;
             }
-            case 64: {
+            case 56: {
 
               type_ = input.readInt32();
               break;
@@ -1256,17 +1218,8 @@ public final class Transaction {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          inputs_ = java.util.Collections.unmodifiableList(inputs_);
-        }
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           outputs_ = java.util.Collections.unmodifiableList(outputs_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          signatures_ = java.util.Collections.unmodifiableList(signatures_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          delegate_ = java.util.Collections.unmodifiableList(delegate_);
         }
         makeExtensionsImmutable();
       }
@@ -1285,38 +1238,24 @@ public final class Transaction {
 
     private int bitField0_;
     public static final int INPUTS_FIELD_NUMBER = 1;
-    private java.util.List<org.fok.core.model.Transaction.TransactionInput> inputs_;
+    private org.fok.core.model.Transaction.TransactionInput inputs_;
     /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+     * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
      */
-    public java.util.List<org.fok.core.model.Transaction.TransactionInput> getInputsList() {
-      return inputs_;
+    public boolean hasInputs() {
+      return inputs_ != null;
     }
     /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+     * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
      */
-    public java.util.List<? extends org.fok.core.model.Transaction.TransactionInputOrBuilder> 
-        getInputsOrBuilderList() {
-      return inputs_;
+    public org.fok.core.model.Transaction.TransactionInput getInputs() {
+      return inputs_ == null ? org.fok.core.model.Transaction.TransactionInput.getDefaultInstance() : inputs_;
     }
     /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+     * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
      */
-    public int getInputsCount() {
-      return inputs_.size();
-    }
-    /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-     */
-    public org.fok.core.model.Transaction.TransactionInput getInputs(int index) {
-      return inputs_.get(index);
-    }
-    /**
-     * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-     */
-    public org.fok.core.model.Transaction.TransactionInputOrBuilder getInputsOrBuilder(
-        int index) {
-      return inputs_.get(index);
+    public org.fok.core.model.Transaction.TransactionInputOrBuilder getInputsOrBuilder() {
+      return getInputs();
     }
 
     public static final int OUTPUTS_FIELD_NUMBER = 2;
@@ -1364,84 +1303,48 @@ public final class Transaction {
     }
 
     public static final int SIGNATURES_FIELD_NUMBER = 4;
-    private java.util.List<org.fok.core.model.Transaction.TransactionSignature> signatures_;
+    private org.fok.core.model.Transaction.TransactionSignature signatures_;
     /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+     * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
      */
-    public java.util.List<org.fok.core.model.Transaction.TransactionSignature> getSignaturesList() {
-      return signatures_;
+    public boolean hasSignatures() {
+      return signatures_ != null;
     }
     /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+     * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
      */
-    public java.util.List<? extends org.fok.core.model.Transaction.TransactionSignatureOrBuilder> 
-        getSignaturesOrBuilderList() {
-      return signatures_;
+    public org.fok.core.model.Transaction.TransactionSignature getSignatures() {
+      return signatures_ == null ? org.fok.core.model.Transaction.TransactionSignature.getDefaultInstance() : signatures_;
     }
     /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+     * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
      */
-    public int getSignaturesCount() {
-      return signatures_.size();
-    }
-    /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-     */
-    public org.fok.core.model.Transaction.TransactionSignature getSignatures(int index) {
-      return signatures_.get(index);
-    }
-    /**
-     * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-     */
-    public org.fok.core.model.Transaction.TransactionSignatureOrBuilder getSignaturesOrBuilder(
-        int index) {
-      return signatures_.get(index);
+    public org.fok.core.model.Transaction.TransactionSignatureOrBuilder getSignaturesOrBuilder() {
+      return getSignatures();
     }
 
-    public static final int DELEGATE_FIELD_NUMBER = 5;
-    private java.util.List<com.google.protobuf.ByteString> delegate_;
-    /**
-     * <code>repeated bytes delegate = 5;</code>
-     */
-    public java.util.List<com.google.protobuf.ByteString>
-        getDelegateList() {
-      return delegate_;
-    }
-    /**
-     * <code>repeated bytes delegate = 5;</code>
-     */
-    public int getDelegateCount() {
-      return delegate_.size();
-    }
-    /**
-     * <code>repeated bytes delegate = 5;</code>
-     */
-    public com.google.protobuf.ByteString getDelegate(int index) {
-      return delegate_.get(index);
-    }
-
-    public static final int DATA_FIELD_NUMBER = 6;
+    public static final int DATA_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString data_;
     /**
-     * <code>bytes data = 6;</code>
+     * <code>bytes data = 5;</code>
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 7;
+    public static final int TIMESTAMP_FIELD_NUMBER = 6;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 7;</code>
+     * <code>int64 timestamp = 6;</code>
      */
     public long getTimestamp() {
       return timestamp_;
     }
 
-    public static final int TYPE_FIELD_NUMBER = 8;
+    public static final int TYPE_FIELD_NUMBER = 7;
     private int type_;
     /**
-     * <code>int32 type = 8;</code>
+     * <code>int32 type = 7;</code>
      */
     public int getType() {
       return type_;
@@ -1459,8 +1362,8 @@ public final class Transaction {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < inputs_.size(); i++) {
-        output.writeMessage(1, inputs_.get(i));
+      if (inputs_ != null) {
+        output.writeMessage(1, getInputs());
       }
       for (int i = 0; i < outputs_.size(); i++) {
         output.writeMessage(2, outputs_.get(i));
@@ -1468,20 +1371,17 @@ public final class Transaction {
       if (!exdata_.isEmpty()) {
         output.writeBytes(3, exdata_);
       }
-      for (int i = 0; i < signatures_.size(); i++) {
-        output.writeMessage(4, signatures_.get(i));
-      }
-      for (int i = 0; i < delegate_.size(); i++) {
-        output.writeBytes(5, delegate_.get(i));
+      if (signatures_ != null) {
+        output.writeMessage(4, getSignatures());
       }
       if (!data_.isEmpty()) {
-        output.writeBytes(6, data_);
+        output.writeBytes(5, data_);
       }
       if (timestamp_ != 0L) {
-        output.writeInt64(7, timestamp_);
+        output.writeInt64(6, timestamp_);
       }
       if (type_ != 0) {
-        output.writeInt32(8, type_);
+        output.writeInt32(7, type_);
       }
     }
 
@@ -1490,9 +1390,9 @@ public final class Transaction {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < inputs_.size(); i++) {
+      if (inputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, inputs_.get(i));
+          .computeMessageSize(1, getInputs());
       }
       for (int i = 0; i < outputs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -1502,30 +1402,21 @@ public final class Transaction {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, exdata_);
       }
-      for (int i = 0; i < signatures_.size(); i++) {
+      if (signatures_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, signatures_.get(i));
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < delegate_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(delegate_.get(i));
-        }
-        size += dataSize;
-        size += 1 * getDelegateList().size();
+          .computeMessageSize(4, getSignatures());
       }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, data_);
+          .computeBytesSize(5, data_);
       }
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, timestamp_);
+          .computeInt64Size(6, timestamp_);
       }
       if (type_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, type_);
+          .computeInt32Size(7, type_);
       }
       memoizedSize = size;
       return size;
@@ -1543,16 +1434,20 @@ public final class Transaction {
       org.fok.core.model.Transaction.TransactionBody other = (org.fok.core.model.Transaction.TransactionBody) obj;
 
       boolean result = true;
-      result = result && getInputsList()
-          .equals(other.getInputsList());
+      result = result && (hasInputs() == other.hasInputs());
+      if (hasInputs()) {
+        result = result && getInputs()
+            .equals(other.getInputs());
+      }
       result = result && getOutputsList()
           .equals(other.getOutputsList());
       result = result && getExdata()
           .equals(other.getExdata());
-      result = result && getSignaturesList()
-          .equals(other.getSignaturesList());
-      result = result && getDelegateList()
-          .equals(other.getDelegateList());
+      result = result && (hasSignatures() == other.hasSignatures());
+      if (hasSignatures()) {
+        result = result && getSignatures()
+            .equals(other.getSignatures());
+      }
       result = result && getData()
           .equals(other.getData());
       result = result && (getTimestamp()
@@ -1569,9 +1464,9 @@ public final class Transaction {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getInputsCount() > 0) {
+      if (hasInputs()) {
         hash = (37 * hash) + INPUTS_FIELD_NUMBER;
-        hash = (53 * hash) + getInputsList().hashCode();
+        hash = (53 * hash) + getInputs().hashCode();
       }
       if (getOutputsCount() > 0) {
         hash = (37 * hash) + OUTPUTS_FIELD_NUMBER;
@@ -1579,13 +1474,9 @@ public final class Transaction {
       }
       hash = (37 * hash) + EXDATA_FIELD_NUMBER;
       hash = (53 * hash) + getExdata().hashCode();
-      if (getSignaturesCount() > 0) {
+      if (hasSignatures()) {
         hash = (37 * hash) + SIGNATURES_FIELD_NUMBER;
-        hash = (53 * hash) + getSignaturesList().hashCode();
-      }
-      if (getDelegateCount() > 0) {
-        hash = (37 * hash) + DELEGATE_FIELD_NUMBER;
-        hash = (53 * hash) + getDelegateList().hashCode();
+        hash = (53 * hash) + getSignatures().hashCode();
       }
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
@@ -1708,18 +1599,16 @@ public final class Transaction {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getInputsFieldBuilder();
           getOutputsFieldBuilder();
-          getSignaturesFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
         if (inputsBuilder_ == null) {
-          inputs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          inputs_ = null;
         } else {
-          inputsBuilder_.clear();
+          inputs_ = null;
+          inputsBuilder_ = null;
         }
         if (outputsBuilder_ == null) {
           outputs_ = java.util.Collections.emptyList();
@@ -1730,13 +1619,11 @@ public final class Transaction {
         exdata_ = com.google.protobuf.ByteString.EMPTY;
 
         if (signaturesBuilder_ == null) {
-          signatures_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          signatures_ = null;
         } else {
-          signaturesBuilder_.clear();
+          signatures_ = null;
+          signaturesBuilder_ = null;
         }
-        delegate_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
         data_ = com.google.protobuf.ByteString.EMPTY;
 
         timestamp_ = 0L;
@@ -1768,10 +1655,6 @@ public final class Transaction {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (inputsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            inputs_ = java.util.Collections.unmodifiableList(inputs_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
           result.inputs_ = inputs_;
         } else {
           result.inputs_ = inputsBuilder_.build();
@@ -1787,19 +1670,10 @@ public final class Transaction {
         }
         result.exdata_ = exdata_;
         if (signaturesBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            signatures_ = java.util.Collections.unmodifiableList(signatures_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
           result.signatures_ = signatures_;
         } else {
           result.signatures_ = signaturesBuilder_.build();
         }
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          delegate_ = java.util.Collections.unmodifiableList(delegate_);
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.delegate_ = delegate_;
         result.data_ = data_;
         result.timestamp_ = timestamp_;
         result.type_ = type_;
@@ -1845,31 +1719,8 @@ public final class Transaction {
 
       public Builder mergeFrom(org.fok.core.model.Transaction.TransactionBody other) {
         if (other == org.fok.core.model.Transaction.TransactionBody.getDefaultInstance()) return this;
-        if (inputsBuilder_ == null) {
-          if (!other.inputs_.isEmpty()) {
-            if (inputs_.isEmpty()) {
-              inputs_ = other.inputs_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureInputsIsMutable();
-              inputs_.addAll(other.inputs_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.inputs_.isEmpty()) {
-            if (inputsBuilder_.isEmpty()) {
-              inputsBuilder_.dispose();
-              inputsBuilder_ = null;
-              inputs_ = other.inputs_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              inputsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getInputsFieldBuilder() : null;
-            } else {
-              inputsBuilder_.addAllMessages(other.inputs_);
-            }
-          }
+        if (other.hasInputs()) {
+          mergeInputs(other.getInputs());
         }
         if (outputsBuilder_ == null) {
           if (!other.outputs_.isEmpty()) {
@@ -1900,41 +1751,8 @@ public final class Transaction {
         if (other.getExdata() != com.google.protobuf.ByteString.EMPTY) {
           setExdata(other.getExdata());
         }
-        if (signaturesBuilder_ == null) {
-          if (!other.signatures_.isEmpty()) {
-            if (signatures_.isEmpty()) {
-              signatures_ = other.signatures_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureSignaturesIsMutable();
-              signatures_.addAll(other.signatures_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.signatures_.isEmpty()) {
-            if (signaturesBuilder_.isEmpty()) {
-              signaturesBuilder_.dispose();
-              signaturesBuilder_ = null;
-              signatures_ = other.signatures_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              signaturesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSignaturesFieldBuilder() : null;
-            } else {
-              signaturesBuilder_.addAllMessages(other.signatures_);
-            }
-          }
-        }
-        if (!other.delegate_.isEmpty()) {
-          if (delegate_.isEmpty()) {
-            delegate_ = other.delegate_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-          } else {
-            ensureDelegateIsMutable();
-            delegate_.addAll(other.delegate_);
-          }
-          onChanged();
+        if (other.hasSignatures()) {
+          mergeSignatures(other.getSignatures());
         }
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
@@ -1972,239 +1790,116 @@ public final class Transaction {
       }
       private int bitField0_;
 
-      private java.util.List<org.fok.core.model.Transaction.TransactionInput> inputs_ =
-        java.util.Collections.emptyList();
-      private void ensureInputsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          inputs_ = new java.util.ArrayList<org.fok.core.model.Transaction.TransactionInput>(inputs_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private org.fok.core.model.Transaction.TransactionInput inputs_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.fok.core.model.Transaction.TransactionInput, org.fok.core.model.Transaction.TransactionInput.Builder, org.fok.core.model.Transaction.TransactionInputOrBuilder> inputsBuilder_;
+      /**
+       * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
+       */
+      public boolean hasInputs() {
+        return inputsBuilder_ != null || inputs_ != null;
+      }
+      /**
+       * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
+       */
+      public org.fok.core.model.Transaction.TransactionInput getInputs() {
+        if (inputsBuilder_ == null) {
+          return inputs_ == null ? org.fok.core.model.Transaction.TransactionInput.getDefaultInstance() : inputs_;
+        } else {
+          return inputsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
+       */
+      public Builder setInputs(org.fok.core.model.Transaction.TransactionInput value) {
+        if (inputsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          inputs_ = value;
+          onChanged();
+        } else {
+          inputsBuilder_.setMessage(value);
+        }
 
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public java.util.List<org.fok.core.model.Transaction.TransactionInput> getInputsList() {
-        if (inputsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(inputs_);
-        } else {
-          return inputsBuilder_.getMessageList();
-        }
+        return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public int getInputsCount() {
-        if (inputsBuilder_ == null) {
-          return inputs_.size();
-        } else {
-          return inputsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public org.fok.core.model.Transaction.TransactionInput getInputs(int index) {
-        if (inputsBuilder_ == null) {
-          return inputs_.get(index);
-        } else {
-          return inputsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+       * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
        */
       public Builder setInputs(
-          int index, org.fok.core.model.Transaction.TransactionInput value) {
-        if (inputsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureInputsIsMutable();
-          inputs_.set(index, value);
-          onChanged();
-        } else {
-          inputsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public Builder setInputs(
-          int index, org.fok.core.model.Transaction.TransactionInput.Builder builderForValue) {
-        if (inputsBuilder_ == null) {
-          ensureInputsIsMutable();
-          inputs_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          inputsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public Builder addInputs(org.fok.core.model.Transaction.TransactionInput value) {
-        if (inputsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureInputsIsMutable();
-          inputs_.add(value);
-          onChanged();
-        } else {
-          inputsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public Builder addInputs(
-          int index, org.fok.core.model.Transaction.TransactionInput value) {
-        if (inputsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureInputsIsMutable();
-          inputs_.add(index, value);
-          onChanged();
-        } else {
-          inputsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public Builder addInputs(
           org.fok.core.model.Transaction.TransactionInput.Builder builderForValue) {
         if (inputsBuilder_ == null) {
-          ensureInputsIsMutable();
-          inputs_.add(builderForValue.build());
+          inputs_ = builderForValue.build();
           onChanged();
         } else {
-          inputsBuilder_.addMessage(builderForValue.build());
+          inputsBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+       * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
        */
-      public Builder addInputs(
-          int index, org.fok.core.model.Transaction.TransactionInput.Builder builderForValue) {
+      public Builder mergeInputs(org.fok.core.model.Transaction.TransactionInput value) {
         if (inputsBuilder_ == null) {
-          ensureInputsIsMutable();
-          inputs_.add(index, builderForValue.build());
+          if (inputs_ != null) {
+            inputs_ =
+              org.fok.core.model.Transaction.TransactionInput.newBuilder(inputs_).mergeFrom(value).buildPartial();
+          } else {
+            inputs_ = value;
+          }
           onChanged();
         } else {
-          inputsBuilder_.addMessage(index, builderForValue.build());
+          inputsBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public Builder addAllInputs(
-          java.lang.Iterable<? extends org.fok.core.model.Transaction.TransactionInput> values) {
-        if (inputsBuilder_ == null) {
-          ensureInputsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, inputs_);
-          onChanged();
-        } else {
-          inputsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+       * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
        */
       public Builder clearInputs() {
         if (inputsBuilder_ == null) {
-          inputs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          inputs_ = null;
           onChanged();
         } else {
-          inputsBuilder_.clear();
+          inputs_ = null;
+          inputsBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+       * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
        */
-      public Builder removeInputs(int index) {
-        if (inputsBuilder_ == null) {
-          ensureInputsIsMutable();
-          inputs_.remove(index);
-          onChanged();
-        } else {
-          inputsBuilder_.remove(index);
-        }
-        return this;
+      public org.fok.core.model.Transaction.TransactionInput.Builder getInputsBuilder() {
+        
+        onChanged();
+        return getInputsFieldBuilder().getBuilder();
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+       * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
        */
-      public org.fok.core.model.Transaction.TransactionInput.Builder getInputsBuilder(
-          int index) {
-        return getInputsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public org.fok.core.model.Transaction.TransactionInputOrBuilder getInputsOrBuilder(
-          int index) {
-        if (inputsBuilder_ == null) {
-          return inputs_.get(index);  } else {
-          return inputsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public java.util.List<? extends org.fok.core.model.Transaction.TransactionInputOrBuilder> 
-           getInputsOrBuilderList() {
+      public org.fok.core.model.Transaction.TransactionInputOrBuilder getInputsOrBuilder() {
         if (inputsBuilder_ != null) {
-          return inputsBuilder_.getMessageOrBuilderList();
+          return inputsBuilder_.getMessageOrBuilder();
         } else {
-          return java.util.Collections.unmodifiableList(inputs_);
+          return inputs_ == null ?
+              org.fok.core.model.Transaction.TransactionInput.getDefaultInstance() : inputs_;
         }
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
+       * <code>.org.fok.core.model.TransactionInput inputs = 1;</code>
        */
-      public org.fok.core.model.Transaction.TransactionInput.Builder addInputsBuilder() {
-        return getInputsFieldBuilder().addBuilder(
-            org.fok.core.model.Transaction.TransactionInput.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public org.fok.core.model.Transaction.TransactionInput.Builder addInputsBuilder(
-          int index) {
-        return getInputsFieldBuilder().addBuilder(
-            index, org.fok.core.model.Transaction.TransactionInput.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionInput inputs = 1;</code>
-       */
-      public java.util.List<org.fok.core.model.Transaction.TransactionInput.Builder> 
-           getInputsBuilderList() {
-        return getInputsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.fok.core.model.Transaction.TransactionInput, org.fok.core.model.Transaction.TransactionInput.Builder, org.fok.core.model.Transaction.TransactionInputOrBuilder> 
           getInputsFieldBuilder() {
         if (inputsBuilder_ == null) {
-          inputsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          inputsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.fok.core.model.Transaction.TransactionInput, org.fok.core.model.Transaction.TransactionInput.Builder, org.fok.core.model.Transaction.TransactionInputOrBuilder>(
-                  inputs_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getInputs(),
                   getParentForChildren(),
                   isClean());
           inputs_ = null;
@@ -2481,239 +2176,116 @@ public final class Transaction {
         return this;
       }
 
-      private java.util.List<org.fok.core.model.Transaction.TransactionSignature> signatures_ =
-        java.util.Collections.emptyList();
-      private void ensureSignaturesIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          signatures_ = new java.util.ArrayList<org.fok.core.model.Transaction.TransactionSignature>(signatures_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private org.fok.core.model.Transaction.TransactionSignature signatures_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.fok.core.model.Transaction.TransactionSignature, org.fok.core.model.Transaction.TransactionSignature.Builder, org.fok.core.model.Transaction.TransactionSignatureOrBuilder> signaturesBuilder_;
+      /**
+       * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
+       */
+      public boolean hasSignatures() {
+        return signaturesBuilder_ != null || signatures_ != null;
+      }
+      /**
+       * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
+       */
+      public org.fok.core.model.Transaction.TransactionSignature getSignatures() {
+        if (signaturesBuilder_ == null) {
+          return signatures_ == null ? org.fok.core.model.Transaction.TransactionSignature.getDefaultInstance() : signatures_;
+        } else {
+          return signaturesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
+       */
+      public Builder setSignatures(org.fok.core.model.Transaction.TransactionSignature value) {
+        if (signaturesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signatures_ = value;
+          onChanged();
+        } else {
+          signaturesBuilder_.setMessage(value);
+        }
 
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public java.util.List<org.fok.core.model.Transaction.TransactionSignature> getSignaturesList() {
-        if (signaturesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(signatures_);
-        } else {
-          return signaturesBuilder_.getMessageList();
-        }
+        return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public int getSignaturesCount() {
-        if (signaturesBuilder_ == null) {
-          return signatures_.size();
-        } else {
-          return signaturesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public org.fok.core.model.Transaction.TransactionSignature getSignatures(int index) {
-        if (signaturesBuilder_ == null) {
-          return signatures_.get(index);
-        } else {
-          return signaturesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+       * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
        */
       public Builder setSignatures(
-          int index, org.fok.core.model.Transaction.TransactionSignature value) {
-        if (signaturesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSignaturesIsMutable();
-          signatures_.set(index, value);
-          onChanged();
-        } else {
-          signaturesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public Builder setSignatures(
-          int index, org.fok.core.model.Transaction.TransactionSignature.Builder builderForValue) {
-        if (signaturesBuilder_ == null) {
-          ensureSignaturesIsMutable();
-          signatures_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          signaturesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public Builder addSignatures(org.fok.core.model.Transaction.TransactionSignature value) {
-        if (signaturesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSignaturesIsMutable();
-          signatures_.add(value);
-          onChanged();
-        } else {
-          signaturesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public Builder addSignatures(
-          int index, org.fok.core.model.Transaction.TransactionSignature value) {
-        if (signaturesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSignaturesIsMutable();
-          signatures_.add(index, value);
-          onChanged();
-        } else {
-          signaturesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public Builder addSignatures(
           org.fok.core.model.Transaction.TransactionSignature.Builder builderForValue) {
         if (signaturesBuilder_ == null) {
-          ensureSignaturesIsMutable();
-          signatures_.add(builderForValue.build());
+          signatures_ = builderForValue.build();
           onChanged();
         } else {
-          signaturesBuilder_.addMessage(builderForValue.build());
+          signaturesBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+       * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
        */
-      public Builder addSignatures(
-          int index, org.fok.core.model.Transaction.TransactionSignature.Builder builderForValue) {
+      public Builder mergeSignatures(org.fok.core.model.Transaction.TransactionSignature value) {
         if (signaturesBuilder_ == null) {
-          ensureSignaturesIsMutable();
-          signatures_.add(index, builderForValue.build());
+          if (signatures_ != null) {
+            signatures_ =
+              org.fok.core.model.Transaction.TransactionSignature.newBuilder(signatures_).mergeFrom(value).buildPartial();
+          } else {
+            signatures_ = value;
+          }
           onChanged();
         } else {
-          signaturesBuilder_.addMessage(index, builderForValue.build());
+          signaturesBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public Builder addAllSignatures(
-          java.lang.Iterable<? extends org.fok.core.model.Transaction.TransactionSignature> values) {
-        if (signaturesBuilder_ == null) {
-          ensureSignaturesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, signatures_);
-          onChanged();
-        } else {
-          signaturesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+       * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
        */
       public Builder clearSignatures() {
         if (signaturesBuilder_ == null) {
-          signatures_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          signatures_ = null;
           onChanged();
         } else {
-          signaturesBuilder_.clear();
+          signatures_ = null;
+          signaturesBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+       * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
        */
-      public Builder removeSignatures(int index) {
-        if (signaturesBuilder_ == null) {
-          ensureSignaturesIsMutable();
-          signatures_.remove(index);
-          onChanged();
-        } else {
-          signaturesBuilder_.remove(index);
-        }
-        return this;
+      public org.fok.core.model.Transaction.TransactionSignature.Builder getSignaturesBuilder() {
+        
+        onChanged();
+        return getSignaturesFieldBuilder().getBuilder();
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+       * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
        */
-      public org.fok.core.model.Transaction.TransactionSignature.Builder getSignaturesBuilder(
-          int index) {
-        return getSignaturesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public org.fok.core.model.Transaction.TransactionSignatureOrBuilder getSignaturesOrBuilder(
-          int index) {
-        if (signaturesBuilder_ == null) {
-          return signatures_.get(index);  } else {
-          return signaturesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public java.util.List<? extends org.fok.core.model.Transaction.TransactionSignatureOrBuilder> 
-           getSignaturesOrBuilderList() {
+      public org.fok.core.model.Transaction.TransactionSignatureOrBuilder getSignaturesOrBuilder() {
         if (signaturesBuilder_ != null) {
-          return signaturesBuilder_.getMessageOrBuilderList();
+          return signaturesBuilder_.getMessageOrBuilder();
         } else {
-          return java.util.Collections.unmodifiableList(signatures_);
+          return signatures_ == null ?
+              org.fok.core.model.Transaction.TransactionSignature.getDefaultInstance() : signatures_;
         }
       }
       /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
+       * <code>.org.fok.core.model.TransactionSignature signatures = 4;</code>
        */
-      public org.fok.core.model.Transaction.TransactionSignature.Builder addSignaturesBuilder() {
-        return getSignaturesFieldBuilder().addBuilder(
-            org.fok.core.model.Transaction.TransactionSignature.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public org.fok.core.model.Transaction.TransactionSignature.Builder addSignaturesBuilder(
-          int index) {
-        return getSignaturesFieldBuilder().addBuilder(
-            index, org.fok.core.model.Transaction.TransactionSignature.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TransactionSignature signatures = 4;</code>
-       */
-      public java.util.List<org.fok.core.model.Transaction.TransactionSignature.Builder> 
-           getSignaturesBuilderList() {
-        return getSignaturesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.fok.core.model.Transaction.TransactionSignature, org.fok.core.model.Transaction.TransactionSignature.Builder, org.fok.core.model.Transaction.TransactionSignatureOrBuilder> 
           getSignaturesFieldBuilder() {
         if (signaturesBuilder_ == null) {
-          signaturesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          signaturesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.fok.core.model.Transaction.TransactionSignature, org.fok.core.model.Transaction.TransactionSignature.Builder, org.fok.core.model.Transaction.TransactionSignatureOrBuilder>(
-                  signatures_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getSignatures(),
                   getParentForChildren(),
                   isClean());
           signatures_ = null;
@@ -2721,87 +2293,15 @@ public final class Transaction {
         return signaturesBuilder_;
       }
 
-      private java.util.List<com.google.protobuf.ByteString> delegate_ = java.util.Collections.emptyList();
-      private void ensureDelegateIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          delegate_ = new java.util.ArrayList<com.google.protobuf.ByteString>(delegate_);
-          bitField0_ |= 0x00000010;
-         }
-      }
-      /**
-       * <code>repeated bytes delegate = 5;</code>
-       */
-      public java.util.List<com.google.protobuf.ByteString>
-          getDelegateList() {
-        return java.util.Collections.unmodifiableList(delegate_);
-      }
-      /**
-       * <code>repeated bytes delegate = 5;</code>
-       */
-      public int getDelegateCount() {
-        return delegate_.size();
-      }
-      /**
-       * <code>repeated bytes delegate = 5;</code>
-       */
-      public com.google.protobuf.ByteString getDelegate(int index) {
-        return delegate_.get(index);
-      }
-      /**
-       * <code>repeated bytes delegate = 5;</code>
-       */
-      public Builder setDelegate(
-          int index, com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDelegateIsMutable();
-        delegate_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes delegate = 5;</code>
-       */
-      public Builder addDelegate(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDelegateIsMutable();
-        delegate_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes delegate = 5;</code>
-       */
-      public Builder addAllDelegate(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-        ensureDelegateIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, delegate_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes delegate = 5;</code>
-       */
-      public Builder clearDelegate() {
-        delegate_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes data = 6;</code>
+       * <code>bytes data = 5;</code>
        */
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
       /**
-       * <code>bytes data = 6;</code>
+       * <code>bytes data = 5;</code>
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2813,7 +2313,7 @@ public final class Transaction {
         return this;
       }
       /**
-       * <code>bytes data = 6;</code>
+       * <code>bytes data = 5;</code>
        */
       public Builder clearData() {
         
@@ -2824,13 +2324,13 @@ public final class Transaction {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 7;</code>
+       * <code>int64 timestamp = 6;</code>
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 7;</code>
+       * <code>int64 timestamp = 6;</code>
        */
       public Builder setTimestamp(long value) {
         
@@ -2839,7 +2339,7 @@ public final class Transaction {
         return this;
       }
       /**
-       * <code>int64 timestamp = 7;</code>
+       * <code>int64 timestamp = 6;</code>
        */
       public Builder clearTimestamp() {
         
@@ -2850,13 +2350,13 @@ public final class Transaction {
 
       private int type_ ;
       /**
-       * <code>int32 type = 8;</code>
+       * <code>int32 type = 7;</code>
        */
       public int getType() {
         return type_;
       }
       /**
-       * <code>int32 type = 8;</code>
+       * <code>int32 type = 7;</code>
        */
       public Builder setType(int value) {
         
@@ -2865,7 +2365,7 @@ public final class Transaction {
         return this;
       }
       /**
-       * <code>int32 type = 8;</code>
+       * <code>int32 type = 7;</code>
        */
       public Builder clearType() {
         
@@ -2932,29 +2432,37 @@ public final class Transaction {
     int getNonce();
 
     /**
-     * <code>bytes address = 4;</code>
+     * <code>bytes address = 2;</code>
      */
     com.google.protobuf.ByteString getAddress();
 
     /**
-     * <code>bytes amount = 5;</code>
+     * <code>bytes amount = 3;</code>
      */
     com.google.protobuf.ByteString getAmount();
 
     /**
-     * <code>bytes token = 7;</code>
+     * <code>bytes token = 4;</code>
      */
     com.google.protobuf.ByteString getToken();
 
     /**
-     * <code>bytes symbol = 8;</code>
+     * <code>bytes symbol = 5;</code>
      */
     com.google.protobuf.ByteString getSymbol();
 
     /**
-     * <code>bytes cryptoToken = 9;</code>
+     * <code>repeated bytes cryptoToken = 6;</code>
      */
-    com.google.protobuf.ByteString getCryptoToken();
+    java.util.List<com.google.protobuf.ByteString> getCryptoTokenList();
+    /**
+     * <code>repeated bytes cryptoToken = 6;</code>
+     */
+    int getCryptoTokenCount();
+    /**
+     * <code>repeated bytes cryptoToken = 6;</code>
+     */
+    com.google.protobuf.ByteString getCryptoToken(int index);
   }
   /**
    * Protobuf type {@code org.fok.core.model.TransactionInput}
@@ -2973,7 +2481,7 @@ public final class Transaction {
       amount_ = com.google.protobuf.ByteString.EMPTY;
       token_ = com.google.protobuf.ByteString.EMPTY;
       symbol_ = com.google.protobuf.ByteString.EMPTY;
-      cryptoToken_ = com.google.protobuf.ByteString.EMPTY;
+      cryptoToken_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3006,29 +2514,32 @@ public final class Transaction {
               nonce_ = input.readInt32();
               break;
             }
-            case 34: {
+            case 18: {
 
               address_ = input.readBytes();
               break;
             }
-            case 42: {
+            case 26: {
 
               amount_ = input.readBytes();
               break;
             }
-            case 58: {
+            case 34: {
 
               token_ = input.readBytes();
               break;
             }
-            case 66: {
+            case 42: {
 
               symbol_ = input.readBytes();
               break;
             }
-            case 74: {
-
-              cryptoToken_ = input.readBytes();
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                cryptoToken_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              cryptoToken_.add(input.readBytes());
               break;
             }
           }
@@ -3039,6 +2550,9 @@ public final class Transaction {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          cryptoToken_ = java.util.Collections.unmodifiableList(cryptoToken_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -3054,6 +2568,7 @@ public final class Transaction {
               org.fok.core.model.Transaction.TransactionInput.class, org.fok.core.model.Transaction.TransactionInput.Builder.class);
     }
 
+    private int bitField0_;
     public static final int NONCE_FIELD_NUMBER = 1;
     private int nonce_;
     /**
@@ -3063,49 +2578,62 @@ public final class Transaction {
       return nonce_;
     }
 
-    public static final int ADDRESS_FIELD_NUMBER = 4;
+    public static final int ADDRESS_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString address_;
     /**
-     * <code>bytes address = 4;</code>
+     * <code>bytes address = 2;</code>
      */
     public com.google.protobuf.ByteString getAddress() {
       return address_;
     }
 
-    public static final int AMOUNT_FIELD_NUMBER = 5;
+    public static final int AMOUNT_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString amount_;
     /**
-     * <code>bytes amount = 5;</code>
+     * <code>bytes amount = 3;</code>
      */
     public com.google.protobuf.ByteString getAmount() {
       return amount_;
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 7;
+    public static final int TOKEN_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString token_;
     /**
-     * <code>bytes token = 7;</code>
+     * <code>bytes token = 4;</code>
      */
     public com.google.protobuf.ByteString getToken() {
       return token_;
     }
 
-    public static final int SYMBOL_FIELD_NUMBER = 8;
+    public static final int SYMBOL_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString symbol_;
     /**
-     * <code>bytes symbol = 8;</code>
+     * <code>bytes symbol = 5;</code>
      */
     public com.google.protobuf.ByteString getSymbol() {
       return symbol_;
     }
 
-    public static final int CRYPTOTOKEN_FIELD_NUMBER = 9;
-    private com.google.protobuf.ByteString cryptoToken_;
+    public static final int CRYPTOTOKEN_FIELD_NUMBER = 6;
+    private java.util.List<com.google.protobuf.ByteString> cryptoToken_;
     /**
-     * <code>bytes cryptoToken = 9;</code>
+     * <code>repeated bytes cryptoToken = 6;</code>
      */
-    public com.google.protobuf.ByteString getCryptoToken() {
+    public java.util.List<com.google.protobuf.ByteString>
+        getCryptoTokenList() {
       return cryptoToken_;
+    }
+    /**
+     * <code>repeated bytes cryptoToken = 6;</code>
+     */
+    public int getCryptoTokenCount() {
+      return cryptoToken_.size();
+    }
+    /**
+     * <code>repeated bytes cryptoToken = 6;</code>
+     */
+    public com.google.protobuf.ByteString getCryptoToken(int index) {
+      return cryptoToken_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3124,19 +2652,19 @@ public final class Transaction {
         output.writeInt32(1, nonce_);
       }
       if (!address_.isEmpty()) {
-        output.writeBytes(4, address_);
+        output.writeBytes(2, address_);
       }
       if (!amount_.isEmpty()) {
-        output.writeBytes(5, amount_);
+        output.writeBytes(3, amount_);
       }
       if (!token_.isEmpty()) {
-        output.writeBytes(7, token_);
+        output.writeBytes(4, token_);
       }
       if (!symbol_.isEmpty()) {
-        output.writeBytes(8, symbol_);
+        output.writeBytes(5, symbol_);
       }
-      if (!cryptoToken_.isEmpty()) {
-        output.writeBytes(9, cryptoToken_);
+      for (int i = 0; i < cryptoToken_.size(); i++) {
+        output.writeBytes(6, cryptoToken_.get(i));
       }
     }
 
@@ -3151,23 +2679,28 @@ public final class Transaction {
       }
       if (!address_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, address_);
+          .computeBytesSize(2, address_);
       }
       if (!amount_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, amount_);
+          .computeBytesSize(3, amount_);
       }
       if (!token_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, token_);
+          .computeBytesSize(4, token_);
       }
       if (!symbol_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, symbol_);
+          .computeBytesSize(5, symbol_);
       }
-      if (!cryptoToken_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(9, cryptoToken_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < cryptoToken_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(cryptoToken_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getCryptoTokenList().size();
       }
       memoizedSize = size;
       return size;
@@ -3195,8 +2728,8 @@ public final class Transaction {
           .equals(other.getToken());
       result = result && getSymbol()
           .equals(other.getSymbol());
-      result = result && getCryptoToken()
-          .equals(other.getCryptoToken());
+      result = result && getCryptoTokenList()
+          .equals(other.getCryptoTokenList());
       return result;
     }
 
@@ -3217,8 +2750,10 @@ public final class Transaction {
       hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + SYMBOL_FIELD_NUMBER;
       hash = (53 * hash) + getSymbol().hashCode();
-      hash = (37 * hash) + CRYPTOTOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getCryptoToken().hashCode();
+      if (getCryptoTokenCount() > 0) {
+        hash = (37 * hash) + CRYPTOTOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getCryptoTokenList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3347,8 +2882,8 @@ public final class Transaction {
 
         symbol_ = com.google.protobuf.ByteString.EMPTY;
 
-        cryptoToken_ = com.google.protobuf.ByteString.EMPTY;
-
+        cryptoToken_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -3371,12 +2906,19 @@ public final class Transaction {
 
       public org.fok.core.model.Transaction.TransactionInput buildPartial() {
         org.fok.core.model.Transaction.TransactionInput result = new org.fok.core.model.Transaction.TransactionInput(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.nonce_ = nonce_;
         result.address_ = address_;
         result.amount_ = amount_;
         result.token_ = token_;
         result.symbol_ = symbol_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          cryptoToken_ = java.util.Collections.unmodifiableList(cryptoToken_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
         result.cryptoToken_ = cryptoToken_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3433,8 +2975,15 @@ public final class Transaction {
         if (other.getSymbol() != com.google.protobuf.ByteString.EMPTY) {
           setSymbol(other.getSymbol());
         }
-        if (other.getCryptoToken() != com.google.protobuf.ByteString.EMPTY) {
-          setCryptoToken(other.getCryptoToken());
+        if (!other.cryptoToken_.isEmpty()) {
+          if (cryptoToken_.isEmpty()) {
+            cryptoToken_ = other.cryptoToken_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureCryptoTokenIsMutable();
+            cryptoToken_.addAll(other.cryptoToken_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -3461,6 +3010,7 @@ public final class Transaction {
         }
         return this;
       }
+      private int bitField0_;
 
       private int nonce_ ;
       /**
@@ -3490,13 +3040,13 @@ public final class Transaction {
 
       private com.google.protobuf.ByteString address_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes address = 4;</code>
+       * <code>bytes address = 2;</code>
        */
       public com.google.protobuf.ByteString getAddress() {
         return address_;
       }
       /**
-       * <code>bytes address = 4;</code>
+       * <code>bytes address = 2;</code>
        */
       public Builder setAddress(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3508,7 +3058,7 @@ public final class Transaction {
         return this;
       }
       /**
-       * <code>bytes address = 4;</code>
+       * <code>bytes address = 2;</code>
        */
       public Builder clearAddress() {
         
@@ -3519,13 +3069,13 @@ public final class Transaction {
 
       private com.google.protobuf.ByteString amount_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes amount = 5;</code>
+       * <code>bytes amount = 3;</code>
        */
       public com.google.protobuf.ByteString getAmount() {
         return amount_;
       }
       /**
-       * <code>bytes amount = 5;</code>
+       * <code>bytes amount = 3;</code>
        */
       public Builder setAmount(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3537,7 +3087,7 @@ public final class Transaction {
         return this;
       }
       /**
-       * <code>bytes amount = 5;</code>
+       * <code>bytes amount = 3;</code>
        */
       public Builder clearAmount() {
         
@@ -3548,13 +3098,13 @@ public final class Transaction {
 
       private com.google.protobuf.ByteString token_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes token = 7;</code>
+       * <code>bytes token = 4;</code>
        */
       public com.google.protobuf.ByteString getToken() {
         return token_;
       }
       /**
-       * <code>bytes token = 7;</code>
+       * <code>bytes token = 4;</code>
        */
       public Builder setToken(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3566,7 +3116,7 @@ public final class Transaction {
         return this;
       }
       /**
-       * <code>bytes token = 7;</code>
+       * <code>bytes token = 4;</code>
        */
       public Builder clearToken() {
         
@@ -3577,13 +3127,13 @@ public final class Transaction {
 
       private com.google.protobuf.ByteString symbol_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes symbol = 8;</code>
+       * <code>bytes symbol = 5;</code>
        */
       public com.google.protobuf.ByteString getSymbol() {
         return symbol_;
       }
       /**
-       * <code>bytes symbol = 8;</code>
+       * <code>bytes symbol = 5;</code>
        */
       public Builder setSymbol(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3595,7 +3145,7 @@ public final class Transaction {
         return this;
       }
       /**
-       * <code>bytes symbol = 8;</code>
+       * <code>bytes symbol = 5;</code>
        */
       public Builder clearSymbol() {
         
@@ -3604,31 +3154,74 @@ public final class Transaction {
         return this;
       }
 
-      private com.google.protobuf.ByteString cryptoToken_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes cryptoToken = 9;</code>
-       */
-      public com.google.protobuf.ByteString getCryptoToken() {
-        return cryptoToken_;
+      private java.util.List<com.google.protobuf.ByteString> cryptoToken_ = java.util.Collections.emptyList();
+      private void ensureCryptoTokenIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          cryptoToken_ = new java.util.ArrayList<com.google.protobuf.ByteString>(cryptoToken_);
+          bitField0_ |= 0x00000020;
+         }
       }
       /**
-       * <code>bytes cryptoToken = 9;</code>
+       * <code>repeated bytes cryptoToken = 6;</code>
        */
-      public Builder setCryptoToken(com.google.protobuf.ByteString value) {
+      public java.util.List<com.google.protobuf.ByteString>
+          getCryptoTokenList() {
+        return java.util.Collections.unmodifiableList(cryptoToken_);
+      }
+      /**
+       * <code>repeated bytes cryptoToken = 6;</code>
+       */
+      public int getCryptoTokenCount() {
+        return cryptoToken_.size();
+      }
+      /**
+       * <code>repeated bytes cryptoToken = 6;</code>
+       */
+      public com.google.protobuf.ByteString getCryptoToken(int index) {
+        return cryptoToken_.get(index);
+      }
+      /**
+       * <code>repeated bytes cryptoToken = 6;</code>
+       */
+      public Builder setCryptoToken(
+          int index, com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        cryptoToken_ = value;
+  ensureCryptoTokenIsMutable();
+        cryptoToken_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>bytes cryptoToken = 9;</code>
+       * <code>repeated bytes cryptoToken = 6;</code>
+       */
+      public Builder addCryptoToken(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCryptoTokenIsMutable();
+        cryptoToken_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes cryptoToken = 6;</code>
+       */
+      public Builder addAllCryptoToken(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureCryptoTokenIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cryptoToken_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes cryptoToken = 6;</code>
        */
       public Builder clearCryptoToken() {
-        
-        cryptoToken_ = getDefaultInstance().getCryptoToken();
+        cryptoToken_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -3696,14 +3289,17 @@ public final class Transaction {
     com.google.protobuf.ByteString getAmount();
 
     /**
-     * <code>bytes symbol = 3;</code>
+     * <code>repeated bytes cryptoToken = 3;</code>
      */
-    com.google.protobuf.ByteString getSymbol();
-
+    java.util.List<com.google.protobuf.ByteString> getCryptoTokenList();
     /**
-     * <code>bytes cryptoToken = 4;</code>
+     * <code>repeated bytes cryptoToken = 3;</code>
      */
-    com.google.protobuf.ByteString getCryptoToken();
+    int getCryptoTokenCount();
+    /**
+     * <code>repeated bytes cryptoToken = 3;</code>
+     */
+    com.google.protobuf.ByteString getCryptoToken(int index);
   }
   /**
    * Protobuf type {@code org.fok.core.model.TransactionOutput}
@@ -3719,8 +3315,7 @@ public final class Transaction {
     private TransactionOutput() {
       address_ = com.google.protobuf.ByteString.EMPTY;
       amount_ = com.google.protobuf.ByteString.EMPTY;
-      symbol_ = com.google.protobuf.ByteString.EMPTY;
-      cryptoToken_ = com.google.protobuf.ByteString.EMPTY;
+      cryptoToken_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3759,13 +3354,11 @@ public final class Transaction {
               break;
             }
             case 26: {
-
-              symbol_ = input.readBytes();
-              break;
-            }
-            case 34: {
-
-              cryptoToken_ = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                cryptoToken_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              cryptoToken_.add(input.readBytes());
               break;
             }
           }
@@ -3776,6 +3369,9 @@ public final class Transaction {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          cryptoToken_ = java.util.Collections.unmodifiableList(cryptoToken_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -3791,6 +3387,7 @@ public final class Transaction {
               org.fok.core.model.Transaction.TransactionOutput.class, org.fok.core.model.Transaction.TransactionOutput.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString address_;
     /**
@@ -3809,22 +3406,26 @@ public final class Transaction {
       return amount_;
     }
 
-    public static final int SYMBOL_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString symbol_;
+    public static final int CRYPTOTOKEN_FIELD_NUMBER = 3;
+    private java.util.List<com.google.protobuf.ByteString> cryptoToken_;
     /**
-     * <code>bytes symbol = 3;</code>
+     * <code>repeated bytes cryptoToken = 3;</code>
      */
-    public com.google.protobuf.ByteString getSymbol() {
-      return symbol_;
-    }
-
-    public static final int CRYPTOTOKEN_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString cryptoToken_;
-    /**
-     * <code>bytes cryptoToken = 4;</code>
-     */
-    public com.google.protobuf.ByteString getCryptoToken() {
+    public java.util.List<com.google.protobuf.ByteString>
+        getCryptoTokenList() {
       return cryptoToken_;
+    }
+    /**
+     * <code>repeated bytes cryptoToken = 3;</code>
+     */
+    public int getCryptoTokenCount() {
+      return cryptoToken_.size();
+    }
+    /**
+     * <code>repeated bytes cryptoToken = 3;</code>
+     */
+    public com.google.protobuf.ByteString getCryptoToken(int index) {
+      return cryptoToken_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3845,11 +3446,8 @@ public final class Transaction {
       if (!amount_.isEmpty()) {
         output.writeBytes(2, amount_);
       }
-      if (!symbol_.isEmpty()) {
-        output.writeBytes(3, symbol_);
-      }
-      if (!cryptoToken_.isEmpty()) {
-        output.writeBytes(4, cryptoToken_);
+      for (int i = 0; i < cryptoToken_.size(); i++) {
+        output.writeBytes(3, cryptoToken_.get(i));
       }
     }
 
@@ -3866,13 +3464,14 @@ public final class Transaction {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, amount_);
       }
-      if (!symbol_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, symbol_);
-      }
-      if (!cryptoToken_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, cryptoToken_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < cryptoToken_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(cryptoToken_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getCryptoTokenList().size();
       }
       memoizedSize = size;
       return size;
@@ -3894,10 +3493,8 @@ public final class Transaction {
           .equals(other.getAddress());
       result = result && getAmount()
           .equals(other.getAmount());
-      result = result && getSymbol()
-          .equals(other.getSymbol());
-      result = result && getCryptoToken()
-          .equals(other.getCryptoToken());
+      result = result && getCryptoTokenList()
+          .equals(other.getCryptoTokenList());
       return result;
     }
 
@@ -3912,10 +3509,10 @@ public final class Transaction {
       hash = (53 * hash) + getAddress().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getAmount().hashCode();
-      hash = (37 * hash) + SYMBOL_FIELD_NUMBER;
-      hash = (53 * hash) + getSymbol().hashCode();
-      hash = (37 * hash) + CRYPTOTOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getCryptoToken().hashCode();
+      if (getCryptoTokenCount() > 0) {
+        hash = (37 * hash) + CRYPTOTOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getCryptoTokenList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4038,10 +3635,8 @@ public final class Transaction {
 
         amount_ = com.google.protobuf.ByteString.EMPTY;
 
-        symbol_ = com.google.protobuf.ByteString.EMPTY;
-
-        cryptoToken_ = com.google.protobuf.ByteString.EMPTY;
-
+        cryptoToken_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -4064,10 +3659,16 @@ public final class Transaction {
 
       public org.fok.core.model.Transaction.TransactionOutput buildPartial() {
         org.fok.core.model.Transaction.TransactionOutput result = new org.fok.core.model.Transaction.TransactionOutput(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.address_ = address_;
         result.amount_ = amount_;
-        result.symbol_ = symbol_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          cryptoToken_ = java.util.Collections.unmodifiableList(cryptoToken_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
         result.cryptoToken_ = cryptoToken_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -4115,11 +3716,15 @@ public final class Transaction {
         if (other.getAmount() != com.google.protobuf.ByteString.EMPTY) {
           setAmount(other.getAmount());
         }
-        if (other.getSymbol() != com.google.protobuf.ByteString.EMPTY) {
-          setSymbol(other.getSymbol());
-        }
-        if (other.getCryptoToken() != com.google.protobuf.ByteString.EMPTY) {
-          setCryptoToken(other.getCryptoToken());
+        if (!other.cryptoToken_.isEmpty()) {
+          if (cryptoToken_.isEmpty()) {
+            cryptoToken_ = other.cryptoToken_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureCryptoTokenIsMutable();
+            cryptoToken_.addAll(other.cryptoToken_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -4146,6 +3751,7 @@ public final class Transaction {
         }
         return this;
       }
+      private int bitField0_;
 
       private com.google.protobuf.ByteString address_ = com.google.protobuf.ByteString.EMPTY;
       /**
@@ -4205,60 +3811,74 @@ public final class Transaction {
         return this;
       }
 
-      private com.google.protobuf.ByteString symbol_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes symbol = 3;</code>
-       */
-      public com.google.protobuf.ByteString getSymbol() {
-        return symbol_;
+      private java.util.List<com.google.protobuf.ByteString> cryptoToken_ = java.util.Collections.emptyList();
+      private void ensureCryptoTokenIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          cryptoToken_ = new java.util.ArrayList<com.google.protobuf.ByteString>(cryptoToken_);
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
-       * <code>bytes symbol = 3;</code>
+       * <code>repeated bytes cryptoToken = 3;</code>
        */
-      public Builder setSymbol(com.google.protobuf.ByteString value) {
+      public java.util.List<com.google.protobuf.ByteString>
+          getCryptoTokenList() {
+        return java.util.Collections.unmodifiableList(cryptoToken_);
+      }
+      /**
+       * <code>repeated bytes cryptoToken = 3;</code>
+       */
+      public int getCryptoTokenCount() {
+        return cryptoToken_.size();
+      }
+      /**
+       * <code>repeated bytes cryptoToken = 3;</code>
+       */
+      public com.google.protobuf.ByteString getCryptoToken(int index) {
+        return cryptoToken_.get(index);
+      }
+      /**
+       * <code>repeated bytes cryptoToken = 3;</code>
+       */
+      public Builder setCryptoToken(
+          int index, com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        symbol_ = value;
+  ensureCryptoTokenIsMutable();
+        cryptoToken_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>bytes symbol = 3;</code>
+       * <code>repeated bytes cryptoToken = 3;</code>
        */
-      public Builder clearSymbol() {
-        
-        symbol_ = getDefaultInstance().getSymbol();
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString cryptoToken_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes cryptoToken = 4;</code>
-       */
-      public com.google.protobuf.ByteString getCryptoToken() {
-        return cryptoToken_;
-      }
-      /**
-       * <code>bytes cryptoToken = 4;</code>
-       */
-      public Builder setCryptoToken(com.google.protobuf.ByteString value) {
+      public Builder addCryptoToken(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        cryptoToken_ = value;
+  ensureCryptoTokenIsMutable();
+        cryptoToken_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>bytes cryptoToken = 4;</code>
+       * <code>repeated bytes cryptoToken = 3;</code>
+       */
+      public Builder addAllCryptoToken(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureCryptoTokenIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cryptoToken_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes cryptoToken = 3;</code>
        */
       public Builder clearCryptoToken() {
-        
-        cryptoToken_ = getDefaultInstance().getCryptoToken();
+        cryptoToken_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -8327,26 +7947,25 @@ public final class Transaction {
   static {
     java.lang.String[] descriptorData = {
       "\n\021transaction.proto\022\022org.fok.core.model\"" +
-      "\253\001\n\017TransactionInfo\022\016\n\006txHash\030\001 \001(\014\0223\n\006t" +
-      "xBody\030\002 \001(\0132#.org.fok.core.model.Transac" +
-      "tionBody\022\016\n\006status\030\003 \001(\t\0223\n\006txNode\030\004 \001(\013" +
-      "2#.org.fok.core.model.TransactionNode\022\016\n" +
-      "\006result\030\005 \001(\014\"\216\002\n\017TransactionBody\0224\n\006inp" +
-      "uts\030\001 \003(\0132$.org.fok.core.model.Transacti" +
-      "onInput\0226\n\007outputs\030\002 \003(\0132%.org.fok.core." +
-      "model.TransactionOutput\022\016\n\006exdata\030\003 \001(\014\022" +
-      "<\n\nsignatures\030\004 \003(\0132(.org.fok.core.model",
-      ".TransactionSignature\022\020\n\010delegate\030\005 \003(\014\022" +
-      "\014\n\004data\030\006 \001(\014\022\021\n\ttimestamp\030\007 \001(\003\022\014\n\004type" +
-      "\030\010 \001(\005\"v\n\020TransactionInput\022\r\n\005nonce\030\001 \001(" +
-      "\005\022\017\n\007address\030\004 \001(\014\022\016\n\006amount\030\005 \001(\014\022\r\n\005to" +
-      "ken\030\007 \001(\014\022\016\n\006symbol\030\010 \001(\014\022\023\n\013cryptoToken" +
-      "\030\t \001(\014\"Y\n\021TransactionOutput\022\017\n\007address\030\001" +
-      " \001(\014\022\016\n\006amount\030\002 \001(\014\022\016\n\006symbol\030\003 \001(\014\022\023\n\013" +
-      "cryptoToken\030\004 \001(\014\")\n\024TransactionSignatur" +
+      "\245\001\n\017TransactionInfo\022\014\n\004hash\030\001 \001(\014\0221\n\004bod" +
+      "y\030\002 \001(\0132#.org.fok.core.model.Transaction" +
+      "Body\022\016\n\006status\030\003 \001(\t\0221\n\004node\030\004 \001(\0132#.org" +
+      ".fok.core.model.TransactionNode\022\016\n\006resul" +
+      "t\030\005 \001(\014\"\374\001\n\017TransactionBody\0224\n\006inputs\030\001 " +
+      "\001(\0132$.org.fok.core.model.TransactionInpu" +
+      "t\0226\n\007outputs\030\002 \003(\0132%.org.fok.core.model." +
+      "TransactionOutput\022\016\n\006exdata\030\003 \001(\014\022<\n\nsig" +
+      "natures\030\004 \001(\0132(.org.fok.core.model.Trans",
+      "actionSignature\022\014\n\004data\030\005 \001(\014\022\021\n\ttimesta" +
+      "mp\030\006 \001(\003\022\014\n\004type\030\007 \001(\005\"v\n\020TransactionInp" +
+      "ut\022\r\n\005nonce\030\001 \001(\005\022\017\n\007address\030\002 \001(\014\022\016\n\006am" +
+      "ount\030\003 \001(\014\022\r\n\005token\030\004 \001(\014\022\016\n\006symbol\030\005 \001(" +
+      "\014\022\023\n\013cryptoToken\030\006 \003(\014\"I\n\021TransactionOut" +
+      "put\022\017\n\007address\030\001 \001(\014\022\016\n\006amount\030\002 \001(\014\022\023\n\013" +
+      "cryptoToken\030\003 \003(\014\")\n\024TransactionSignatur" +
       "e\022\021\n\tsignature\030\001 \001(\014\"0\n\017TransactionNode\022" +
-      "\014\n\004node\030\001 \001(\t\022\017\n\007address\030\002 \001(\014\":\n\027Broadc",
-      "astTransactionMsg\022\016\n\006txHash\030\001 \003(\014\022\017\n\007txD" +
+      "\014\n\004node\030\001 \001(\t\022\017\n\007address\030\002 \001(\014\":\n\027Broadc" +
+      "astTransactionMsg\022\016\n\006txHash\030\001 \003(\014\022\017\n\007txD",
       "atas\030\002 \003(\014\"]\n\017CryptoTokenData\022\r\n\005total\030\001" +
       " \001(\003\022\016\n\006symbol\030\002 \001(\014\022\017\n\007extData\030\003 \001(\014\022\014\n" +
       "\004name\030\004 \003(\t\022\014\n\004code\030\005 \003(\t\"X\n\020UnionAccoun" +
@@ -8372,13 +7991,13 @@ public final class Transaction {
     internal_static_org_fok_core_model_TransactionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_fok_core_model_TransactionInfo_descriptor,
-        new java.lang.String[] { "TxHash", "TxBody", "Status", "TxNode", "Result", });
+        new java.lang.String[] { "Hash", "Body", "Status", "Node", "Result", });
     internal_static_org_fok_core_model_TransactionBody_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_org_fok_core_model_TransactionBody_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_fok_core_model_TransactionBody_descriptor,
-        new java.lang.String[] { "Inputs", "Outputs", "Exdata", "Signatures", "Delegate", "Data", "Timestamp", "Type", });
+        new java.lang.String[] { "Inputs", "Outputs", "Exdata", "Signatures", "Data", "Timestamp", "Type", });
     internal_static_org_fok_core_model_TransactionInput_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_org_fok_core_model_TransactionInput_fieldAccessorTable = new
@@ -8390,7 +8009,7 @@ public final class Transaction {
     internal_static_org_fok_core_model_TransactionOutput_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_fok_core_model_TransactionOutput_descriptor,
-        new java.lang.String[] { "Address", "Amount", "Symbol", "CryptoToken", });
+        new java.lang.String[] { "Address", "Amount", "CryptoToken", });
     internal_static_org_fok_core_model_TransactionSignature_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_org_fok_core_model_TransactionSignature_fieldAccessorTable = new
