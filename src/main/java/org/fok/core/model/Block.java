@@ -2814,12 +2814,22 @@ public final class Block {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes address = 1;</code>
+     * <code>string nodeId = 1;</code>
+     */
+    java.lang.String getNodeId();
+    /**
+     * <code>string nodeId = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNodeIdBytes();
+
+    /**
+     * <code>bytes address = 2;</code>
      */
     com.google.protobuf.ByteString getAddress();
 
     /**
-     * <code>bytes reward = 2;</code>
+     * <code>bytes reward = 3;</code>
      */
     com.google.protobuf.ByteString getReward();
   }
@@ -2835,6 +2845,7 @@ public final class Block {
       super(builder);
     }
     private BlockMiner() {
+      nodeId_ = "";
       address_ = com.google.protobuf.ByteString.EMPTY;
       reward_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -2865,11 +2876,17 @@ public final class Block {
               break;
             }
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeId_ = s;
+              break;
+            }
+            case 18: {
 
               address_ = input.readBytes();
               break;
             }
-            case 18: {
+            case 26: {
 
               reward_ = input.readBytes();
               break;
@@ -2897,19 +2914,53 @@ public final class Block {
               org.fok.core.model.Block.BlockMiner.class, org.fok.core.model.Block.BlockMiner.Builder.class);
     }
 
-    public static final int ADDRESS_FIELD_NUMBER = 1;
+    public static final int NODEID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object nodeId_;
+    /**
+     * <code>string nodeId = 1;</code>
+     */
+    public java.lang.String getNodeId() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string nodeId = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNodeIdBytes() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString address_;
     /**
-     * <code>bytes address = 1;</code>
+     * <code>bytes address = 2;</code>
      */
     public com.google.protobuf.ByteString getAddress() {
       return address_;
     }
 
-    public static final int REWARD_FIELD_NUMBER = 2;
+    public static final int REWARD_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString reward_;
     /**
-     * <code>bytes reward = 2;</code>
+     * <code>bytes reward = 3;</code>
      */
     public com.google.protobuf.ByteString getReward() {
       return reward_;
@@ -2927,11 +2978,14 @@ public final class Block {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeId_);
+      }
       if (!address_.isEmpty()) {
-        output.writeBytes(1, address_);
+        output.writeBytes(2, address_);
       }
       if (!reward_.isEmpty()) {
-        output.writeBytes(2, reward_);
+        output.writeBytes(3, reward_);
       }
     }
 
@@ -2940,13 +2994,16 @@ public final class Block {
       if (size != -1) return size;
 
       size = 0;
+      if (!getNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeId_);
+      }
       if (!address_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, address_);
+          .computeBytesSize(2, address_);
       }
       if (!reward_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, reward_);
+          .computeBytesSize(3, reward_);
       }
       memoizedSize = size;
       return size;
@@ -2964,6 +3021,8 @@ public final class Block {
       org.fok.core.model.Block.BlockMiner other = (org.fok.core.model.Block.BlockMiner) obj;
 
       boolean result = true;
+      result = result && getNodeId()
+          .equals(other.getNodeId());
       result = result && getAddress()
           .equals(other.getAddress());
       result = result && getReward()
@@ -2978,6 +3037,8 @@ public final class Block {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NODEID_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeId().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       hash = (37 * hash) + REWARD_FIELD_NUMBER;
@@ -3100,6 +3161,8 @@ public final class Block {
       }
       public Builder clear() {
         super.clear();
+        nodeId_ = "";
+
         address_ = com.google.protobuf.ByteString.EMPTY;
 
         reward_ = com.google.protobuf.ByteString.EMPTY;
@@ -3126,6 +3189,7 @@ public final class Block {
 
       public org.fok.core.model.Block.BlockMiner buildPartial() {
         org.fok.core.model.Block.BlockMiner result = new org.fok.core.model.Block.BlockMiner(this);
+        result.nodeId_ = nodeId_;
         result.address_ = address_;
         result.reward_ = reward_;
         onBuilt();
@@ -3169,6 +3233,10 @@ public final class Block {
 
       public Builder mergeFrom(org.fok.core.model.Block.BlockMiner other) {
         if (other == org.fok.core.model.Block.BlockMiner.getDefaultInstance()) return this;
+        if (!other.getNodeId().isEmpty()) {
+          nodeId_ = other.nodeId_;
+          onChanged();
+        }
         if (other.getAddress() != com.google.protobuf.ByteString.EMPTY) {
           setAddress(other.getAddress());
         }
@@ -3201,15 +3269,84 @@ public final class Block {
         return this;
       }
 
+      private java.lang.Object nodeId_ = "";
+      /**
+       * <code>string nodeId = 1;</code>
+       */
+      public java.lang.String getNodeId() {
+        java.lang.Object ref = nodeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nodeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string nodeId = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNodeIdBytes() {
+        java.lang.Object ref = nodeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string nodeId = 1;</code>
+       */
+      public Builder setNodeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nodeId = 1;</code>
+       */
+      public Builder clearNodeId() {
+        
+        nodeId_ = getDefaultInstance().getNodeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nodeId = 1;</code>
+       */
+      public Builder setNodeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString address_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes address = 1;</code>
+       * <code>bytes address = 2;</code>
        */
       public com.google.protobuf.ByteString getAddress() {
         return address_;
       }
       /**
-       * <code>bytes address = 1;</code>
+       * <code>bytes address = 2;</code>
        */
       public Builder setAddress(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3221,7 +3358,7 @@ public final class Block {
         return this;
       }
       /**
-       * <code>bytes address = 1;</code>
+       * <code>bytes address = 2;</code>
        */
       public Builder clearAddress() {
         
@@ -3232,13 +3369,13 @@ public final class Block {
 
       private com.google.protobuf.ByteString reward_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes reward = 2;</code>
+       * <code>bytes reward = 3;</code>
        */
       public com.google.protobuf.ByteString getReward() {
         return reward_;
       }
       /**
-       * <code>bytes reward = 2;</code>
+       * <code>bytes reward = 3;</code>
        */
       public Builder setReward(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -3250,7 +3387,7 @@ public final class Block {
         return this;
       }
       /**
-       * <code>bytes reward = 2;</code>
+       * <code>bytes reward = 3;</code>
        */
       public Builder clearReward() {
         
@@ -3347,9 +3484,9 @@ public final class Block {
       "tionRoot\030\005 \001(\014\022\023\n\013receiptRoot\030\006 \001(\014\022\021\n\tt" +
       "imestamp\030\007 \001(\003\022\021\n\textraData\030\010 \001(\014\022\017\n\007txH",
       "ashs\030\t \003(\014\"=\n\tBlockBody\0220\n\003txs\030\001 \003(\0132#.o" +
-      "rg.fok.core.model.TransactionInfo\"-\n\nBlo" +
-      "ckMiner\022\017\n\007address\030\001 \001(\014\022\016\n\006reward\030\002 \001(\014" +
-      "b\006proto3"
+      "rg.fok.core.model.TransactionInfo\"=\n\nBlo" +
+      "ckMiner\022\016\n\006nodeId\030\001 \001(\t\022\017\n\007address\030\002 \001(\014" +
+      "\022\016\n\006reward\030\003 \001(\014b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3387,7 +3524,7 @@ public final class Block {
     internal_static_org_fok_core_model_BlockMiner_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_fok_core_model_BlockMiner_descriptor,
-        new java.lang.String[] { "Address", "Reward", });
+        new java.lang.String[] { "NodeId", "Address", "Reward", });
     org.fok.core.model.Transaction.getDescriptor();
   }
 

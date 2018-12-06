@@ -27,6 +27,7 @@ message BlockBody {
 }
 
 message BlockMiner {
-	bytes address = 1;
-	bytes reward = 2;
+	string nodeId = 1;
+	bytes address = 2;
+	bytes reward = 3;
 }
