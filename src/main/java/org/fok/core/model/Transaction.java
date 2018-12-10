@@ -4368,14 +4368,14 @@ public final class Transaction {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string node = 1;</code>
+     * <code>string nid = 1;</code>
      */
-    java.lang.String getNode();
+    java.lang.String getNid();
     /**
-     * <code>string node = 1;</code>
+     * <code>string nid = 1;</code>
      */
     com.google.protobuf.ByteString
-        getNodeBytes();
+        getNidBytes();
 
     /**
      * <code>bytes address = 2;</code>
@@ -4394,7 +4394,7 @@ public final class Transaction {
       super(builder);
     }
     private TransactionNode() {
-      node_ = "";
+      nid_ = "";
       address_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -4426,7 +4426,7 @@ public final class Transaction {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              node_ = s;
+              nid_ = s;
               break;
             }
             case 18: {
@@ -4457,34 +4457,34 @@ public final class Transaction {
               org.fok.core.model.Transaction.TransactionNode.class, org.fok.core.model.Transaction.TransactionNode.Builder.class);
     }
 
-    public static final int NODE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object node_;
+    public static final int NID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object nid_;
     /**
-     * <code>string node = 1;</code>
+     * <code>string nid = 1;</code>
      */
-    public java.lang.String getNode() {
-      java.lang.Object ref = node_;
+    public java.lang.String getNid() {
+      java.lang.Object ref = nid_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        node_ = s;
+        nid_ = s;
         return s;
       }
     }
     /**
-     * <code>string node = 1;</code>
+     * <code>string nid = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getNodeBytes() {
-      java.lang.Object ref = node_;
+        getNidBytes() {
+      java.lang.Object ref = nid_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        node_ = b;
+        nid_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4512,8 +4512,8 @@ public final class Transaction {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, node_);
+      if (!getNidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nid_);
       }
       if (!address_.isEmpty()) {
         output.writeBytes(2, address_);
@@ -4525,8 +4525,8 @@ public final class Transaction {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, node_);
+      if (!getNidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nid_);
       }
       if (!address_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
@@ -4548,8 +4548,8 @@ public final class Transaction {
       org.fok.core.model.Transaction.TransactionNode other = (org.fok.core.model.Transaction.TransactionNode) obj;
 
       boolean result = true;
-      result = result && getNode()
-          .equals(other.getNode());
+      result = result && getNid()
+          .equals(other.getNid());
       result = result && getAddress()
           .equals(other.getAddress());
       return result;
@@ -4562,8 +4562,8 @@ public final class Transaction {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NODE_FIELD_NUMBER;
-      hash = (53 * hash) + getNode().hashCode();
+      hash = (37 * hash) + NID_FIELD_NUMBER;
+      hash = (53 * hash) + getNid().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -4684,7 +4684,7 @@ public final class Transaction {
       }
       public Builder clear() {
         super.clear();
-        node_ = "";
+        nid_ = "";
 
         address_ = com.google.protobuf.ByteString.EMPTY;
 
@@ -4710,7 +4710,7 @@ public final class Transaction {
 
       public org.fok.core.model.Transaction.TransactionNode buildPartial() {
         org.fok.core.model.Transaction.TransactionNode result = new org.fok.core.model.Transaction.TransactionNode(this);
-        result.node_ = node_;
+        result.nid_ = nid_;
         result.address_ = address_;
         onBuilt();
         return result;
@@ -4753,8 +4753,8 @@ public final class Transaction {
 
       public Builder mergeFrom(org.fok.core.model.Transaction.TransactionNode other) {
         if (other == org.fok.core.model.Transaction.TransactionNode.getDefaultInstance()) return this;
-        if (!other.getNode().isEmpty()) {
-          node_ = other.node_;
+        if (!other.getNid().isEmpty()) {
+          nid_ = other.nid_;
           onChanged();
         }
         if (other.getAddress() != com.google.protobuf.ByteString.EMPTY) {
@@ -4786,71 +4786,71 @@ public final class Transaction {
         return this;
       }
 
-      private java.lang.Object node_ = "";
+      private java.lang.Object nid_ = "";
       /**
-       * <code>string node = 1;</code>
+       * <code>string nid = 1;</code>
        */
-      public java.lang.String getNode() {
-        java.lang.Object ref = node_;
+      public java.lang.String getNid() {
+        java.lang.Object ref = nid_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          node_ = s;
+          nid_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string node = 1;</code>
+       * <code>string nid = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getNodeBytes() {
-        java.lang.Object ref = node_;
+          getNidBytes() {
+        java.lang.Object ref = nid_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          node_ = b;
+          nid_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string node = 1;</code>
+       * <code>string nid = 1;</code>
        */
-      public Builder setNode(
+      public Builder setNid(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        node_ = value;
+        nid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string node = 1;</code>
+       * <code>string nid = 1;</code>
        */
-      public Builder clearNode() {
+      public Builder clearNid() {
         
-        node_ = getDefaultInstance().getNode();
+        nid_ = getDefaultInstance().getNid();
         onChanged();
         return this;
       }
       /**
-       * <code>string node = 1;</code>
+       * <code>string nid = 1;</code>
        */
-      public Builder setNodeBytes(
+      public Builder setNidBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        node_ = value;
+        nid_ = value;
         onChanged();
         return this;
       }
@@ -7963,16 +7963,16 @@ public final class Transaction {
       "\014\022\023\n\013cryptoToken\030\006 \003(\014\"I\n\021TransactionOut" +
       "put\022\017\n\007address\030\001 \001(\014\022\016\n\006amount\030\002 \001(\014\022\023\n\013" +
       "cryptoToken\030\003 \003(\014\")\n\024TransactionSignatur" +
-      "e\022\021\n\tsignature\030\001 \001(\014\"0\n\017TransactionNode\022" +
-      "\014\n\004node\030\001 \001(\t\022\017\n\007address\030\002 \001(\014\":\n\027Broadc" +
-      "astTransactionMsg\022\016\n\006txHash\030\001 \003(\014\022\017\n\007txD",
-      "atas\030\002 \003(\014\"]\n\017CryptoTokenData\022\r\n\005total\030\001" +
-      " \001(\003\022\016\n\006symbol\030\002 \001(\014\022\017\n\007extData\030\003 \001(\014\022\014\n" +
-      "\004name\030\004 \003(\t\022\014\n\004code\030\005 \003(\t\"X\n\020UnionAccoun" +
-      "tData\022\013\n\003max\030\001 \001(\014\022\021\n\tacceptMax\030\002 \001(\014\022\023\n" +
-      "\013acceptLimit\030\003 \001(\005\022\017\n\007address\030\004 \003(\014\"G\n\014S" +
-      "anctionData\022\017\n\007content\030\001 \001(\014\022\026\n\016endBlock" +
-      "Height\030\002 \001(\003\022\016\n\006result\030\003 \001(\014b\006proto3"
+      "e\022\021\n\tsignature\030\001 \001(\014\"/\n\017TransactionNode\022" +
+      "\013\n\003nid\030\001 \001(\t\022\017\n\007address\030\002 \001(\014\":\n\027Broadca" +
+      "stTransactionMsg\022\016\n\006txHash\030\001 \003(\014\022\017\n\007txDa",
+      "tas\030\002 \003(\014\"]\n\017CryptoTokenData\022\r\n\005total\030\001 " +
+      "\001(\003\022\016\n\006symbol\030\002 \001(\014\022\017\n\007extData\030\003 \001(\014\022\014\n\004" +
+      "name\030\004 \003(\t\022\014\n\004code\030\005 \003(\t\"X\n\020UnionAccount" +
+      "Data\022\013\n\003max\030\001 \001(\014\022\021\n\tacceptMax\030\002 \001(\014\022\023\n\013" +
+      "acceptLimit\030\003 \001(\005\022\017\n\007address\030\004 \003(\014\"G\n\014Sa" +
+      "nctionData\022\017\n\007content\030\001 \001(\014\022\026\n\016endBlockH" +
+      "eight\030\002 \001(\003\022\016\n\006result\030\003 \001(\014b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8021,7 +8021,7 @@ public final class Transaction {
     internal_static_org_fok_core_model_TransactionNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_fok_core_model_TransactionNode_descriptor,
-        new java.lang.String[] { "Node", "Address", });
+        new java.lang.String[] { "Nid", "Address", });
     internal_static_org_fok_core_model_BroadcastTransactionMsg_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_org_fok_core_model_BroadcastTransactionMsg_fieldAccessorTable = new

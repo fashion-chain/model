@@ -40,7 +40,7 @@ message TransactionSignature {
 }
 
 message TransactionNode {
-	string node = 1;
+	string nid = 1;
 	bytes address = 2;
 }
 
