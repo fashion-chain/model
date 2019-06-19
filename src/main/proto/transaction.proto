@@ -5,38 +5,33 @@ package org.fok.core.model;
 message TransactionInfo {
 	bytes hash = 1;
 	TransactionBody body = 2;
-	string status = 3;
-	TransactionNode node = 4;
-	bytes result = 5;
+	bytes signature = 3;
+	string status = 4;
+	TransactionNode node = 5;
+	bytes result = 6;
 }
 
 message TransactionBody {
-	TransactionInput inputs = 1;
+	TransactionInput input = 1;
 	repeated TransactionOutput outputs = 2;
-	bytes exdata = 3;
-	TransactionSignature signatures = 4;
-	bytes data = 5;
+	bytes fee = 3;
+	TransactionData data = 4;
+	bytes exdata = 5;
 	int64 timestamp = 6;
-	int32 type = 7;
 }
 
 message TransactionInput {
 	int32 nonce = 1;
 	bytes address = 2;
-	bytes amount = 3;
-	bytes token = 4;
-	bytes symbol = 5;
-	repeated bytes cryptoToken = 6;
 }
 
 message TransactionOutput {
 	bytes address = 1;
 	bytes amount = 2;
-	repeated bytes cryptoToken = 3;
-}
-
-message TransactionSignature {
-	bytes signature = 1;
+	bytes token = 3;
+	bytes tokenAmount = 4;
+	bytes symbol = 5;
+	repeated bytes cryptoToken = 6;
 }
 
 message TransactionNode {
@@ -45,28 +40,68 @@ message TransactionNode {
 }
 
 message BroadcastTransactionMsg {
-//repeated string txHexStr = 1;
 	repeated bytes txHash = 1;
 	repeated bytes txDatas = 2;
 }
 
-message CryptoTokenData {
-	int64 total = 1;
-	bytes symbol = 2;
-	bytes extData = 3;
-	repeated string name = 4;
-	repeated string code = 5;
-}
-
-message UnionAccountData {
-	bytes max = 1;
-	bytes acceptMax = 2;
-	int32 acceptLimit = 3;
-	repeated bytes address = 4;
-}
-
-message SanctionData {
-	bytes content = 1;
-	int64 endBlockHeight = 2;
-	bytes result = 3;
+message TransactionData {
+	DataType type = 1;
+	UnionAccountData unionAccountData = 10;
+	PublicCryptoTokenData cryptoTokenData = 20;
+	OwnerTokenData ownerTokenData = 30;
+	UserTokenData userTokenData = 31;
+	PublicContractData publicContractData = 40;
+	CallContractData callContractData = 41;
+	
+	enum DataType {
+	    PUBLICCRYPTOTOKEN = 0;
+	    OWNERTOKEN = 1;
+	    USERTOKEN = 2;
+	    PUBLICCONTRACT = 3;
+	    CALLCONTRACT = 4;
+	}
+	message PublicCryptoTokenData {
+		int64 total = 1;
+		bytes symbol = 2;
+		repeated string name = 3;
+		repeated string code = 4;
+		repeated string prop = 5;
+	}
+	message OwnerTokenData {
+		bytes token = 1;
+		bytes amount = 2;
+		OwnerTokenOpCode opCode = 3;
+		enum OwnerTokenOpCode {
+			PUBLIC = 0;
+			BURN = 1;
+			MINT = 2;
+		}
+	}
+	message UserTokenData {
+		bytes token = 1;
+		bytes address = 2;
+		bytes amount = 3;
+		UserTokenOpCode opCode = 4;
+		enum UserTokenOpCode {
+			FREEZE = 0;
+			UNFREEZE = 1;
+			LOCK = 2;
+			UNLOCK = 3;
+		}
+	}
+	message PublicContractData {
+		bytes data = 1;
+		bytes code = 2;
+	}
+	message CallContractData {
+		bytes data = 1;
+		bytes contract = 2;
+		bytes amount = 3;
+	}
+	message UnionAccountData {
+		bytes max = 1;
+		bytes acceptMax = 2;
+		int32 acceptLimit = 3;
+		repeated bytes address = 4;
+	}
 }

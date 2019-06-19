@@ -22,9 +22,6 @@ message AccountValue {
 	bytes data = 12;
 	int64 accumulatedTimestamp = 13;
 	bytes accumulated = 14;
-	
-	Token ownerToken = 30;
-	CryptoToken ownerCryptoToken = 40;
 }
 
 message AccountTokenValue {
@@ -40,7 +37,7 @@ message AccountCryptoValue {
 }
 
 message AccountCryptoToken {
-	bytes hash = 1; // Token的hash，hash(index,total,code,name,timestamp)
+	bytes hash = 1; // Token的hash
 	int64 timestamp = 2; // Token创建时间
 	int64 index = 3; // 该Token发行时的索引
 	int64 total = 4; // 该Token的发行总数量
@@ -49,26 +46,32 @@ message AccountCryptoToken {
 	bytes owner = 7; // 所有人的账户地址
 	int32 nonce = 8; // 交易次数
 	int64 ownertime = 9; // 所有人获取时间
-	bytes extData = 10;
+	repeated AccountCryptoTokenProp props = 10;
 }
 
-message CryptoToken {
-	repeated CryptoTokenValue value = 1;
+message AccountCryptoTokenProp {
+	bytes key = 1;
+	bytes value = 2;
 }
 
-message CryptoTokenValue {
+message CryptoTokenOriginValue {
 	int64 total = 1;
-	int64 current = 2;
-	int64 timestamp = 3;
-	bytes owner = 4;
-	bytes symbol = 5;
-	// repeated CryptoTokenValueHistory history = 5;
+	bytes symbol = 2;
+	bytes owner = 3;
+	int64 timestamp = 4;
+	int64 current = 5;
+
+	repeated bytes txHash = 6;
 }
 
-// message CryptoTokenValueHistory { }
-
-message Token {
-	repeated TokenValue value = 1;
+message CryptoTokenOriginTransactionValue {
+	string txHash = 1;
+	int32 timestamp = 2;
+	int32 startIndex = 3;
+	int32 endIndex = 4;
+	repeated string name = 5;
+	repeated string code = 6;
+	repeated string prop = 7;
 }
 
 message TokenValue {

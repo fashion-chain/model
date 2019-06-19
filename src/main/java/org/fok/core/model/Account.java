@@ -759,32 +759,6 @@ public final class Account {
      * <code>bytes accumulated = 14;</code>
      */
     com.google.protobuf.ByteString getAccumulated();
-
-    /**
-     * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-     */
-    boolean hasOwnerToken();
-    /**
-     * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-     */
-    org.fok.core.model.Account.Token getOwnerToken();
-    /**
-     * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-     */
-    org.fok.core.model.Account.TokenOrBuilder getOwnerTokenOrBuilder();
-
-    /**
-     * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-     */
-    boolean hasOwnerCryptoToken();
-    /**
-     * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-     */
-    org.fok.core.model.Account.CryptoToken getOwnerCryptoToken();
-    /**
-     * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-     */
-    org.fok.core.model.Account.CryptoTokenOrBuilder getOwnerCryptoTokenOrBuilder();
   }
   /**
    * Protobuf type {@code org.fok.core.model.AccountValue}
@@ -918,32 +892,6 @@ public final class Account {
             case 114: {
 
               accumulated_ = input.readBytes();
-              break;
-            }
-            case 242: {
-              org.fok.core.model.Account.Token.Builder subBuilder = null;
-              if (ownerToken_ != null) {
-                subBuilder = ownerToken_.toBuilder();
-              }
-              ownerToken_ = input.readMessage(org.fok.core.model.Account.Token.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ownerToken_);
-                ownerToken_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 322: {
-              org.fok.core.model.Account.CryptoToken.Builder subBuilder = null;
-              if (ownerCryptoToken_ != null) {
-                subBuilder = ownerCryptoToken_.toBuilder();
-              }
-              ownerCryptoToken_ = input.readMessage(org.fok.core.model.Account.CryptoToken.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ownerCryptoToken_);
-                ownerCryptoToken_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           }
@@ -1170,48 +1118,6 @@ public final class Account {
       return accumulated_;
     }
 
-    public static final int OWNERTOKEN_FIELD_NUMBER = 30;
-    private org.fok.core.model.Account.Token ownerToken_;
-    /**
-     * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-     */
-    public boolean hasOwnerToken() {
-      return ownerToken_ != null;
-    }
-    /**
-     * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-     */
-    public org.fok.core.model.Account.Token getOwnerToken() {
-      return ownerToken_ == null ? org.fok.core.model.Account.Token.getDefaultInstance() : ownerToken_;
-    }
-    /**
-     * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-     */
-    public org.fok.core.model.Account.TokenOrBuilder getOwnerTokenOrBuilder() {
-      return getOwnerToken();
-    }
-
-    public static final int OWNERCRYPTOTOKEN_FIELD_NUMBER = 40;
-    private org.fok.core.model.Account.CryptoToken ownerCryptoToken_;
-    /**
-     * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-     */
-    public boolean hasOwnerCryptoToken() {
-      return ownerCryptoToken_ != null;
-    }
-    /**
-     * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-     */
-    public org.fok.core.model.Account.CryptoToken getOwnerCryptoToken() {
-      return ownerCryptoToken_ == null ? org.fok.core.model.Account.CryptoToken.getDefaultInstance() : ownerCryptoToken_;
-    }
-    /**
-     * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-     */
-    public org.fok.core.model.Account.CryptoTokenOrBuilder getOwnerCryptoTokenOrBuilder() {
-      return getOwnerCryptoToken();
-    }
-
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1265,12 +1171,6 @@ public final class Account {
       }
       if (!accumulated_.isEmpty()) {
         output.writeBytes(14, accumulated_);
-      }
-      if (ownerToken_ != null) {
-        output.writeMessage(30, getOwnerToken());
-      }
-      if (ownerCryptoToken_ != null) {
-        output.writeMessage(40, getOwnerCryptoToken());
       }
     }
 
@@ -1340,14 +1240,6 @@ public final class Account {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(14, accumulated_);
       }
-      if (ownerToken_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(30, getOwnerToken());
-      }
-      if (ownerCryptoToken_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(40, getOwnerCryptoToken());
-      }
       memoizedSize = size;
       return size;
     }
@@ -1392,16 +1284,6 @@ public final class Account {
           == other.getAccumulatedTimestamp());
       result = result && getAccumulated()
           .equals(other.getAccumulated());
-      result = result && (hasOwnerToken() == other.hasOwnerToken());
-      if (hasOwnerToken()) {
-        result = result && getOwnerToken()
-            .equals(other.getOwnerToken());
-      }
-      result = result && (hasOwnerCryptoToken() == other.hasOwnerCryptoToken());
-      if (hasOwnerCryptoToken()) {
-        result = result && getOwnerCryptoToken()
-            .equals(other.getOwnerCryptoToken());
-      }
       return result;
     }
 
@@ -1447,14 +1329,6 @@ public final class Account {
           getAccumulatedTimestamp());
       hash = (37 * hash) + ACCUMULATED_FIELD_NUMBER;
       hash = (53 * hash) + getAccumulated().hashCode();
-      if (hasOwnerToken()) {
-        hash = (37 * hash) + OWNERTOKEN_FIELD_NUMBER;
-        hash = (53 * hash) + getOwnerToken().hashCode();
-      }
-      if (hasOwnerCryptoToken()) {
-        hash = (37 * hash) + OWNERCRYPTOTOKEN_FIELD_NUMBER;
-        hash = (53 * hash) + getOwnerCryptoToken().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1611,18 +1485,6 @@ public final class Account {
 
         accumulated_ = com.google.protobuf.ByteString.EMPTY;
 
-        if (ownerTokenBuilder_ == null) {
-          ownerToken_ = null;
-        } else {
-          ownerToken_ = null;
-          ownerTokenBuilder_ = null;
-        }
-        if (ownerCryptoTokenBuilder_ == null) {
-          ownerCryptoToken_ = null;
-        } else {
-          ownerCryptoToken_ = null;
-          ownerCryptoTokenBuilder_ = null;
-        }
         return this;
       }
 
@@ -1681,16 +1543,6 @@ public final class Account {
         result.data_ = data_;
         result.accumulatedTimestamp_ = accumulatedTimestamp_;
         result.accumulated_ = accumulated_;
-        if (ownerTokenBuilder_ == null) {
-          result.ownerToken_ = ownerToken_;
-        } else {
-          result.ownerToken_ = ownerTokenBuilder_.build();
-        }
-        if (ownerCryptoTokenBuilder_ == null) {
-          result.ownerCryptoToken_ = ownerCryptoToken_;
-        } else {
-          result.ownerCryptoToken_ = ownerCryptoTokenBuilder_.build();
-        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1827,12 +1679,6 @@ public final class Account {
         }
         if (other.getAccumulated() != com.google.protobuf.ByteString.EMPTY) {
           setAccumulated(other.getAccumulated());
-        }
-        if (other.hasOwnerToken()) {
-          mergeOwnerToken(other.getOwnerToken());
-        }
-        if (other.hasOwnerCryptoToken()) {
-          mergeOwnerCryptoToken(other.getOwnerCryptoToken());
         }
         onChanged();
         return this;
@@ -2721,240 +2567,6 @@ public final class Account {
         accumulated_ = getDefaultInstance().getAccumulated();
         onChanged();
         return this;
-      }
-
-      private org.fok.core.model.Account.Token ownerToken_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.fok.core.model.Account.Token, org.fok.core.model.Account.Token.Builder, org.fok.core.model.Account.TokenOrBuilder> ownerTokenBuilder_;
-      /**
-       * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-       */
-      public boolean hasOwnerToken() {
-        return ownerTokenBuilder_ != null || ownerToken_ != null;
-      }
-      /**
-       * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-       */
-      public org.fok.core.model.Account.Token getOwnerToken() {
-        if (ownerTokenBuilder_ == null) {
-          return ownerToken_ == null ? org.fok.core.model.Account.Token.getDefaultInstance() : ownerToken_;
-        } else {
-          return ownerTokenBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-       */
-      public Builder setOwnerToken(org.fok.core.model.Account.Token value) {
-        if (ownerTokenBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ownerToken_ = value;
-          onChanged();
-        } else {
-          ownerTokenBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-       */
-      public Builder setOwnerToken(
-          org.fok.core.model.Account.Token.Builder builderForValue) {
-        if (ownerTokenBuilder_ == null) {
-          ownerToken_ = builderForValue.build();
-          onChanged();
-        } else {
-          ownerTokenBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-       */
-      public Builder mergeOwnerToken(org.fok.core.model.Account.Token value) {
-        if (ownerTokenBuilder_ == null) {
-          if (ownerToken_ != null) {
-            ownerToken_ =
-              org.fok.core.model.Account.Token.newBuilder(ownerToken_).mergeFrom(value).buildPartial();
-          } else {
-            ownerToken_ = value;
-          }
-          onChanged();
-        } else {
-          ownerTokenBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-       */
-      public Builder clearOwnerToken() {
-        if (ownerTokenBuilder_ == null) {
-          ownerToken_ = null;
-          onChanged();
-        } else {
-          ownerToken_ = null;
-          ownerTokenBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-       */
-      public org.fok.core.model.Account.Token.Builder getOwnerTokenBuilder() {
-        
-        onChanged();
-        return getOwnerTokenFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-       */
-      public org.fok.core.model.Account.TokenOrBuilder getOwnerTokenOrBuilder() {
-        if (ownerTokenBuilder_ != null) {
-          return ownerTokenBuilder_.getMessageOrBuilder();
-        } else {
-          return ownerToken_ == null ?
-              org.fok.core.model.Account.Token.getDefaultInstance() : ownerToken_;
-        }
-      }
-      /**
-       * <code>.org.fok.core.model.Token ownerToken = 30;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.fok.core.model.Account.Token, org.fok.core.model.Account.Token.Builder, org.fok.core.model.Account.TokenOrBuilder> 
-          getOwnerTokenFieldBuilder() {
-        if (ownerTokenBuilder_ == null) {
-          ownerTokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.fok.core.model.Account.Token, org.fok.core.model.Account.Token.Builder, org.fok.core.model.Account.TokenOrBuilder>(
-                  getOwnerToken(),
-                  getParentForChildren(),
-                  isClean());
-          ownerToken_ = null;
-        }
-        return ownerTokenBuilder_;
-      }
-
-      private org.fok.core.model.Account.CryptoToken ownerCryptoToken_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.fok.core.model.Account.CryptoToken, org.fok.core.model.Account.CryptoToken.Builder, org.fok.core.model.Account.CryptoTokenOrBuilder> ownerCryptoTokenBuilder_;
-      /**
-       * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-       */
-      public boolean hasOwnerCryptoToken() {
-        return ownerCryptoTokenBuilder_ != null || ownerCryptoToken_ != null;
-      }
-      /**
-       * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-       */
-      public org.fok.core.model.Account.CryptoToken getOwnerCryptoToken() {
-        if (ownerCryptoTokenBuilder_ == null) {
-          return ownerCryptoToken_ == null ? org.fok.core.model.Account.CryptoToken.getDefaultInstance() : ownerCryptoToken_;
-        } else {
-          return ownerCryptoTokenBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-       */
-      public Builder setOwnerCryptoToken(org.fok.core.model.Account.CryptoToken value) {
-        if (ownerCryptoTokenBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ownerCryptoToken_ = value;
-          onChanged();
-        } else {
-          ownerCryptoTokenBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-       */
-      public Builder setOwnerCryptoToken(
-          org.fok.core.model.Account.CryptoToken.Builder builderForValue) {
-        if (ownerCryptoTokenBuilder_ == null) {
-          ownerCryptoToken_ = builderForValue.build();
-          onChanged();
-        } else {
-          ownerCryptoTokenBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-       */
-      public Builder mergeOwnerCryptoToken(org.fok.core.model.Account.CryptoToken value) {
-        if (ownerCryptoTokenBuilder_ == null) {
-          if (ownerCryptoToken_ != null) {
-            ownerCryptoToken_ =
-              org.fok.core.model.Account.CryptoToken.newBuilder(ownerCryptoToken_).mergeFrom(value).buildPartial();
-          } else {
-            ownerCryptoToken_ = value;
-          }
-          onChanged();
-        } else {
-          ownerCryptoTokenBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-       */
-      public Builder clearOwnerCryptoToken() {
-        if (ownerCryptoTokenBuilder_ == null) {
-          ownerCryptoToken_ = null;
-          onChanged();
-        } else {
-          ownerCryptoToken_ = null;
-          ownerCryptoTokenBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-       */
-      public org.fok.core.model.Account.CryptoToken.Builder getOwnerCryptoTokenBuilder() {
-        
-        onChanged();
-        return getOwnerCryptoTokenFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-       */
-      public org.fok.core.model.Account.CryptoTokenOrBuilder getOwnerCryptoTokenOrBuilder() {
-        if (ownerCryptoTokenBuilder_ != null) {
-          return ownerCryptoTokenBuilder_.getMessageOrBuilder();
-        } else {
-          return ownerCryptoToken_ == null ?
-              org.fok.core.model.Account.CryptoToken.getDefaultInstance() : ownerCryptoToken_;
-        }
-      }
-      /**
-       * <code>.org.fok.core.model.CryptoToken ownerCryptoToken = 40;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.fok.core.model.Account.CryptoToken, org.fok.core.model.Account.CryptoToken.Builder, org.fok.core.model.Account.CryptoTokenOrBuilder> 
-          getOwnerCryptoTokenFieldBuilder() {
-        if (ownerCryptoTokenBuilder_ == null) {
-          ownerCryptoTokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.fok.core.model.Account.CryptoToken, org.fok.core.model.Account.CryptoToken.Builder, org.fok.core.model.Account.CryptoTokenOrBuilder>(
-                  getOwnerCryptoToken(),
-                  getParentForChildren(),
-                  isClean());
-          ownerCryptoToken_ = null;
-        }
-        return ownerCryptoTokenBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4445,7 +4057,7 @@ public final class Account {
 
     /**
      * <pre>
-     * Token的hash，hash(index,total,code,name,timestamp)
+     * Token的hash
      * </pre>
      *
      * <code>bytes hash = 1;</code>
@@ -4543,9 +4155,28 @@ public final class Account {
     long getOwnertime();
 
     /**
-     * <code>bytes extData = 10;</code>
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
      */
-    com.google.protobuf.ByteString getExtData();
+    java.util.List<org.fok.core.model.Account.AccountCryptoTokenProp> 
+        getPropsList();
+    /**
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+     */
+    org.fok.core.model.Account.AccountCryptoTokenProp getProps(int index);
+    /**
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+     */
+    int getPropsCount();
+    /**
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+     */
+    java.util.List<? extends org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder> 
+        getPropsOrBuilderList();
+    /**
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+     */
+    org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder getPropsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code org.fok.core.model.AccountCryptoToken}
@@ -4568,7 +4199,7 @@ public final class Account {
       owner_ = com.google.protobuf.ByteString.EMPTY;
       nonce_ = 0;
       ownertime_ = 0L;
-      extData_ = com.google.protobuf.ByteString.EMPTY;
+      props_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -4644,8 +4275,12 @@ public final class Account {
               break;
             }
             case 82: {
-
-              extData_ = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                props_ = new java.util.ArrayList<org.fok.core.model.Account.AccountCryptoTokenProp>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              props_.add(
+                  input.readMessage(org.fok.core.model.Account.AccountCryptoTokenProp.parser(), extensionRegistry));
               break;
             }
           }
@@ -4656,6 +4291,9 @@ public final class Account {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+          props_ = java.util.Collections.unmodifiableList(props_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -4671,11 +4309,12 @@ public final class Account {
               org.fok.core.model.Account.AccountCryptoToken.class, org.fok.core.model.Account.AccountCryptoToken.Builder.class);
     }
 
+    private int bitField0_;
     public static final int HASH_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString hash_;
     /**
      * <pre>
-     * Token的hash，hash(index,total,code,name,timestamp)
+     * Token的hash
      * </pre>
      *
      * <code>bytes hash = 1;</code>
@@ -4846,13 +4485,39 @@ public final class Account {
       return ownertime_;
     }
 
-    public static final int EXTDATA_FIELD_NUMBER = 10;
-    private com.google.protobuf.ByteString extData_;
+    public static final int PROPS_FIELD_NUMBER = 10;
+    private java.util.List<org.fok.core.model.Account.AccountCryptoTokenProp> props_;
     /**
-     * <code>bytes extData = 10;</code>
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
      */
-    public com.google.protobuf.ByteString getExtData() {
-      return extData_;
+    public java.util.List<org.fok.core.model.Account.AccountCryptoTokenProp> getPropsList() {
+      return props_;
+    }
+    /**
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+     */
+    public java.util.List<? extends org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder> 
+        getPropsOrBuilderList() {
+      return props_;
+    }
+    /**
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+     */
+    public int getPropsCount() {
+      return props_.size();
+    }
+    /**
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+     */
+    public org.fok.core.model.Account.AccountCryptoTokenProp getProps(int index) {
+      return props_.get(index);
+    }
+    /**
+     * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+     */
+    public org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder getPropsOrBuilder(
+        int index) {
+      return props_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4894,8 +4559,8 @@ public final class Account {
       if (ownertime_ != 0L) {
         output.writeInt64(9, ownertime_);
       }
-      if (!extData_.isEmpty()) {
-        output.writeBytes(10, extData_);
+      for (int i = 0; i < props_.size(); i++) {
+        output.writeMessage(10, props_.get(i));
       }
     }
 
@@ -4938,9 +4603,9 @@ public final class Account {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, ownertime_);
       }
-      if (!extData_.isEmpty()) {
+      for (int i = 0; i < props_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(10, extData_);
+          .computeMessageSize(10, props_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -4976,8 +4641,8 @@ public final class Account {
           == other.getNonce());
       result = result && (getOwnertime()
           == other.getOwnertime());
-      result = result && getExtData()
-          .equals(other.getExtData());
+      result = result && getPropsList()
+          .equals(other.getPropsList());
       return result;
     }
 
@@ -5010,8 +4675,10 @@ public final class Account {
       hash = (37 * hash) + OWNERTIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOwnertime());
-      hash = (37 * hash) + EXTDATA_FIELD_NUMBER;
-      hash = (53 * hash) + getExtData().hashCode();
+      if (getPropsCount() > 0) {
+        hash = (37 * hash) + PROPS_FIELD_NUMBER;
+        hash = (53 * hash) + getPropsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5126,6 +4793,7 @@ public final class Account {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getPropsFieldBuilder();
         }
       }
       public Builder clear() {
@@ -5148,8 +4816,12 @@ public final class Account {
 
         ownertime_ = 0L;
 
-        extData_ = com.google.protobuf.ByteString.EMPTY;
-
+        if (propsBuilder_ == null) {
+          props_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          propsBuilder_.clear();
+        }
         return this;
       }
 
@@ -5172,6 +4844,8 @@ public final class Account {
 
       public org.fok.core.model.Account.AccountCryptoToken buildPartial() {
         org.fok.core.model.Account.AccountCryptoToken result = new org.fok.core.model.Account.AccountCryptoToken(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.hash_ = hash_;
         result.timestamp_ = timestamp_;
         result.index_ = index_;
@@ -5181,7 +4855,16 @@ public final class Account {
         result.owner_ = owner_;
         result.nonce_ = nonce_;
         result.ownertime_ = ownertime_;
-        result.extData_ = extData_;
+        if (propsBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) == 0x00000200)) {
+            props_ = java.util.Collections.unmodifiableList(props_);
+            bitField0_ = (bitField0_ & ~0x00000200);
+          }
+          result.props_ = props_;
+        } else {
+          result.props_ = propsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -5252,8 +4935,31 @@ public final class Account {
         if (other.getOwnertime() != 0L) {
           setOwnertime(other.getOwnertime());
         }
-        if (other.getExtData() != com.google.protobuf.ByteString.EMPTY) {
-          setExtData(other.getExtData());
+        if (propsBuilder_ == null) {
+          if (!other.props_.isEmpty()) {
+            if (props_.isEmpty()) {
+              props_ = other.props_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+            } else {
+              ensurePropsIsMutable();
+              props_.addAll(other.props_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.props_.isEmpty()) {
+            if (propsBuilder_.isEmpty()) {
+              propsBuilder_.dispose();
+              propsBuilder_ = null;
+              props_ = other.props_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+              propsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPropsFieldBuilder() : null;
+            } else {
+              propsBuilder_.addAllMessages(other.props_);
+            }
+          }
         }
         onChanged();
         return this;
@@ -5280,11 +4986,12 @@ public final class Account {
         }
         return this;
       }
+      private int bitField0_;
 
       private com.google.protobuf.ByteString hash_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
-       * Token的hash，hash(index,total,code,name,timestamp)
+       * Token的hash
        * </pre>
        *
        * <code>bytes hash = 1;</code>
@@ -5294,7 +5001,7 @@ public final class Account {
       }
       /**
        * <pre>
-       * Token的hash，hash(index,total,code,name,timestamp)
+       * Token的hash
        * </pre>
        *
        * <code>bytes hash = 1;</code>
@@ -5310,7 +5017,7 @@ public final class Account {
       }
       /**
        * <pre>
-       * Token的hash，hash(index,total,code,name,timestamp)
+       * Token的hash
        * </pre>
        *
        * <code>bytes hash = 1;</code>
@@ -5731,33 +5438,244 @@ public final class Account {
         return this;
       }
 
-      private com.google.protobuf.ByteString extData_ = com.google.protobuf.ByteString.EMPTY;
+      private java.util.List<org.fok.core.model.Account.AccountCryptoTokenProp> props_ =
+        java.util.Collections.emptyList();
+      private void ensurePropsIsMutable() {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+          props_ = new java.util.ArrayList<org.fok.core.model.Account.AccountCryptoTokenProp>(props_);
+          bitField0_ |= 0x00000200;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.fok.core.model.Account.AccountCryptoTokenProp, org.fok.core.model.Account.AccountCryptoTokenProp.Builder, org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder> propsBuilder_;
+
       /**
-       * <code>bytes extData = 10;</code>
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
        */
-      public com.google.protobuf.ByteString getExtData() {
-        return extData_;
+      public java.util.List<org.fok.core.model.Account.AccountCryptoTokenProp> getPropsList() {
+        if (propsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(props_);
+        } else {
+          return propsBuilder_.getMessageList();
+        }
       }
       /**
-       * <code>bytes extData = 10;</code>
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
        */
-      public Builder setExtData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        extData_ = value;
-        onChanged();
+      public int getPropsCount() {
+        if (propsBuilder_ == null) {
+          return props_.size();
+        } else {
+          return propsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public org.fok.core.model.Account.AccountCryptoTokenProp getProps(int index) {
+        if (propsBuilder_ == null) {
+          return props_.get(index);
+        } else {
+          return propsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public Builder setProps(
+          int index, org.fok.core.model.Account.AccountCryptoTokenProp value) {
+        if (propsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePropsIsMutable();
+          props_.set(index, value);
+          onChanged();
+        } else {
+          propsBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>bytes extData = 10;</code>
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
        */
-      public Builder clearExtData() {
-        
-        extData_ = getDefaultInstance().getExtData();
-        onChanged();
+      public Builder setProps(
+          int index, org.fok.core.model.Account.AccountCryptoTokenProp.Builder builderForValue) {
+        if (propsBuilder_ == null) {
+          ensurePropsIsMutable();
+          props_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          propsBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public Builder addProps(org.fok.core.model.Account.AccountCryptoTokenProp value) {
+        if (propsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePropsIsMutable();
+          props_.add(value);
+          onChanged();
+        } else {
+          propsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public Builder addProps(
+          int index, org.fok.core.model.Account.AccountCryptoTokenProp value) {
+        if (propsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePropsIsMutable();
+          props_.add(index, value);
+          onChanged();
+        } else {
+          propsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public Builder addProps(
+          org.fok.core.model.Account.AccountCryptoTokenProp.Builder builderForValue) {
+        if (propsBuilder_ == null) {
+          ensurePropsIsMutable();
+          props_.add(builderForValue.build());
+          onChanged();
+        } else {
+          propsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public Builder addProps(
+          int index, org.fok.core.model.Account.AccountCryptoTokenProp.Builder builderForValue) {
+        if (propsBuilder_ == null) {
+          ensurePropsIsMutable();
+          props_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          propsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public Builder addAllProps(
+          java.lang.Iterable<? extends org.fok.core.model.Account.AccountCryptoTokenProp> values) {
+        if (propsBuilder_ == null) {
+          ensurePropsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, props_);
+          onChanged();
+        } else {
+          propsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public Builder clearProps() {
+        if (propsBuilder_ == null) {
+          props_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+        } else {
+          propsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public Builder removeProps(int index) {
+        if (propsBuilder_ == null) {
+          ensurePropsIsMutable();
+          props_.remove(index);
+          onChanged();
+        } else {
+          propsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public org.fok.core.model.Account.AccountCryptoTokenProp.Builder getPropsBuilder(
+          int index) {
+        return getPropsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder getPropsOrBuilder(
+          int index) {
+        if (propsBuilder_ == null) {
+          return props_.get(index);  } else {
+          return propsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public java.util.List<? extends org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder> 
+           getPropsOrBuilderList() {
+        if (propsBuilder_ != null) {
+          return propsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(props_);
+        }
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public org.fok.core.model.Account.AccountCryptoTokenProp.Builder addPropsBuilder() {
+        return getPropsFieldBuilder().addBuilder(
+            org.fok.core.model.Account.AccountCryptoTokenProp.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public org.fok.core.model.Account.AccountCryptoTokenProp.Builder addPropsBuilder(
+          int index) {
+        return getPropsFieldBuilder().addBuilder(
+            index, org.fok.core.model.Account.AccountCryptoTokenProp.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.fok.core.model.AccountCryptoTokenProp props = 10;</code>
+       */
+      public java.util.List<org.fok.core.model.Account.AccountCryptoTokenProp.Builder> 
+           getPropsBuilderList() {
+        return getPropsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.fok.core.model.Account.AccountCryptoTokenProp, org.fok.core.model.Account.AccountCryptoTokenProp.Builder, org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder> 
+          getPropsFieldBuilder() {
+        if (propsBuilder_ == null) {
+          propsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.fok.core.model.Account.AccountCryptoTokenProp, org.fok.core.model.Account.AccountCryptoTokenProp.Builder, org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder>(
+                  props_,
+                  ((bitField0_ & 0x00000200) == 0x00000200),
+                  getParentForChildren(),
+                  isClean());
+          props_ = null;
+        }
+        return propsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5808,47 +5726,34 @@ public final class Account {
 
   }
 
-  public interface CryptoTokenOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.fok.core.model.CryptoToken)
+  public interface AccountCryptoTokenPropOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.fok.core.model.AccountCryptoTokenProp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
+     * <code>bytes key = 1;</code>
      */
-    java.util.List<org.fok.core.model.Account.CryptoTokenValue> 
-        getValueList();
+    com.google.protobuf.ByteString getKey();
+
     /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
+     * <code>bytes value = 2;</code>
      */
-    org.fok.core.model.Account.CryptoTokenValue getValue(int index);
-    /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-     */
-    int getValueCount();
-    /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-     */
-    java.util.List<? extends org.fok.core.model.Account.CryptoTokenValueOrBuilder> 
-        getValueOrBuilderList();
-    /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-     */
-    org.fok.core.model.Account.CryptoTokenValueOrBuilder getValueOrBuilder(
-        int index);
+    com.google.protobuf.ByteString getValue();
   }
   /**
-   * Protobuf type {@code org.fok.core.model.CryptoToken}
+   * Protobuf type {@code org.fok.core.model.AccountCryptoTokenProp}
    */
-  public  static final class CryptoToken extends
+  public  static final class AccountCryptoTokenProp extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:org.fok.core.model.CryptoToken)
-      CryptoTokenOrBuilder {
-    // Use CryptoToken.newBuilder() to construct.
-    private CryptoToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:org.fok.core.model.AccountCryptoTokenProp)
+      AccountCryptoTokenPropOrBuilder {
+    // Use AccountCryptoTokenProp.newBuilder() to construct.
+    private AccountCryptoTokenProp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CryptoToken() {
-      value_ = java.util.Collections.emptyList();
+    private AccountCryptoTokenProp() {
+      key_ = com.google.protobuf.ByteString.EMPTY;
+      value_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -5856,7 +5761,7 @@ public final class Account {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private CryptoToken(
+    private AccountCryptoTokenProp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5877,12 +5782,13 @@ public final class Account {
               break;
             }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                value_ = new java.util.ArrayList<org.fok.core.model.Account.CryptoTokenValue>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              value_.add(
-                  input.readMessage(org.fok.core.model.Account.CryptoTokenValue.parser(), extensionRegistry));
+
+              key_ = input.readBytes();
+              break;
+            }
+            case 18: {
+
+              value_ = input.readBytes();
               break;
             }
           }
@@ -5893,57 +5799,37 @@ public final class Account {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          value_ = java.util.Collections.unmodifiableList(value_);
-        }
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoToken_descriptor;
+      return org.fok.core.model.Account.internal_static_org_fok_core_model_AccountCryptoTokenProp_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoToken_fieldAccessorTable
+      return org.fok.core.model.Account.internal_static_org_fok_core_model_AccountCryptoTokenProp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.fok.core.model.Account.CryptoToken.class, org.fok.core.model.Account.CryptoToken.Builder.class);
+              org.fok.core.model.Account.AccountCryptoTokenProp.class, org.fok.core.model.Account.AccountCryptoTokenProp.Builder.class);
     }
 
-    public static final int VALUE_FIELD_NUMBER = 1;
-    private java.util.List<org.fok.core.model.Account.CryptoTokenValue> value_;
+    public static final int KEY_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString key_;
     /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
+     * <code>bytes key = 1;</code>
      */
-    public java.util.List<org.fok.core.model.Account.CryptoTokenValue> getValueList() {
+    public com.google.protobuf.ByteString getKey() {
+      return key_;
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString value_;
+    /**
+     * <code>bytes value = 2;</code>
+     */
+    public com.google.protobuf.ByteString getValue() {
       return value_;
-    }
-    /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-     */
-    public java.util.List<? extends org.fok.core.model.Account.CryptoTokenValueOrBuilder> 
-        getValueOrBuilderList() {
-      return value_;
-    }
-    /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-     */
-    public int getValueCount() {
-      return value_.size();
-    }
-    /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-     */
-    public org.fok.core.model.Account.CryptoTokenValue getValue(int index) {
-      return value_.get(index);
-    }
-    /**
-     * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-     */
-    public org.fok.core.model.Account.CryptoTokenValueOrBuilder getValueOrBuilder(
-        int index) {
-      return value_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5958,8 +5844,11 @@ public final class Account {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < value_.size(); i++) {
-        output.writeMessage(1, value_.get(i));
+      if (!key_.isEmpty()) {
+        output.writeBytes(1, key_);
+      }
+      if (!value_.isEmpty()) {
+        output.writeBytes(2, value_);
       }
     }
 
@@ -5968,9 +5857,13 @@ public final class Account {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < value_.size(); i++) {
+      if (!key_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, value_.get(i));
+          .computeBytesSize(1, key_);
+      }
+      if (!value_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, value_);
       }
       memoizedSize = size;
       return size;
@@ -5982,14 +5875,16 @@ public final class Account {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.fok.core.model.Account.CryptoToken)) {
+      if (!(obj instanceof org.fok.core.model.Account.AccountCryptoTokenProp)) {
         return super.equals(obj);
       }
-      org.fok.core.model.Account.CryptoToken other = (org.fok.core.model.Account.CryptoToken) obj;
+      org.fok.core.model.Account.AccountCryptoTokenProp other = (org.fok.core.model.Account.AccountCryptoTokenProp) obj;
 
       boolean result = true;
-      result = result && getValueList()
-          .equals(other.getValueList());
+      result = result && getKey()
+          .equals(other.getKey());
+      result = result && getValue()
+          .equals(other.getValue());
       return result;
     }
 
@@ -6000,67 +5895,67 @@ public final class Account {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getValueCount() > 0) {
-        hash = (37 * hash) + VALUE_FIELD_NUMBER;
-        hash = (53 * hash) + getValueList().hashCode();
-      }
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static org.fok.core.model.Account.CryptoToken parseFrom(
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.fok.core.model.Account.CryptoToken parseFrom(
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.fok.core.model.Account.CryptoToken parseFrom(byte[] data)
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.fok.core.model.Account.CryptoToken parseFrom(
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.fok.core.model.Account.CryptoToken parseFrom(java.io.InputStream input)
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.fok.core.model.Account.CryptoToken parseFrom(
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.fok.core.model.Account.CryptoToken parseDelimitedFrom(java.io.InputStream input)
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.fok.core.model.Account.CryptoToken parseDelimitedFrom(
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.fok.core.model.Account.CryptoToken parseFrom(
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.fok.core.model.Account.CryptoToken parseFrom(
+    public static org.fok.core.model.Account.AccountCryptoTokenProp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6072,7 +5967,7 @@ public final class Account {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.fok.core.model.Account.CryptoToken prototype) {
+    public static Builder newBuilder(org.fok.core.model.Account.AccountCryptoTokenProp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -6087,25 +5982,25 @@ public final class Account {
       return builder;
     }
     /**
-     * Protobuf type {@code org.fok.core.model.CryptoToken}
+     * Protobuf type {@code org.fok.core.model.AccountCryptoTokenProp}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.fok.core.model.CryptoToken)
-        org.fok.core.model.Account.CryptoTokenOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.fok.core.model.AccountCryptoTokenProp)
+        org.fok.core.model.Account.AccountCryptoTokenPropOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoToken_descriptor;
+        return org.fok.core.model.Account.internal_static_org_fok_core_model_AccountCryptoTokenProp_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoToken_fieldAccessorTable
+        return org.fok.core.model.Account.internal_static_org_fok_core_model_AccountCryptoTokenProp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.fok.core.model.Account.CryptoToken.class, org.fok.core.model.Account.CryptoToken.Builder.class);
+                org.fok.core.model.Account.AccountCryptoTokenProp.class, org.fok.core.model.Account.AccountCryptoTokenProp.Builder.class);
       }
 
-      // Construct using org.fok.core.model.Account.CryptoToken.newBuilder()
+      // Construct using org.fok.core.model.Account.AccountCryptoTokenProp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6118,49 +6013,38 @@ public final class Account {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getValueFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (valueBuilder_ == null) {
-          value_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          valueBuilder_.clear();
-        }
+        key_ = com.google.protobuf.ByteString.EMPTY;
+
+        value_ = com.google.protobuf.ByteString.EMPTY;
+
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoToken_descriptor;
+        return org.fok.core.model.Account.internal_static_org_fok_core_model_AccountCryptoTokenProp_descriptor;
       }
 
-      public org.fok.core.model.Account.CryptoToken getDefaultInstanceForType() {
-        return org.fok.core.model.Account.CryptoToken.getDefaultInstance();
+      public org.fok.core.model.Account.AccountCryptoTokenProp getDefaultInstanceForType() {
+        return org.fok.core.model.Account.AccountCryptoTokenProp.getDefaultInstance();
       }
 
-      public org.fok.core.model.Account.CryptoToken build() {
-        org.fok.core.model.Account.CryptoToken result = buildPartial();
+      public org.fok.core.model.Account.AccountCryptoTokenProp build() {
+        org.fok.core.model.Account.AccountCryptoTokenProp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public org.fok.core.model.Account.CryptoToken buildPartial() {
-        org.fok.core.model.Account.CryptoToken result = new org.fok.core.model.Account.CryptoToken(this);
-        int from_bitField0_ = bitField0_;
-        if (valueBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            value_ = java.util.Collections.unmodifiableList(value_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.value_ = value_;
-        } else {
-          result.value_ = valueBuilder_.build();
-        }
+      public org.fok.core.model.Account.AccountCryptoTokenProp buildPartial() {
+        org.fok.core.model.Account.AccountCryptoTokenProp result = new org.fok.core.model.Account.AccountCryptoTokenProp(this);
+        result.key_ = key_;
+        result.value_ = value_;
         onBuilt();
         return result;
       }
@@ -6192,41 +6076,21 @@ public final class Account {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.fok.core.model.Account.CryptoToken) {
-          return mergeFrom((org.fok.core.model.Account.CryptoToken)other);
+        if (other instanceof org.fok.core.model.Account.AccountCryptoTokenProp) {
+          return mergeFrom((org.fok.core.model.Account.AccountCryptoTokenProp)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.fok.core.model.Account.CryptoToken other) {
-        if (other == org.fok.core.model.Account.CryptoToken.getDefaultInstance()) return this;
-        if (valueBuilder_ == null) {
-          if (!other.value_.isEmpty()) {
-            if (value_.isEmpty()) {
-              value_ = other.value_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureValueIsMutable();
-              value_.addAll(other.value_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.value_.isEmpty()) {
-            if (valueBuilder_.isEmpty()) {
-              valueBuilder_.dispose();
-              valueBuilder_ = null;
-              value_ = other.value_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              valueBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getValueFieldBuilder() : null;
-            } else {
-              valueBuilder_.addAllMessages(other.value_);
-            }
-          }
+      public Builder mergeFrom(org.fok.core.model.Account.AccountCryptoTokenProp other) {
+        if (other == org.fok.core.model.Account.AccountCryptoTokenProp.getDefaultInstance()) return this;
+        if (other.getKey() != com.google.protobuf.ByteString.EMPTY) {
+          setKey(other.getKey());
+        }
+        if (other.getValue() != com.google.protobuf.ByteString.EMPTY) {
+          setValue(other.getValue());
         }
         onChanged();
         return this;
@@ -6240,11 +6104,11 @@ public final class Account {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.fok.core.model.Account.CryptoToken parsedMessage = null;
+        org.fok.core.model.Account.AccountCryptoTokenProp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.fok.core.model.Account.CryptoToken) e.getUnfinishedMessage();
+          parsedMessage = (org.fok.core.model.Account.AccountCryptoTokenProp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6253,246 +6117,63 @@ public final class Account {
         }
         return this;
       }
-      private int bitField0_;
 
-      private java.util.List<org.fok.core.model.Account.CryptoTokenValue> value_ =
-        java.util.Collections.emptyList();
-      private void ensureValueIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          value_ = new java.util.ArrayList<org.fok.core.model.Account.CryptoTokenValue>(value_);
-          bitField0_ |= 0x00000001;
-         }
+      private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes key = 1;</code>
+       */
+      public com.google.protobuf.ByteString getKey() {
+        return key_;
+      }
+      /**
+       * <code>bytes key = 1;</code>
+       */
+      public Builder setKey(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes key = 1;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
       }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.fok.core.model.Account.CryptoTokenValue, org.fok.core.model.Account.CryptoTokenValue.Builder, org.fok.core.model.Account.CryptoTokenValueOrBuilder> valueBuilder_;
-
+      private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
+       * <code>bytes value = 2;</code>
        */
-      public java.util.List<org.fok.core.model.Account.CryptoTokenValue> getValueList() {
-        if (valueBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(value_);
-        } else {
-          return valueBuilder_.getMessageList();
-        }
+      public com.google.protobuf.ByteString getValue() {
+        return value_;
       }
       /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
+       * <code>bytes value = 2;</code>
        */
-      public int getValueCount() {
-        if (valueBuilder_ == null) {
-          return value_.size();
-        } else {
-          return valueBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public org.fok.core.model.Account.CryptoTokenValue getValue(int index) {
-        if (valueBuilder_ == null) {
-          return value_.get(index);
-        } else {
-          return valueBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public Builder setValue(
-          int index, org.fok.core.model.Account.CryptoTokenValue value) {
-        if (valueBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValueIsMutable();
-          value_.set(index, value);
-          onChanged();
-        } else {
-          valueBuilder_.setMessage(index, value);
-        }
+      public Builder setValue(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public Builder setValue(
-          int index, org.fok.core.model.Account.CryptoTokenValue.Builder builderForValue) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          value_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          valueBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public Builder addValue(org.fok.core.model.Account.CryptoTokenValue value) {
-        if (valueBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValueIsMutable();
-          value_.add(value);
-          onChanged();
-        } else {
-          valueBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public Builder addValue(
-          int index, org.fok.core.model.Account.CryptoTokenValue value) {
-        if (valueBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValueIsMutable();
-          value_.add(index, value);
-          onChanged();
-        } else {
-          valueBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public Builder addValue(
-          org.fok.core.model.Account.CryptoTokenValue.Builder builderForValue) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          value_.add(builderForValue.build());
-          onChanged();
-        } else {
-          valueBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public Builder addValue(
-          int index, org.fok.core.model.Account.CryptoTokenValue.Builder builderForValue) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          value_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          valueBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public Builder addAllValue(
-          java.lang.Iterable<? extends org.fok.core.model.Account.CryptoTokenValue> values) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, value_);
-          onChanged();
-        } else {
-          valueBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
+       * <code>bytes value = 2;</code>
        */
       public Builder clearValue() {
-        if (valueBuilder_ == null) {
-          value_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          valueBuilder_.clear();
-        }
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
         return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public Builder removeValue(int index) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          value_.remove(index);
-          onChanged();
-        } else {
-          valueBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public org.fok.core.model.Account.CryptoTokenValue.Builder getValueBuilder(
-          int index) {
-        return getValueFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public org.fok.core.model.Account.CryptoTokenValueOrBuilder getValueOrBuilder(
-          int index) {
-        if (valueBuilder_ == null) {
-          return value_.get(index);  } else {
-          return valueBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public java.util.List<? extends org.fok.core.model.Account.CryptoTokenValueOrBuilder> 
-           getValueOrBuilderList() {
-        if (valueBuilder_ != null) {
-          return valueBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(value_);
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public org.fok.core.model.Account.CryptoTokenValue.Builder addValueBuilder() {
-        return getValueFieldBuilder().addBuilder(
-            org.fok.core.model.Account.CryptoTokenValue.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public org.fok.core.model.Account.CryptoTokenValue.Builder addValueBuilder(
-          int index) {
-        return getValueFieldBuilder().addBuilder(
-            index, org.fok.core.model.Account.CryptoTokenValue.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .org.fok.core.model.CryptoTokenValue value = 1;</code>
-       */
-      public java.util.List<org.fok.core.model.Account.CryptoTokenValue.Builder> 
-           getValueBuilderList() {
-        return getValueFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.fok.core.model.Account.CryptoTokenValue, org.fok.core.model.Account.CryptoTokenValue.Builder, org.fok.core.model.Account.CryptoTokenValueOrBuilder> 
-          getValueFieldBuilder() {
-        if (valueBuilder_ == null) {
-          valueBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.fok.core.model.Account.CryptoTokenValue, org.fok.core.model.Account.CryptoTokenValue.Builder, org.fok.core.model.Account.CryptoTokenValueOrBuilder>(
-                  value_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
-          value_ = null;
-        }
-        return valueBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6505,46 +6186,46 @@ public final class Account {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:org.fok.core.model.CryptoToken)
+      // @@protoc_insertion_point(builder_scope:org.fok.core.model.AccountCryptoTokenProp)
     }
 
-    // @@protoc_insertion_point(class_scope:org.fok.core.model.CryptoToken)
-    private static final org.fok.core.model.Account.CryptoToken DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.fok.core.model.AccountCryptoTokenProp)
+    private static final org.fok.core.model.Account.AccountCryptoTokenProp DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.fok.core.model.Account.CryptoToken();
+      DEFAULT_INSTANCE = new org.fok.core.model.Account.AccountCryptoTokenProp();
     }
 
-    public static org.fok.core.model.Account.CryptoToken getDefaultInstance() {
+    public static org.fok.core.model.Account.AccountCryptoTokenProp getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CryptoToken>
-        PARSER = new com.google.protobuf.AbstractParser<CryptoToken>() {
-      public CryptoToken parsePartialFrom(
+    private static final com.google.protobuf.Parser<AccountCryptoTokenProp>
+        PARSER = new com.google.protobuf.AbstractParser<AccountCryptoTokenProp>() {
+      public AccountCryptoTokenProp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CryptoToken(input, extensionRegistry);
+          return new AccountCryptoTokenProp(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CryptoToken> parser() {
+    public static com.google.protobuf.Parser<AccountCryptoTokenProp> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CryptoToken> getParserForType() {
+    public com.google.protobuf.Parser<AccountCryptoTokenProp> getParserForType() {
       return PARSER;
     }
 
-    public org.fok.core.model.Account.CryptoToken getDefaultInstanceForType() {
+    public org.fok.core.model.Account.AccountCryptoTokenProp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CryptoTokenValueOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.fok.core.model.CryptoTokenValue)
+  public interface CryptoTokenOriginValueOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.fok.core.model.CryptoTokenOriginValue)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6553,46 +6234,56 @@ public final class Account {
     long getTotal();
 
     /**
-     * <code>int64 current = 2;</code>
+     * <code>bytes symbol = 2;</code>
      */
-    long getCurrent();
+    com.google.protobuf.ByteString getSymbol();
 
     /**
-     * <code>int64 timestamp = 3;</code>
-     */
-    long getTimestamp();
-
-    /**
-     * <code>bytes owner = 4;</code>
+     * <code>bytes owner = 3;</code>
      */
     com.google.protobuf.ByteString getOwner();
 
     /**
-     * <pre>
-     * repeated CryptoTokenValueHistory history = 5;
-     * </pre>
-     *
-     * <code>bytes symbol = 5;</code>
+     * <code>int64 timestamp = 4;</code>
      */
-    com.google.protobuf.ByteString getSymbol();
+    long getTimestamp();
+
+    /**
+     * <code>int64 current = 5;</code>
+     */
+    long getCurrent();
+
+    /**
+     * <code>repeated bytes txHash = 6;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getTxHashList();
+    /**
+     * <code>repeated bytes txHash = 6;</code>
+     */
+    int getTxHashCount();
+    /**
+     * <code>repeated bytes txHash = 6;</code>
+     */
+    com.google.protobuf.ByteString getTxHash(int index);
   }
   /**
-   * Protobuf type {@code org.fok.core.model.CryptoTokenValue}
+   * Protobuf type {@code org.fok.core.model.CryptoTokenOriginValue}
    */
-  public  static final class CryptoTokenValue extends
+  public  static final class CryptoTokenOriginValue extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:org.fok.core.model.CryptoTokenValue)
-      CryptoTokenValueOrBuilder {
-    // Use CryptoTokenValue.newBuilder() to construct.
-    private CryptoTokenValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:org.fok.core.model.CryptoTokenOriginValue)
+      CryptoTokenOriginValueOrBuilder {
+    // Use CryptoTokenOriginValue.newBuilder() to construct.
+    private CryptoTokenOriginValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CryptoTokenValue() {
+    private CryptoTokenOriginValue() {
       total_ = 0L;
-      current_ = 0L;
-      timestamp_ = 0L;
-      owner_ = com.google.protobuf.ByteString.EMPTY;
       symbol_ = com.google.protobuf.ByteString.EMPTY;
+      owner_ = com.google.protobuf.ByteString.EMPTY;
+      timestamp_ = 0L;
+      current_ = 0L;
+      txHash_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6600,7 +6291,7 @@ public final class Account {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private CryptoTokenValue(
+    private CryptoTokenOriginValue(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6625,24 +6316,32 @@ public final class Account {
               total_ = input.readInt64();
               break;
             }
-            case 16: {
+            case 18: {
 
-              current_ = input.readInt64();
+              symbol_ = input.readBytes();
               break;
             }
-            case 24: {
-
-              timestamp_ = input.readInt64();
-              break;
-            }
-            case 34: {
+            case 26: {
 
               owner_ = input.readBytes();
               break;
             }
-            case 42: {
+            case 32: {
 
-              symbol_ = input.readBytes();
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              current_ = input.readInt64();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                txHash_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              txHash_.add(input.readBytes());
               break;
             }
           }
@@ -6653,21 +6352,25 @@ public final class Account {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          txHash_ = java.util.Collections.unmodifiableList(txHash_);
+        }
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenValue_descriptor;
+      return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginValue_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenValue_fieldAccessorTable
+      return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginValue_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.fok.core.model.Account.CryptoTokenValue.class, org.fok.core.model.Account.CryptoTokenValue.Builder.class);
+              org.fok.core.model.Account.CryptoTokenOriginValue.class, org.fok.core.model.Account.CryptoTokenOriginValue.Builder.class);
     }
 
+    private int bitField0_;
     public static final int TOTAL_FIELD_NUMBER = 1;
     private long total_;
     /**
@@ -6677,44 +6380,62 @@ public final class Account {
       return total_;
     }
 
-    public static final int CURRENT_FIELD_NUMBER = 2;
-    private long current_;
+    public static final int SYMBOL_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString symbol_;
     /**
-     * <code>int64 current = 2;</code>
+     * <code>bytes symbol = 2;</code>
      */
-    public long getCurrent() {
-      return current_;
+    public com.google.protobuf.ByteString getSymbol() {
+      return symbol_;
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 3;
-    private long timestamp_;
-    /**
-     * <code>int64 timestamp = 3;</code>
-     */
-    public long getTimestamp() {
-      return timestamp_;
-    }
-
-    public static final int OWNER_FIELD_NUMBER = 4;
+    public static final int OWNER_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString owner_;
     /**
-     * <code>bytes owner = 4;</code>
+     * <code>bytes owner = 3;</code>
      */
     public com.google.protobuf.ByteString getOwner() {
       return owner_;
     }
 
-    public static final int SYMBOL_FIELD_NUMBER = 5;
-    private com.google.protobuf.ByteString symbol_;
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private long timestamp_;
     /**
-     * <pre>
-     * repeated CryptoTokenValueHistory history = 5;
-     * </pre>
-     *
-     * <code>bytes symbol = 5;</code>
+     * <code>int64 timestamp = 4;</code>
      */
-    public com.google.protobuf.ByteString getSymbol() {
-      return symbol_;
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int CURRENT_FIELD_NUMBER = 5;
+    private long current_;
+    /**
+     * <code>int64 current = 5;</code>
+     */
+    public long getCurrent() {
+      return current_;
+    }
+
+    public static final int TXHASH_FIELD_NUMBER = 6;
+    private java.util.List<com.google.protobuf.ByteString> txHash_;
+    /**
+     * <code>repeated bytes txHash = 6;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getTxHashList() {
+      return txHash_;
+    }
+    /**
+     * <code>repeated bytes txHash = 6;</code>
+     */
+    public int getTxHashCount() {
+      return txHash_.size();
+    }
+    /**
+     * <code>repeated bytes txHash = 6;</code>
+     */
+    public com.google.protobuf.ByteString getTxHash(int index) {
+      return txHash_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6732,17 +6453,20 @@ public final class Account {
       if (total_ != 0L) {
         output.writeInt64(1, total_);
       }
-      if (current_ != 0L) {
-        output.writeInt64(2, current_);
-      }
-      if (timestamp_ != 0L) {
-        output.writeInt64(3, timestamp_);
+      if (!symbol_.isEmpty()) {
+        output.writeBytes(2, symbol_);
       }
       if (!owner_.isEmpty()) {
-        output.writeBytes(4, owner_);
+        output.writeBytes(3, owner_);
       }
-      if (!symbol_.isEmpty()) {
-        output.writeBytes(5, symbol_);
+      if (timestamp_ != 0L) {
+        output.writeInt64(4, timestamp_);
+      }
+      if (current_ != 0L) {
+        output.writeInt64(5, current_);
+      }
+      for (int i = 0; i < txHash_.size(); i++) {
+        output.writeBytes(6, txHash_.get(i));
       }
     }
 
@@ -6755,21 +6479,30 @@ public final class Account {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, total_);
       }
-      if (current_ != 0L) {
+      if (!symbol_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, current_);
-      }
-      if (timestamp_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, timestamp_);
+          .computeBytesSize(2, symbol_);
       }
       if (!owner_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, owner_);
+          .computeBytesSize(3, owner_);
       }
-      if (!symbol_.isEmpty()) {
+      if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, symbol_);
+          .computeInt64Size(4, timestamp_);
+      }
+      if (current_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, current_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < txHash_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(txHash_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getTxHashList().size();
       }
       memoizedSize = size;
       return size;
@@ -6781,22 +6514,24 @@ public final class Account {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.fok.core.model.Account.CryptoTokenValue)) {
+      if (!(obj instanceof org.fok.core.model.Account.CryptoTokenOriginValue)) {
         return super.equals(obj);
       }
-      org.fok.core.model.Account.CryptoTokenValue other = (org.fok.core.model.Account.CryptoTokenValue) obj;
+      org.fok.core.model.Account.CryptoTokenOriginValue other = (org.fok.core.model.Account.CryptoTokenOriginValue) obj;
 
       boolean result = true;
       result = result && (getTotal()
           == other.getTotal());
-      result = result && (getCurrent()
-          == other.getCurrent());
-      result = result && (getTimestamp()
-          == other.getTimestamp());
-      result = result && getOwner()
-          .equals(other.getOwner());
       result = result && getSymbol()
           .equals(other.getSymbol());
+      result = result && getOwner()
+          .equals(other.getOwner());
+      result = result && (getTimestamp()
+          == other.getTimestamp());
+      result = result && (getCurrent()
+          == other.getCurrent());
+      result = result && getTxHashList()
+          .equals(other.getTxHashList());
       return result;
     }
 
@@ -6810,73 +6545,77 @@ public final class Account {
       hash = (37 * hash) + TOTAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTotal());
-      hash = (37 * hash) + CURRENT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCurrent());
+      hash = (37 * hash) + SYMBOL_FIELD_NUMBER;
+      hash = (53 * hash) + getSymbol().hashCode();
+      hash = (37 * hash) + OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getOwner().hashCode();
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
-      hash = (37 * hash) + OWNER_FIELD_NUMBER;
-      hash = (53 * hash) + getOwner().hashCode();
-      hash = (37 * hash) + SYMBOL_FIELD_NUMBER;
-      hash = (53 * hash) + getSymbol().hashCode();
+      hash = (37 * hash) + CURRENT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCurrent());
+      if (getTxHashCount() > 0) {
+        hash = (37 * hash) + TXHASH_FIELD_NUMBER;
+        hash = (53 * hash) + getTxHashList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static org.fok.core.model.Account.CryptoTokenValue parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.fok.core.model.Account.CryptoTokenValue parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.fok.core.model.Account.CryptoTokenValue parseFrom(byte[] data)
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.fok.core.model.Account.CryptoTokenValue parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.fok.core.model.Account.CryptoTokenValue parseFrom(java.io.InputStream input)
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.fok.core.model.Account.CryptoTokenValue parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.fok.core.model.Account.CryptoTokenValue parseDelimitedFrom(java.io.InputStream input)
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.fok.core.model.Account.CryptoTokenValue parseDelimitedFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.fok.core.model.Account.CryptoTokenValue parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.fok.core.model.Account.CryptoTokenValue parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginValue parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6888,7 +6627,7 @@ public final class Account {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.fok.core.model.Account.CryptoTokenValue prototype) {
+    public static Builder newBuilder(org.fok.core.model.Account.CryptoTokenOriginValue prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -6903,25 +6642,25 @@ public final class Account {
       return builder;
     }
     /**
-     * Protobuf type {@code org.fok.core.model.CryptoTokenValue}
+     * Protobuf type {@code org.fok.core.model.CryptoTokenOriginValue}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.fok.core.model.CryptoTokenValue)
-        org.fok.core.model.Account.CryptoTokenValueOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.fok.core.model.CryptoTokenOriginValue)
+        org.fok.core.model.Account.CryptoTokenOriginValueOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenValue_descriptor;
+        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginValue_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenValue_fieldAccessorTable
+        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginValue_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.fok.core.model.Account.CryptoTokenValue.class, org.fok.core.model.Account.CryptoTokenValue.Builder.class);
+                org.fok.core.model.Account.CryptoTokenOriginValue.class, org.fok.core.model.Account.CryptoTokenOriginValue.Builder.class);
       }
 
-      // Construct using org.fok.core.model.Account.CryptoTokenValue.newBuilder()
+      // Construct using org.fok.core.model.Account.CryptoTokenOriginValue.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6940,41 +6679,51 @@ public final class Account {
         super.clear();
         total_ = 0L;
 
-        current_ = 0L;
-
-        timestamp_ = 0L;
+        symbol_ = com.google.protobuf.ByteString.EMPTY;
 
         owner_ = com.google.protobuf.ByteString.EMPTY;
 
-        symbol_ = com.google.protobuf.ByteString.EMPTY;
+        timestamp_ = 0L;
 
+        current_ = 0L;
+
+        txHash_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenValue_descriptor;
+        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginValue_descriptor;
       }
 
-      public org.fok.core.model.Account.CryptoTokenValue getDefaultInstanceForType() {
-        return org.fok.core.model.Account.CryptoTokenValue.getDefaultInstance();
+      public org.fok.core.model.Account.CryptoTokenOriginValue getDefaultInstanceForType() {
+        return org.fok.core.model.Account.CryptoTokenOriginValue.getDefaultInstance();
       }
 
-      public org.fok.core.model.Account.CryptoTokenValue build() {
-        org.fok.core.model.Account.CryptoTokenValue result = buildPartial();
+      public org.fok.core.model.Account.CryptoTokenOriginValue build() {
+        org.fok.core.model.Account.CryptoTokenOriginValue result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public org.fok.core.model.Account.CryptoTokenValue buildPartial() {
-        org.fok.core.model.Account.CryptoTokenValue result = new org.fok.core.model.Account.CryptoTokenValue(this);
+      public org.fok.core.model.Account.CryptoTokenOriginValue buildPartial() {
+        org.fok.core.model.Account.CryptoTokenOriginValue result = new org.fok.core.model.Account.CryptoTokenOriginValue(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.total_ = total_;
-        result.current_ = current_;
-        result.timestamp_ = timestamp_;
-        result.owner_ = owner_;
         result.symbol_ = symbol_;
+        result.owner_ = owner_;
+        result.timestamp_ = timestamp_;
+        result.current_ = current_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          txHash_ = java.util.Collections.unmodifiableList(txHash_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.txHash_ = txHash_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -7006,30 +6755,40 @@ public final class Account {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.fok.core.model.Account.CryptoTokenValue) {
-          return mergeFrom((org.fok.core.model.Account.CryptoTokenValue)other);
+        if (other instanceof org.fok.core.model.Account.CryptoTokenOriginValue) {
+          return mergeFrom((org.fok.core.model.Account.CryptoTokenOriginValue)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.fok.core.model.Account.CryptoTokenValue other) {
-        if (other == org.fok.core.model.Account.CryptoTokenValue.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.fok.core.model.Account.CryptoTokenOriginValue other) {
+        if (other == org.fok.core.model.Account.CryptoTokenOriginValue.getDefaultInstance()) return this;
         if (other.getTotal() != 0L) {
           setTotal(other.getTotal());
         }
-        if (other.getCurrent() != 0L) {
-          setCurrent(other.getCurrent());
-        }
-        if (other.getTimestamp() != 0L) {
-          setTimestamp(other.getTimestamp());
+        if (other.getSymbol() != com.google.protobuf.ByteString.EMPTY) {
+          setSymbol(other.getSymbol());
         }
         if (other.getOwner() != com.google.protobuf.ByteString.EMPTY) {
           setOwner(other.getOwner());
         }
-        if (other.getSymbol() != com.google.protobuf.ByteString.EMPTY) {
-          setSymbol(other.getSymbol());
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getCurrent() != 0L) {
+          setCurrent(other.getCurrent());
+        }
+        if (!other.txHash_.isEmpty()) {
+          if (txHash_.isEmpty()) {
+            txHash_ = other.txHash_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureTxHashIsMutable();
+            txHash_.addAll(other.txHash_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -7043,11 +6802,11 @@ public final class Account {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.fok.core.model.Account.CryptoTokenValue parsedMessage = null;
+        org.fok.core.model.Account.CryptoTokenOriginValue parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.fok.core.model.Account.CryptoTokenValue) e.getUnfinishedMessage();
+          parsedMessage = (org.fok.core.model.Account.CryptoTokenOriginValue) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7056,6 +6815,7 @@ public final class Account {
         }
         return this;
       }
+      private int bitField0_;
 
       private long total_ ;
       /**
@@ -7083,104 +6843,15 @@ public final class Account {
         return this;
       }
 
-      private long current_ ;
-      /**
-       * <code>int64 current = 2;</code>
-       */
-      public long getCurrent() {
-        return current_;
-      }
-      /**
-       * <code>int64 current = 2;</code>
-       */
-      public Builder setCurrent(long value) {
-        
-        current_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 current = 2;</code>
-       */
-      public Builder clearCurrent() {
-        
-        current_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long timestamp_ ;
-      /**
-       * <code>int64 timestamp = 3;</code>
-       */
-      public long getTimestamp() {
-        return timestamp_;
-      }
-      /**
-       * <code>int64 timestamp = 3;</code>
-       */
-      public Builder setTimestamp(long value) {
-        
-        timestamp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 timestamp = 3;</code>
-       */
-      public Builder clearTimestamp() {
-        
-        timestamp_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString owner_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes owner = 4;</code>
-       */
-      public com.google.protobuf.ByteString getOwner() {
-        return owner_;
-      }
-      /**
-       * <code>bytes owner = 4;</code>
-       */
-      public Builder setOwner(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        owner_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bytes owner = 4;</code>
-       */
-      public Builder clearOwner() {
-        
-        owner_ = getDefaultInstance().getOwner();
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.ByteString symbol_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <pre>
-       * repeated CryptoTokenValueHistory history = 5;
-       * </pre>
-       *
-       * <code>bytes symbol = 5;</code>
+       * <code>bytes symbol = 2;</code>
        */
       public com.google.protobuf.ByteString getSymbol() {
         return symbol_;
       }
       /**
-       * <pre>
-       * repeated CryptoTokenValueHistory history = 5;
-       * </pre>
-       *
-       * <code>bytes symbol = 5;</code>
+       * <code>bytes symbol = 2;</code>
        */
       public Builder setSymbol(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -7192,15 +6863,164 @@ public final class Account {
         return this;
       }
       /**
-       * <pre>
-       * repeated CryptoTokenValueHistory history = 5;
-       * </pre>
-       *
-       * <code>bytes symbol = 5;</code>
+       * <code>bytes symbol = 2;</code>
        */
       public Builder clearSymbol() {
         
         symbol_ = getDefaultInstance().getSymbol();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString owner_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes owner = 3;</code>
+       */
+      public com.google.protobuf.ByteString getOwner() {
+        return owner_;
+      }
+      /**
+       * <code>bytes owner = 3;</code>
+       */
+      public Builder setOwner(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        owner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes owner = 3;</code>
+       */
+      public Builder clearOwner() {
+        
+        owner_ = getDefaultInstance().getOwner();
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 timestamp = 4;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 timestamp = 4;</code>
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 timestamp = 4;</code>
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long current_ ;
+      /**
+       * <code>int64 current = 5;</code>
+       */
+      public long getCurrent() {
+        return current_;
+      }
+      /**
+       * <code>int64 current = 5;</code>
+       */
+      public Builder setCurrent(long value) {
+        
+        current_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 current = 5;</code>
+       */
+      public Builder clearCurrent() {
+        
+        current_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.protobuf.ByteString> txHash_ = java.util.Collections.emptyList();
+      private void ensureTxHashIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          txHash_ = new java.util.ArrayList<com.google.protobuf.ByteString>(txHash_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated bytes txHash = 6;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getTxHashList() {
+        return java.util.Collections.unmodifiableList(txHash_);
+      }
+      /**
+       * <code>repeated bytes txHash = 6;</code>
+       */
+      public int getTxHashCount() {
+        return txHash_.size();
+      }
+      /**
+       * <code>repeated bytes txHash = 6;</code>
+       */
+      public com.google.protobuf.ByteString getTxHash(int index) {
+        return txHash_.get(index);
+      }
+      /**
+       * <code>repeated bytes txHash = 6;</code>
+       */
+      public Builder setTxHash(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTxHashIsMutable();
+        txHash_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes txHash = 6;</code>
+       */
+      public Builder addTxHash(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTxHashIsMutable();
+        txHash_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes txHash = 6;</code>
+       */
+      public Builder addAllTxHash(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureTxHashIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, txHash_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes txHash = 6;</code>
+       */
+      public Builder clearTxHash() {
+        txHash_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -7215,85 +7035,149 @@ public final class Account {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:org.fok.core.model.CryptoTokenValue)
+      // @@protoc_insertion_point(builder_scope:org.fok.core.model.CryptoTokenOriginValue)
     }
 
-    // @@protoc_insertion_point(class_scope:org.fok.core.model.CryptoTokenValue)
-    private static final org.fok.core.model.Account.CryptoTokenValue DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.fok.core.model.CryptoTokenOriginValue)
+    private static final org.fok.core.model.Account.CryptoTokenOriginValue DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.fok.core.model.Account.CryptoTokenValue();
+      DEFAULT_INSTANCE = new org.fok.core.model.Account.CryptoTokenOriginValue();
     }
 
-    public static org.fok.core.model.Account.CryptoTokenValue getDefaultInstance() {
+    public static org.fok.core.model.Account.CryptoTokenOriginValue getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CryptoTokenValue>
-        PARSER = new com.google.protobuf.AbstractParser<CryptoTokenValue>() {
-      public CryptoTokenValue parsePartialFrom(
+    private static final com.google.protobuf.Parser<CryptoTokenOriginValue>
+        PARSER = new com.google.protobuf.AbstractParser<CryptoTokenOriginValue>() {
+      public CryptoTokenOriginValue parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CryptoTokenValue(input, extensionRegistry);
+          return new CryptoTokenOriginValue(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CryptoTokenValue> parser() {
+    public static com.google.protobuf.Parser<CryptoTokenOriginValue> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CryptoTokenValue> getParserForType() {
+    public com.google.protobuf.Parser<CryptoTokenOriginValue> getParserForType() {
       return PARSER;
     }
 
-    public org.fok.core.model.Account.CryptoTokenValue getDefaultInstanceForType() {
+    public org.fok.core.model.Account.CryptoTokenOriginValue getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface TokenOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:org.fok.core.model.Token)
+  public interface CryptoTokenOriginTransactionValueOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.fok.core.model.CryptoTokenOriginTransactionValue)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>string txHash = 1;</code>
      */
-    java.util.List<org.fok.core.model.Account.TokenValue> 
-        getValueList();
+    java.lang.String getTxHash();
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>string txHash = 1;</code>
      */
-    org.fok.core.model.Account.TokenValue getValue(int index);
+    com.google.protobuf.ByteString
+        getTxHashBytes();
+
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>int32 timestamp = 2;</code>
      */
-    int getValueCount();
+    int getTimestamp();
+
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>int32 startIndex = 3;</code>
      */
-    java.util.List<? extends org.fok.core.model.Account.TokenValueOrBuilder> 
-        getValueOrBuilderList();
+    int getStartIndex();
+
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>int32 endIndex = 4;</code>
      */
-    org.fok.core.model.Account.TokenValueOrBuilder getValueOrBuilder(
-        int index);
+    int getEndIndex();
+
+    /**
+     * <code>repeated string name = 5;</code>
+     */
+    java.util.List<java.lang.String>
+        getNameList();
+    /**
+     * <code>repeated string name = 5;</code>
+     */
+    int getNameCount();
+    /**
+     * <code>repeated string name = 5;</code>
+     */
+    java.lang.String getName(int index);
+    /**
+     * <code>repeated string name = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes(int index);
+
+    /**
+     * <code>repeated string code = 6;</code>
+     */
+    java.util.List<java.lang.String>
+        getCodeList();
+    /**
+     * <code>repeated string code = 6;</code>
+     */
+    int getCodeCount();
+    /**
+     * <code>repeated string code = 6;</code>
+     */
+    java.lang.String getCode(int index);
+    /**
+     * <code>repeated string code = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes(int index);
+
+    /**
+     * <code>repeated string prop = 7;</code>
+     */
+    java.util.List<java.lang.String>
+        getPropList();
+    /**
+     * <code>repeated string prop = 7;</code>
+     */
+    int getPropCount();
+    /**
+     * <code>repeated string prop = 7;</code>
+     */
+    java.lang.String getProp(int index);
+    /**
+     * <code>repeated string prop = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getPropBytes(int index);
   }
   /**
-   * Protobuf type {@code org.fok.core.model.Token}
+   * Protobuf type {@code org.fok.core.model.CryptoTokenOriginTransactionValue}
    */
-  public  static final class Token extends
+  public  static final class CryptoTokenOriginTransactionValue extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:org.fok.core.model.Token)
-      TokenOrBuilder {
-    // Use Token.newBuilder() to construct.
-    private Token(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:org.fok.core.model.CryptoTokenOriginTransactionValue)
+      CryptoTokenOriginTransactionValueOrBuilder {
+    // Use CryptoTokenOriginTransactionValue.newBuilder() to construct.
+    private CryptoTokenOriginTransactionValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Token() {
-      value_ = java.util.Collections.emptyList();
+    private CryptoTokenOriginTransactionValue() {
+      txHash_ = "";
+      timestamp_ = 0;
+      startIndex_ = 0;
+      endIndex_ = 0;
+      name_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      code_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      prop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -7301,7 +7185,7 @@ public final class Account {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private Token(
+    private CryptoTokenOriginTransactionValue(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7322,12 +7206,51 @@ public final class Account {
               break;
             }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                value_ = new java.util.ArrayList<org.fok.core.model.Account.TokenValue>();
-                mutable_bitField0_ |= 0x00000001;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              txHash_ = s;
+              break;
+            }
+            case 16: {
+
+              timestamp_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              startIndex_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              endIndex_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                name_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
               }
-              value_.add(
-                  input.readMessage(org.fok.core.model.Account.TokenValue.parser(), extensionRegistry));
+              name_.add(s);
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                code_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              code_.add(s);
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                prop_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              prop_.add(s);
               break;
             }
           }
@@ -7338,57 +7261,177 @@ public final class Account {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          value_ = java.util.Collections.unmodifiableList(value_);
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          name_ = name_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          code_ = code_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          prop_ = prop_.getUnmodifiableView();
         }
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.fok.core.model.Account.internal_static_org_fok_core_model_Token_descriptor;
+      return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.fok.core.model.Account.internal_static_org_fok_core_model_Token_fieldAccessorTable
+      return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.fok.core.model.Account.Token.class, org.fok.core.model.Account.Token.Builder.class);
+              org.fok.core.model.Account.CryptoTokenOriginTransactionValue.class, org.fok.core.model.Account.CryptoTokenOriginTransactionValue.Builder.class);
     }
 
-    public static final int VALUE_FIELD_NUMBER = 1;
-    private java.util.List<org.fok.core.model.Account.TokenValue> value_;
+    private int bitField0_;
+    public static final int TXHASH_FIELD_NUMBER = 1;
+    private volatile java.lang.Object txHash_;
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>string txHash = 1;</code>
      */
-    public java.util.List<org.fok.core.model.Account.TokenValue> getValueList() {
-      return value_;
+    public java.lang.String getTxHash() {
+      java.lang.Object ref = txHash_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        txHash_ = s;
+        return s;
+      }
     }
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>string txHash = 1;</code>
      */
-    public java.util.List<? extends org.fok.core.model.Account.TokenValueOrBuilder> 
-        getValueOrBuilderList() {
-      return value_;
+    public com.google.protobuf.ByteString
+        getTxHashBytes() {
+      java.lang.Object ref = txHash_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        txHash_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 2;
+    private int timestamp_;
+    /**
+     * <code>int32 timestamp = 2;</code>
+     */
+    public int getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int STARTINDEX_FIELD_NUMBER = 3;
+    private int startIndex_;
+    /**
+     * <code>int32 startIndex = 3;</code>
+     */
+    public int getStartIndex() {
+      return startIndex_;
+    }
+
+    public static final int ENDINDEX_FIELD_NUMBER = 4;
+    private int endIndex_;
+    /**
+     * <code>int32 endIndex = 4;</code>
+     */
+    public int getEndIndex() {
+      return endIndex_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList name_;
+    /**
+     * <code>repeated string name = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getNameList() {
+      return name_;
     }
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>repeated string name = 5;</code>
      */
-    public int getValueCount() {
-      return value_.size();
+    public int getNameCount() {
+      return name_.size();
     }
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>repeated string name = 5;</code>
      */
-    public org.fok.core.model.Account.TokenValue getValue(int index) {
-      return value_.get(index);
+    public java.lang.String getName(int index) {
+      return name_.get(index);
     }
     /**
-     * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+     * <code>repeated string name = 5;</code>
      */
-    public org.fok.core.model.Account.TokenValueOrBuilder getValueOrBuilder(
-        int index) {
-      return value_.get(index);
+    public com.google.protobuf.ByteString
+        getNameBytes(int index) {
+      return name_.getByteString(index);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList code_;
+    /**
+     * <code>repeated string code = 6;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCodeList() {
+      return code_;
+    }
+    /**
+     * <code>repeated string code = 6;</code>
+     */
+    public int getCodeCount() {
+      return code_.size();
+    }
+    /**
+     * <code>repeated string code = 6;</code>
+     */
+    public java.lang.String getCode(int index) {
+      return code_.get(index);
+    }
+    /**
+     * <code>repeated string code = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCodeBytes(int index) {
+      return code_.getByteString(index);
+    }
+
+    public static final int PROP_FIELD_NUMBER = 7;
+    private com.google.protobuf.LazyStringList prop_;
+    /**
+     * <code>repeated string prop = 7;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPropList() {
+      return prop_;
+    }
+    /**
+     * <code>repeated string prop = 7;</code>
+     */
+    public int getPropCount() {
+      return prop_.size();
+    }
+    /**
+     * <code>repeated string prop = 7;</code>
+     */
+    public java.lang.String getProp(int index) {
+      return prop_.get(index);
+    }
+    /**
+     * <code>repeated string prop = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPropBytes(int index) {
+      return prop_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7403,8 +7446,26 @@ public final class Account {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < value_.size(); i++) {
-        output.writeMessage(1, value_.get(i));
+      if (!getTxHashBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, txHash_);
+      }
+      if (timestamp_ != 0) {
+        output.writeInt32(2, timestamp_);
+      }
+      if (startIndex_ != 0) {
+        output.writeInt32(3, startIndex_);
+      }
+      if (endIndex_ != 0) {
+        output.writeInt32(4, endIndex_);
+      }
+      for (int i = 0; i < name_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_.getRaw(i));
+      }
+      for (int i = 0; i < code_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, code_.getRaw(i));
+      }
+      for (int i = 0; i < prop_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, prop_.getRaw(i));
       }
     }
 
@@ -7413,9 +7474,44 @@ public final class Account {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < value_.size(); i++) {
+      if (!getTxHashBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, txHash_);
+      }
+      if (timestamp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, value_.get(i));
+          .computeInt32Size(2, timestamp_);
+      }
+      if (startIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, startIndex_);
+      }
+      if (endIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, endIndex_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < name_.size(); i++) {
+          dataSize += computeStringSizeNoTag(name_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getNameList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < code_.size(); i++) {
+          dataSize += computeStringSizeNoTag(code_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCodeList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < prop_.size(); i++) {
+          dataSize += computeStringSizeNoTag(prop_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPropList().size();
       }
       memoizedSize = size;
       return size;
@@ -7427,14 +7523,26 @@ public final class Account {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.fok.core.model.Account.Token)) {
+      if (!(obj instanceof org.fok.core.model.Account.CryptoTokenOriginTransactionValue)) {
         return super.equals(obj);
       }
-      org.fok.core.model.Account.Token other = (org.fok.core.model.Account.Token) obj;
+      org.fok.core.model.Account.CryptoTokenOriginTransactionValue other = (org.fok.core.model.Account.CryptoTokenOriginTransactionValue) obj;
 
       boolean result = true;
-      result = result && getValueList()
-          .equals(other.getValueList());
+      result = result && getTxHash()
+          .equals(other.getTxHash());
+      result = result && (getTimestamp()
+          == other.getTimestamp());
+      result = result && (getStartIndex()
+          == other.getStartIndex());
+      result = result && (getEndIndex()
+          == other.getEndIndex());
+      result = result && getNameList()
+          .equals(other.getNameList());
+      result = result && getCodeList()
+          .equals(other.getCodeList());
+      result = result && getPropList()
+          .equals(other.getPropList());
       return result;
     }
 
@@ -7445,67 +7553,83 @@ public final class Account {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getValueCount() > 0) {
-        hash = (37 * hash) + VALUE_FIELD_NUMBER;
-        hash = (53 * hash) + getValueList().hashCode();
+      hash = (37 * hash) + TXHASH_FIELD_NUMBER;
+      hash = (53 * hash) + getTxHash().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getTimestamp();
+      hash = (37 * hash) + STARTINDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getStartIndex();
+      hash = (37 * hash) + ENDINDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getEndIndex();
+      if (getNameCount() > 0) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getNameList().hashCode();
+      }
+      if (getCodeCount() > 0) {
+        hash = (37 * hash) + CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getCodeList().hashCode();
+      }
+      if (getPropCount() > 0) {
+        hash = (37 * hash) + PROP_FIELD_NUMBER;
+        hash = (53 * hash) + getPropList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static org.fok.core.model.Account.Token parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.fok.core.model.Account.Token parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.fok.core.model.Account.Token parseFrom(byte[] data)
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.fok.core.model.Account.Token parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.fok.core.model.Account.Token parseFrom(java.io.InputStream input)
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.fok.core.model.Account.Token parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.fok.core.model.Account.Token parseDelimitedFrom(java.io.InputStream input)
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.fok.core.model.Account.Token parseDelimitedFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.fok.core.model.Account.Token parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.fok.core.model.Account.Token parseFrom(
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7517,7 +7641,7 @@ public final class Account {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.fok.core.model.Account.Token prototype) {
+    public static Builder newBuilder(org.fok.core.model.Account.CryptoTokenOriginTransactionValue prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -7532,25 +7656,25 @@ public final class Account {
       return builder;
     }
     /**
-     * Protobuf type {@code org.fok.core.model.Token}
+     * Protobuf type {@code org.fok.core.model.CryptoTokenOriginTransactionValue}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:org.fok.core.model.Token)
-        org.fok.core.model.Account.TokenOrBuilder {
+        // @@protoc_insertion_point(builder_implements:org.fok.core.model.CryptoTokenOriginTransactionValue)
+        org.fok.core.model.Account.CryptoTokenOriginTransactionValueOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.fok.core.model.Account.internal_static_org_fok_core_model_Token_descriptor;
+        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.fok.core.model.Account.internal_static_org_fok_core_model_Token_fieldAccessorTable
+        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.fok.core.model.Account.Token.class, org.fok.core.model.Account.Token.Builder.class);
+                org.fok.core.model.Account.CryptoTokenOriginTransactionValue.class, org.fok.core.model.Account.CryptoTokenOriginTransactionValue.Builder.class);
       }
 
-      // Construct using org.fok.core.model.Account.Token.newBuilder()
+      // Construct using org.fok.core.model.Account.CryptoTokenOriginTransactionValue.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7563,49 +7687,68 @@ public final class Account {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getValueFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (valueBuilder_ == null) {
-          value_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          valueBuilder_.clear();
-        }
+        txHash_ = "";
+
+        timestamp_ = 0;
+
+        startIndex_ = 0;
+
+        endIndex_ = 0;
+
+        name_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        code_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        prop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.fok.core.model.Account.internal_static_org_fok_core_model_Token_descriptor;
+        return org.fok.core.model.Account.internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_descriptor;
       }
 
-      public org.fok.core.model.Account.Token getDefaultInstanceForType() {
-        return org.fok.core.model.Account.Token.getDefaultInstance();
+      public org.fok.core.model.Account.CryptoTokenOriginTransactionValue getDefaultInstanceForType() {
+        return org.fok.core.model.Account.CryptoTokenOriginTransactionValue.getDefaultInstance();
       }
 
-      public org.fok.core.model.Account.Token build() {
-        org.fok.core.model.Account.Token result = buildPartial();
+      public org.fok.core.model.Account.CryptoTokenOriginTransactionValue build() {
+        org.fok.core.model.Account.CryptoTokenOriginTransactionValue result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public org.fok.core.model.Account.Token buildPartial() {
-        org.fok.core.model.Account.Token result = new org.fok.core.model.Account.Token(this);
+      public org.fok.core.model.Account.CryptoTokenOriginTransactionValue buildPartial() {
+        org.fok.core.model.Account.CryptoTokenOriginTransactionValue result = new org.fok.core.model.Account.CryptoTokenOriginTransactionValue(this);
         int from_bitField0_ = bitField0_;
-        if (valueBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            value_ = java.util.Collections.unmodifiableList(value_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.value_ = value_;
-        } else {
-          result.value_ = valueBuilder_.build();
+        int to_bitField0_ = 0;
+        result.txHash_ = txHash_;
+        result.timestamp_ = timestamp_;
+        result.startIndex_ = startIndex_;
+        result.endIndex_ = endIndex_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          name_ = name_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
+        result.name_ = name_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          code_ = code_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.code_ = code_;
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          prop_ = prop_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.prop_ = prop_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -7637,41 +7780,58 @@ public final class Account {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.fok.core.model.Account.Token) {
-          return mergeFrom((org.fok.core.model.Account.Token)other);
+        if (other instanceof org.fok.core.model.Account.CryptoTokenOriginTransactionValue) {
+          return mergeFrom((org.fok.core.model.Account.CryptoTokenOriginTransactionValue)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.fok.core.model.Account.Token other) {
-        if (other == org.fok.core.model.Account.Token.getDefaultInstance()) return this;
-        if (valueBuilder_ == null) {
-          if (!other.value_.isEmpty()) {
-            if (value_.isEmpty()) {
-              value_ = other.value_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureValueIsMutable();
-              value_.addAll(other.value_);
-            }
-            onChanged();
+      public Builder mergeFrom(org.fok.core.model.Account.CryptoTokenOriginTransactionValue other) {
+        if (other == org.fok.core.model.Account.CryptoTokenOriginTransactionValue.getDefaultInstance()) return this;
+        if (!other.getTxHash().isEmpty()) {
+          txHash_ = other.txHash_;
+          onChanged();
+        }
+        if (other.getTimestamp() != 0) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getStartIndex() != 0) {
+          setStartIndex(other.getStartIndex());
+        }
+        if (other.getEndIndex() != 0) {
+          setEndIndex(other.getEndIndex());
+        }
+        if (!other.name_.isEmpty()) {
+          if (name_.isEmpty()) {
+            name_ = other.name_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureNameIsMutable();
+            name_.addAll(other.name_);
           }
-        } else {
-          if (!other.value_.isEmpty()) {
-            if (valueBuilder_.isEmpty()) {
-              valueBuilder_.dispose();
-              valueBuilder_ = null;
-              value_ = other.value_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              valueBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getValueFieldBuilder() : null;
-            } else {
-              valueBuilder_.addAllMessages(other.value_);
-            }
+          onChanged();
+        }
+        if (!other.code_.isEmpty()) {
+          if (code_.isEmpty()) {
+            code_ = other.code_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureCodeIsMutable();
+            code_.addAll(other.code_);
           }
+          onChanged();
+        }
+        if (!other.prop_.isEmpty()) {
+          if (prop_.isEmpty()) {
+            prop_ = other.prop_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensurePropIsMutable();
+            prop_.addAll(other.prop_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -7685,11 +7845,11 @@ public final class Account {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.fok.core.model.Account.Token parsedMessage = null;
+        org.fok.core.model.Account.CryptoTokenOriginTransactionValue parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.fok.core.model.Account.Token) e.getUnfinishedMessage();
+          parsedMessage = (org.fok.core.model.Account.CryptoTokenOriginTransactionValue) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7700,244 +7860,433 @@ public final class Account {
       }
       private int bitField0_;
 
-      private java.util.List<org.fok.core.model.Account.TokenValue> value_ =
-        java.util.Collections.emptyList();
-      private void ensureValueIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          value_ = new java.util.ArrayList<org.fok.core.model.Account.TokenValue>(value_);
-          bitField0_ |= 0x00000001;
+      private java.lang.Object txHash_ = "";
+      /**
+       * <code>string txHash = 1;</code>
+       */
+      public java.lang.String getTxHash() {
+        java.lang.Object ref = txHash_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          txHash_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string txHash = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTxHashBytes() {
+        java.lang.Object ref = txHash_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          txHash_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string txHash = 1;</code>
+       */
+      public Builder setTxHash(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        txHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string txHash = 1;</code>
+       */
+      public Builder clearTxHash() {
+        
+        txHash_ = getDefaultInstance().getTxHash();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string txHash = 1;</code>
+       */
+      public Builder setTxHashBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        txHash_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int timestamp_ ;
+      /**
+       * <code>int32 timestamp = 2;</code>
+       */
+      public int getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int32 timestamp = 2;</code>
+       */
+      public Builder setTimestamp(int value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 timestamp = 2;</code>
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int startIndex_ ;
+      /**
+       * <code>int32 startIndex = 3;</code>
+       */
+      public int getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       * <code>int32 startIndex = 3;</code>
+       */
+      public Builder setStartIndex(int value) {
+        
+        startIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 startIndex = 3;</code>
+       */
+      public Builder clearStartIndex() {
+        
+        startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int endIndex_ ;
+      /**
+       * <code>int32 endIndex = 4;</code>
+       */
+      public int getEndIndex() {
+        return endIndex_;
+      }
+      /**
+       * <code>int32 endIndex = 4;</code>
+       */
+      public Builder setEndIndex(int value) {
+        
+        endIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 endIndex = 4;</code>
+       */
+      public Builder clearEndIndex() {
+        
+        endIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList name_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureNameIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          name_ = new com.google.protobuf.LazyStringArrayList(name_);
+          bitField0_ |= 0x00000010;
          }
       }
+      /**
+       * <code>repeated string name = 5;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getNameList() {
+        return name_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string name = 5;</code>
+       */
+      public int getNameCount() {
+        return name_.size();
+      }
+      /**
+       * <code>repeated string name = 5;</code>
+       */
+      public java.lang.String getName(int index) {
+        return name_.get(index);
+      }
+      /**
+       * <code>repeated string name = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes(int index) {
+        return name_.getByteString(index);
+      }
+      /**
+       * <code>repeated string name = 5;</code>
+       */
+      public Builder setName(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNameIsMutable();
+        name_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string name = 5;</code>
+       */
+      public Builder addName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNameIsMutable();
+        name_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string name = 5;</code>
+       */
+      public Builder addAllName(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureNameIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, name_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string name = 5;</code>
+       */
+      public Builder clearName() {
+        name_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string name = 5;</code>
+       */
+      public Builder addNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureNameIsMutable();
+        name_.add(value);
+        onChanged();
+        return this;
+      }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.fok.core.model.Account.TokenValue, org.fok.core.model.Account.TokenValue.Builder, org.fok.core.model.Account.TokenValueOrBuilder> valueBuilder_;
+      private com.google.protobuf.LazyStringList code_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCodeIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          code_ = new com.google.protobuf.LazyStringArrayList(code_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated string code = 6;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCodeList() {
+        return code_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string code = 6;</code>
+       */
+      public int getCodeCount() {
+        return code_.size();
+      }
+      /**
+       * <code>repeated string code = 6;</code>
+       */
+      public java.lang.String getCode(int index) {
+        return code_.get(index);
+      }
+      /**
+       * <code>repeated string code = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes(int index) {
+        return code_.getByteString(index);
+      }
+      /**
+       * <code>repeated string code = 6;</code>
+       */
+      public Builder setCode(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCodeIsMutable();
+        code_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string code = 6;</code>
+       */
+      public Builder addCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCodeIsMutable();
+        code_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string code = 6;</code>
+       */
+      public Builder addAllCode(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCodeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, code_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string code = 6;</code>
+       */
+      public Builder clearCode() {
+        code_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string code = 6;</code>
+       */
+      public Builder addCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureCodeIsMutable();
+        code_.add(value);
+        onChanged();
+        return this;
+      }
 
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public java.util.List<org.fok.core.model.Account.TokenValue> getValueList() {
-        if (valueBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(value_);
-        } else {
-          return valueBuilder_.getMessageList();
-        }
+      private com.google.protobuf.LazyStringList prop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePropIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          prop_ = new com.google.protobuf.LazyStringArrayList(prop_);
+          bitField0_ |= 0x00000040;
+         }
       }
       /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+       * <code>repeated string prop = 7;</code>
        */
-      public int getValueCount() {
-        if (valueBuilder_ == null) {
-          return value_.size();
-        } else {
-          return valueBuilder_.getCount();
-        }
+      public com.google.protobuf.ProtocolStringList
+          getPropList() {
+        return prop_.getUnmodifiableView();
       }
       /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+       * <code>repeated string prop = 7;</code>
        */
-      public org.fok.core.model.Account.TokenValue getValue(int index) {
-        if (valueBuilder_ == null) {
-          return value_.get(index);
-        } else {
-          return valueBuilder_.getMessage(index);
-        }
+      public int getPropCount() {
+        return prop_.size();
       }
       /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+       * <code>repeated string prop = 7;</code>
        */
-      public Builder setValue(
-          int index, org.fok.core.model.Account.TokenValue value) {
-        if (valueBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValueIsMutable();
-          value_.set(index, value);
-          onChanged();
-        } else {
-          valueBuilder_.setMessage(index, value);
-        }
+      public java.lang.String getProp(int index) {
+        return prop_.get(index);
+      }
+      /**
+       * <code>repeated string prop = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPropBytes(int index) {
+        return prop_.getByteString(index);
+      }
+      /**
+       * <code>repeated string prop = 7;</code>
+       */
+      public Builder setProp(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePropIsMutable();
+        prop_.set(index, value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+       * <code>repeated string prop = 7;</code>
        */
-      public Builder setValue(
-          int index, org.fok.core.model.Account.TokenValue.Builder builderForValue) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          value_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          valueBuilder_.setMessage(index, builderForValue.build());
-        }
+      public Builder addProp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePropIsMutable();
+        prop_.add(value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+       * <code>repeated string prop = 7;</code>
        */
-      public Builder addValue(org.fok.core.model.Account.TokenValue value) {
-        if (valueBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValueIsMutable();
-          value_.add(value);
-          onChanged();
-        } else {
-          valueBuilder_.addMessage(value);
-        }
+      public Builder addAllProp(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePropIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, prop_);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+       * <code>repeated string prop = 7;</code>
        */
-      public Builder addValue(
-          int index, org.fok.core.model.Account.TokenValue value) {
-        if (valueBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureValueIsMutable();
-          value_.add(index, value);
-          onChanged();
-        } else {
-          valueBuilder_.addMessage(index, value);
-        }
+      public Builder clearProp() {
+        prop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
+       * <code>repeated string prop = 7;</code>
        */
-      public Builder addValue(
-          org.fok.core.model.Account.TokenValue.Builder builderForValue) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          value_.add(builderForValue.build());
-          onChanged();
-        } else {
-          valueBuilder_.addMessage(builderForValue.build());
-        }
+      public Builder addPropBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensurePropIsMutable();
+        prop_.add(value);
+        onChanged();
         return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public Builder addValue(
-          int index, org.fok.core.model.Account.TokenValue.Builder builderForValue) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          value_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          valueBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public Builder addAllValue(
-          java.lang.Iterable<? extends org.fok.core.model.Account.TokenValue> values) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, value_);
-          onChanged();
-        } else {
-          valueBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public Builder clearValue() {
-        if (valueBuilder_ == null) {
-          value_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          valueBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public Builder removeValue(int index) {
-        if (valueBuilder_ == null) {
-          ensureValueIsMutable();
-          value_.remove(index);
-          onChanged();
-        } else {
-          valueBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public org.fok.core.model.Account.TokenValue.Builder getValueBuilder(
-          int index) {
-        return getValueFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public org.fok.core.model.Account.TokenValueOrBuilder getValueOrBuilder(
-          int index) {
-        if (valueBuilder_ == null) {
-          return value_.get(index);  } else {
-          return valueBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public java.util.List<? extends org.fok.core.model.Account.TokenValueOrBuilder> 
-           getValueOrBuilderList() {
-        if (valueBuilder_ != null) {
-          return valueBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(value_);
-        }
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public org.fok.core.model.Account.TokenValue.Builder addValueBuilder() {
-        return getValueFieldBuilder().addBuilder(
-            org.fok.core.model.Account.TokenValue.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public org.fok.core.model.Account.TokenValue.Builder addValueBuilder(
-          int index) {
-        return getValueFieldBuilder().addBuilder(
-            index, org.fok.core.model.Account.TokenValue.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .org.fok.core.model.TokenValue value = 1;</code>
-       */
-      public java.util.List<org.fok.core.model.Account.TokenValue.Builder> 
-           getValueBuilderList() {
-        return getValueFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          org.fok.core.model.Account.TokenValue, org.fok.core.model.Account.TokenValue.Builder, org.fok.core.model.Account.TokenValueOrBuilder> 
-          getValueFieldBuilder() {
-        if (valueBuilder_ == null) {
-          valueBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              org.fok.core.model.Account.TokenValue, org.fok.core.model.Account.TokenValue.Builder, org.fok.core.model.Account.TokenValueOrBuilder>(
-                  value_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
-          value_ = null;
-        }
-        return valueBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -7950,39 +8299,39 @@ public final class Account {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:org.fok.core.model.Token)
+      // @@protoc_insertion_point(builder_scope:org.fok.core.model.CryptoTokenOriginTransactionValue)
     }
 
-    // @@protoc_insertion_point(class_scope:org.fok.core.model.Token)
-    private static final org.fok.core.model.Account.Token DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:org.fok.core.model.CryptoTokenOriginTransactionValue)
+    private static final org.fok.core.model.Account.CryptoTokenOriginTransactionValue DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.fok.core.model.Account.Token();
+      DEFAULT_INSTANCE = new org.fok.core.model.Account.CryptoTokenOriginTransactionValue();
     }
 
-    public static org.fok.core.model.Account.Token getDefaultInstance() {
+    public static org.fok.core.model.Account.CryptoTokenOriginTransactionValue getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Token>
-        PARSER = new com.google.protobuf.AbstractParser<Token>() {
-      public Token parsePartialFrom(
+    private static final com.google.protobuf.Parser<CryptoTokenOriginTransactionValue>
+        PARSER = new com.google.protobuf.AbstractParser<CryptoTokenOriginTransactionValue>() {
+      public CryptoTokenOriginTransactionValue parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Token(input, extensionRegistry);
+          return new CryptoTokenOriginTransactionValue(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Token> parser() {
+    public static com.google.protobuf.Parser<CryptoTokenOriginTransactionValue> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Token> getParserForType() {
+    public com.google.protobuf.Parser<CryptoTokenOriginTransactionValue> getParserForType() {
       return PARSER;
     }
 
-    public org.fok.core.model.Account.Token getDefaultInstanceForType() {
+    public org.fok.core.model.Account.CryptoTokenOriginTransactionValue getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13192,20 +13541,20 @@ public final class Account {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_fok_core_model_AccountCryptoToken_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_fok_core_model_CryptoToken_descriptor;
+    internal_static_org_fok_core_model_AccountCryptoTokenProp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_fok_core_model_CryptoToken_fieldAccessorTable;
+      internal_static_org_fok_core_model_AccountCryptoTokenProp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_fok_core_model_CryptoTokenValue_descriptor;
+    internal_static_org_fok_core_model_CryptoTokenOriginValue_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_fok_core_model_CryptoTokenValue_fieldAccessorTable;
+      internal_static_org_fok_core_model_CryptoTokenOriginValue_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_fok_core_model_Token_descriptor;
+    internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_fok_core_model_Token_fieldAccessorTable;
+      internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_fok_core_model_TokenValue_descriptor;
   private static final 
@@ -13252,7 +13601,7 @@ public final class Account {
     java.lang.String[] descriptorData = {
       "\n\raccount.proto\022\022org.fok.core.model\"O\n\013A" +
       "ccountInfo\022\017\n\007address\030\001 \001(\014\022/\n\005value\030\002 \001" +
-      "(\0132 .org.fok.core.model.AccountValue\"\300\003\n" +
+      "(\0132 .org.fok.core.model.AccountValue\"\326\002\n" +
       "\014AccountValue\022\r\n\005nonce\030\001 \001(\005\022\017\n\007balance\030" +
       "\002 \001(\014\022\013\n\003max\030\003 \001(\014\022\021\n\tacceptMax\030\004 \001(\014\022\023\n" +
       "\013acceptLimit\030\005 \001(\005\022\017\n\007address\030\006 \003(\014\0225\n\006t" +
@@ -13261,41 +13610,42 @@ public final class Account {
       "re.model.AccountCryptoValue\022\017\n\007storage\030\t" +
       " \001(\014\022\020\n\010codeHash\030\n \001(\014\022\014\n\004code\030\013 \001(\014\022\014\n\004",
       "data\030\014 \001(\014\022\034\n\024accumulatedTimestamp\030\r \001(\003" +
-      "\022\023\n\013accumulated\030\016 \001(\014\022-\n\nownerToken\030\036 \001(" +
-      "\0132\031.org.fok.core.model.Token\0229\n\020ownerCry" +
-      "ptoToken\030( \001(\0132\037.org.fok.core.model.Cryp" +
-      "toToken\"S\n\021AccountTokenValue\022\r\n\005token\030\001 " +
-      "\001(\014\022\017\n\007balance\030\002 \001(\014\022\016\n\006locked\030\003 \001(\014\022\016\n\006" +
-      "freeze\030\004 \001(\014\"\\\n\022AccountCryptoValue\022\016\n\006sy" +
-      "mbol\030\001 \001(\014\0226\n\006tokens\030\002 \003(\0132&.org.fok.cor" +
-      "e.model.AccountCryptoToken\"\261\001\n\022AccountCr" +
-      "yptoToken\022\014\n\004hash\030\001 \001(\014\022\021\n\ttimestamp\030\002 \001",
-      "(\003\022\r\n\005index\030\003 \001(\003\022\r\n\005total\030\004 \001(\003\022\014\n\004code" +
-      "\030\005 \001(\t\022\014\n\004name\030\006 \001(\t\022\r\n\005owner\030\007 \001(\014\022\r\n\005n" +
-      "once\030\010 \001(\005\022\021\n\townertime\030\t \001(\003\022\017\n\007extData" +
-      "\030\n \001(\014\"B\n\013CryptoToken\0223\n\005value\030\001 \003(\0132$.o" +
-      "rg.fok.core.model.CryptoTokenValue\"d\n\020Cr" +
-      "yptoTokenValue\022\r\n\005total\030\001 \001(\003\022\017\n\007current" +
-      "\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\022\r\n\005owner\030\004 \001(\014" +
-      "\022\016\n\006symbol\030\005 \001(\014\"6\n\005Token\022-\n\005value\030\001 \003(\013" +
-      "2\036.org.fok.core.model.TokenValue\"\206\001\n\nTok" +
-      "enValue\022\r\n\005token\030\001 \001(\014\022\017\n\007address\030\002 \001(\014\022",
-      "\021\n\ttimestamp\030\003 \001(\003\022\r\n\005total\030\004 \001(\014\0226\n\007his" +
-      "tory\030\005 \003(\0132%.org.fok.core.model.TokenVal" +
-      "ueHistory\"F\n\021TokenValueHistory\022\017\n\007conten" +
-      "t\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\003\022\r\n\005total\030\003 \001(" +
-      "\014\"J\n\017AccountContract\0227\n\005value\030\001 \003(\0132(.or" +
-      "g.fok.core.model.AccountContractValue\"P\n" +
-      "\024AccountContractValue\022\024\n\014contractHash\030\001 " +
-      "\001(\014\022\017\n\007address\030\002 \001(\014\022\021\n\ttimestamp\030\003 \001(\003\"" +
-      "h\n\023UnionAccountStorage\022\016\n\006amount\030\001 \001(\014\022\021" +
-      "\n\ttoAddress\030\002 \001(\014\022\r\n\005token\030\003 \001(\014\022\016\n\006txHa",
-      "sh\030\004 \003(\014\022\017\n\007address\030\005 \003(\014\"F\n\017SanctionSto" +
-      "rage\022\022\n\nvoteTxHash\030\001 \001(\014\022\016\n\006txHash\030\002 \003(\014" +
-      "\022\017\n\007address\030\003 \003(\014\"^\n\023TokenAccountMapping" +
-      "\022\014\n\004hash\030\001 \001(\014\0229\n\ttokenInfo\030\002 \001(\0132&.org." +
-      "fok.core.model.AccountCryptoTokenb\006proto" +
-      "3"
+      "\022\023\n\013accumulated\030\016 \001(\014\"S\n\021AccountTokenVal" +
+      "ue\022\r\n\005token\030\001 \001(\014\022\017\n\007balance\030\002 \001(\014\022\016\n\006lo" +
+      "cked\030\003 \001(\014\022\016\n\006freeze\030\004 \001(\014\"\\\n\022AccountCry" +
+      "ptoValue\022\016\n\006symbol\030\001 \001(\014\0226\n\006tokens\030\002 \003(\013" +
+      "2&.org.fok.core.model.AccountCryptoToken" +
+      "\"\333\001\n\022AccountCryptoToken\022\014\n\004hash\030\001 \001(\014\022\021\n" +
+      "\ttimestamp\030\002 \001(\003\022\r\n\005index\030\003 \001(\003\022\r\n\005total" +
+      "\030\004 \001(\003\022\014\n\004code\030\005 \001(\t\022\014\n\004name\030\006 \001(\t\022\r\n\005ow" +
+      "ner\030\007 \001(\014\022\r\n\005nonce\030\010 \001(\005\022\021\n\townertime\030\t ",
+      "\001(\003\0229\n\005props\030\n \003(\0132*.org.fok.core.model." +
+      "AccountCryptoTokenProp\"4\n\026AccountCryptoT" +
+      "okenProp\022\013\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\"z\n\026" +
+      "CryptoTokenOriginValue\022\r\n\005total\030\001 \001(\003\022\016\n" +
+      "\006symbol\030\002 \001(\014\022\r\n\005owner\030\003 \001(\014\022\021\n\ttimestam" +
+      "p\030\004 \001(\003\022\017\n\007current\030\005 \001(\003\022\016\n\006txHash\030\006 \003(\014" +
+      "\"\226\001\n!CryptoTokenOriginTransactionValue\022\016" +
+      "\n\006txHash\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\005\022\022\n\nsta" +
+      "rtIndex\030\003 \001(\005\022\020\n\010endIndex\030\004 \001(\005\022\014\n\004name\030" +
+      "\005 \003(\t\022\014\n\004code\030\006 \003(\t\022\014\n\004prop\030\007 \003(\t\"\206\001\n\nTo",
+      "kenValue\022\r\n\005token\030\001 \001(\014\022\017\n\007address\030\002 \001(\014" +
+      "\022\021\n\ttimestamp\030\003 \001(\003\022\r\n\005total\030\004 \001(\014\0226\n\007hi" +
+      "story\030\005 \003(\0132%.org.fok.core.model.TokenVa" +
+      "lueHistory\"F\n\021TokenValueHistory\022\017\n\007conte" +
+      "nt\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\003\022\r\n\005total\030\003 \001" +
+      "(\014\"J\n\017AccountContract\0227\n\005value\030\001 \003(\0132(.o" +
+      "rg.fok.core.model.AccountContractValue\"P" +
+      "\n\024AccountContractValue\022\024\n\014contractHash\030\001" +
+      " \001(\014\022\017\n\007address\030\002 \001(\014\022\021\n\ttimestamp\030\003 \001(\003" +
+      "\"h\n\023UnionAccountStorage\022\016\n\006amount\030\001 \001(\014\022",
+      "\021\n\ttoAddress\030\002 \001(\014\022\r\n\005token\030\003 \001(\014\022\016\n\006txH" +
+      "ash\030\004 \003(\014\022\017\n\007address\030\005 \003(\014\"F\n\017SanctionSt" +
+      "orage\022\022\n\nvoteTxHash\030\001 \001(\014\022\016\n\006txHash\030\002 \003(" +
+      "\014\022\017\n\007address\030\003 \003(\014\"^\n\023TokenAccountMappin" +
+      "g\022\014\n\004hash\030\001 \001(\014\0229\n\ttokenInfo\030\002 \001(\0132&.org" +
+      ".fok.core.model.AccountCryptoTokenb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13320,7 +13670,7 @@ public final class Account {
     internal_static_org_fok_core_model_AccountValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_fok_core_model_AccountValue_descriptor,
-        new java.lang.String[] { "Nonce", "Balance", "Max", "AcceptMax", "AcceptLimit", "Address", "Tokens", "Cryptos", "Storage", "CodeHash", "Code", "Data", "AccumulatedTimestamp", "Accumulated", "OwnerToken", "OwnerCryptoToken", });
+        new java.lang.String[] { "Nonce", "Balance", "Max", "AcceptMax", "AcceptLimit", "Address", "Tokens", "Cryptos", "Storage", "CodeHash", "Code", "Data", "AccumulatedTimestamp", "Accumulated", });
     internal_static_org_fok_core_model_AccountTokenValue_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_org_fok_core_model_AccountTokenValue_fieldAccessorTable = new
@@ -13338,25 +13688,25 @@ public final class Account {
     internal_static_org_fok_core_model_AccountCryptoToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_fok_core_model_AccountCryptoToken_descriptor,
-        new java.lang.String[] { "Hash", "Timestamp", "Index", "Total", "Code", "Name", "Owner", "Nonce", "Ownertime", "ExtData", });
-    internal_static_org_fok_core_model_CryptoToken_descriptor =
+        new java.lang.String[] { "Hash", "Timestamp", "Index", "Total", "Code", "Name", "Owner", "Nonce", "Ownertime", "Props", });
+    internal_static_org_fok_core_model_AccountCryptoTokenProp_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_org_fok_core_model_CryptoToken_fieldAccessorTable = new
+    internal_static_org_fok_core_model_AccountCryptoTokenProp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_fok_core_model_CryptoToken_descriptor,
-        new java.lang.String[] { "Value", });
-    internal_static_org_fok_core_model_CryptoTokenValue_descriptor =
+        internal_static_org_fok_core_model_AccountCryptoTokenProp_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_org_fok_core_model_CryptoTokenOriginValue_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_org_fok_core_model_CryptoTokenValue_fieldAccessorTable = new
+    internal_static_org_fok_core_model_CryptoTokenOriginValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_fok_core_model_CryptoTokenValue_descriptor,
-        new java.lang.String[] { "Total", "Current", "Timestamp", "Owner", "Symbol", });
-    internal_static_org_fok_core_model_Token_descriptor =
+        internal_static_org_fok_core_model_CryptoTokenOriginValue_descriptor,
+        new java.lang.String[] { "Total", "Symbol", "Owner", "Timestamp", "Current", "TxHash", });
+    internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_org_fok_core_model_Token_fieldAccessorTable = new
+    internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_fok_core_model_Token_descriptor,
-        new java.lang.String[] { "Value", });
+        internal_static_org_fok_core_model_CryptoTokenOriginTransactionValue_descriptor,
+        new java.lang.String[] { "TxHash", "Timestamp", "StartIndex", "EndIndex", "Name", "Code", "Prop", });
     internal_static_org_fok_core_model_TokenValue_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_org_fok_core_model_TokenValue_fieldAccessorTable = new
